@@ -1,2 +1,2 @@
 # KnowledgeLayer
-Colaborative repository for all groups in the knowledge layer
+Collaborative repository for all groups in the knowledge layer
