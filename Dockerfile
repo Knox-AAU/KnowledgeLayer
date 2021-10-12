@@ -8,8 +8,8 @@ FROM python:3.8-slim-buster
 
 # Add a user to avoid running as root
 RUN useradd -rm -d /home/appuser -s /bin/bash -g root -G sudo -u 1001 appuser
-#RUN mkdir /home/appuser/app
-#RUN chown appuser:root /home/appuser/app
+RUN mkdir /home/appuser/app
+RUN chown appuser:root /home/appuser/app
 
 USER appuser
 
@@ -33,4 +33,5 @@ RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.
 # Copy the source code to the work directory
 COPY --chown=appuser:root . .
 
-CMD [ "python3", "app.py"]
+CMD [ "python3", "app.py" ]
+# CMD [ "pytest", "tests/" ]
