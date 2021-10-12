@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  description: "API for sending data from the extraction layer to the knowledge layer"
+  version: "1.0.0"
+  title: "Knox knowledge layer"
+schemes:
+- "https"
+- "http"
+paths:
+  /uploadJsonDoc:
+    post:
+      summary: "Upload a Nordjyske publication / Grundfos manual to the knowledge layer"
+      description: ""
+      operationId: "addDoc"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Json file to be processed "
+        required: true
+        schema:
+          type: "object"
+      responses:
+        "405":
+          description: "Invalid input"
