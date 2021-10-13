@@ -1,15 +1,18 @@
 from word_count.TermFrequency import TermFrequency
+from doc_classification import *
+
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
     word_counter = TermFrequency()
 
-    #while True:
+    # while True:
     # TODO: Await API "call"
+    temp_data = {}
 
-    # TODO: Classify documents
-    # Call appropriate preprocessor depending on document type
+    # Classify documents and call appropriate pre-processor
+    document = DocumentClassifier.classify(temp_data)
 
     # TODO: Lemmatization of some form
 
@@ -22,6 +25,7 @@ def pipeline():
     # TODO: Upload to database
 
     print("End of Knowledge Layer!")
+
 
 if __name__ == "__main__":
     pipeline()
