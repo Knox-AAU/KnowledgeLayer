@@ -1,5 +1,6 @@
-from word_count.TermFrequency import TermFrequency
 from word_count.WordFrequencyHandler import WordFrequencyHandler
+from word_count.TermFrequency import TermFrequency
+from doc_classification import *
 
 
 def pipeline():
@@ -7,11 +8,12 @@ def pipeline():
 
     word_counter = WordFrequencyHandler()
 
-    #while True:
+    # while True:
     # TODO: Await API "call"
+    temp_data = {}
 
-    # TODO: Classify documents
-    # Call appropriate preprocessor depending on document type
+    # Classify documents and call appropriate pre-processor
+    document = DocumentClassifier.classify(temp_data)
 
     # TODO: Lemmatization of some form
 
