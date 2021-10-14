@@ -33,5 +33,5 @@ RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.
 # Copy the source code to the work directory
 COPY --chown=appuser:root . .
 
-CMD [ "python3", "app.py" ]
-# CMD [ "pytest", "tests/" ]
+# CMD [ "python3", "app.py" ]
+CMD [ "pytest", "tests/" ]

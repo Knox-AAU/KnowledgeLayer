@@ -2,7 +2,7 @@ from environment.EnvironmentConstants import EnvironmentVariables as Ev
 Ev()
 import os
 import pytest
-from word_count.WordFrequencyHandler import WordFrequencyHandler, __WordFrequency__, __WordFrequencyEncoder__
+from word_count.WordFrequencyHandler import *
 import json
 
 

@@ -1,11 +1,9 @@
-from word_count.TermFrequency import TermFrequency
+from word_count.TermFrequency import *
 from typing import List
-# from preproc.PreProcessor import remove_stop_words
 # from knox_util import print
 import json
 from json import JSONEncoder
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
-# from rest.DataRequest import send_json_data_to_db
 # import re
 
 
@@ -79,7 +77,7 @@ class WordFrequencyHandler:
             print('Found empty title. Skipping', 'debug')
             return
 
-        json_object = json.dumps(frequency_object, cls=__WordFrequenctEncoder__, sort_keys=True, indent=4,
+        json_object = json.dumps(frequency_object, cls=__WordFrequencyEncoder__, sort_keys=True, indent=4,
                                  ensure_ascii=False)
 
         self.word_frequencies_ready_for_sending.append(json_object)
@@ -182,7 +180,7 @@ class __Word__:
         self.amount = word_count
 
 
-class __WordFrequenctEncoder__(JSONEncoder):
+class __WordFrequencyEncoder__(JSONEncoder):
     """
     Custom JSONEncoder for translating the __WordFrequency__ class instance into JSON
     """

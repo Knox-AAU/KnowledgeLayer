@@ -1,5 +1,4 @@
-from word_count.WordFrequencyHandler import WordFrequencyHandler
-from word_count.TermFrequency import TermFrequency
+from word_count import WordFrequencyHandler
 from doc_classification import *
 
 
@@ -10,7 +9,7 @@ def pipeline():
 
     # while True:
     # TODO: Await API "call"
-    temp_data = {}
+    temp_data = {"type": "Schema_Manual"}
 
     # Classify documents and call appropriate pre-processor
     document = DocumentClassifier.classify(temp_data)
