@@ -4,7 +4,6 @@ import time
 from fastapi import FastAPI, Request, HTTPException
 from knox_source_data_io.io_handler import IOHandler, Generator
 import json
-import uvicorn
 
 app = FastAPI()
 handler = IOHandler(Generator(app="This app", version=1.0), "https://repos.knox.cs.aau.dk/schema/publication.schema.json")

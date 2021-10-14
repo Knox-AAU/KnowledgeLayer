@@ -1,7 +1,6 @@
 from word_count import WordFrequencyHandler
 from doc_classification import *
 from api import ImportApi
-from knox_source_data_io.io_handler import IOHandler, Generator
 import uvicorn
 
 def pipeline():
@@ -11,7 +10,9 @@ def pipeline():
 
     #while True:
     # TODO: Await API "call"
+    #Startes the api(does not run async.. :/ )
     uvicorn.run(ImportApi.app)
+
     temp_data = {"type": "Schema_Manual"}
 
     # Classify documents and call appropriate pre-processor
