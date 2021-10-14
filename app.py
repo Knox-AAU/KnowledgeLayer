@@ -1,14 +1,17 @@
 from word_count import WordFrequencyHandler
 from doc_classification import *
-
+from api import ImportApi
+from knox_source_data_io.io_handler import IOHandler, Generator
+import uvicorn
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
     word_counter = WordFrequencyHandler()
 
-    # while True:
+    #while True:
     # TODO: Await API "call"
+    uvicorn.run(ImportApi.app)
     temp_data = {"type": "Schema_Manual"}
 
     # Classify documents and call appropriate pre-processor
