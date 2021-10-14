@@ -17,8 +17,8 @@ class DocumentClassifier:
         :return: Result of the appropriate pre-processing module
         """
         if json_data["type"] == "Schema_Article":
-            nj_pre_proc = NJPreProcessor()
+            nj_pre_proc = NJPreProcessor
             return nj_pre_proc.process(json_data)
         elif json_data["type"] == "Schema_Manual":
-            gf_pre_proc = GFPreProcessor()
+            gf_pre_proc = GFPreProcessor("en_core_web_sm")
             return gf_pre_proc.process(json_data)

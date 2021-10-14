@@ -1,26 +1,36 @@
+from abc import ABC
+
 import spacy
+import re
+from pre_processing.PreProcessor import PreProcessor
 
 
-def remove_duplicates(str_list):
-    return list(set(str_list))
-
-
-class GFPreProcessor:
+class GFPreProcessor(PreProcessor, ABC):
     """
 
     """
+    def __init__(self, model):
+        self.nlp = spacy.load(model)
+
     def process(self, json_data):
         """
 
         :return:
         """
         # TODO: Do actual processing
+        print("PREPROCESSOR BEGIN")
+        # Lemmatizer can be called through: super().lemmatize()
         return json_data
 
+    # TODO: Review all methods below and ensure that they are relevant and correct
 
     def bigrams(self, sentence: str) -> str:
-        nlp = spacy.load('en_core_web_sm') # TODO: Should be parametrized, so we put spacy model as a parameter
-        doc = nlp(sentence)
+        """
+
+        :param sentence:
+        :return:
+        """
+        doc = self.nlp(sentence)
 
         for noun_phrase in list(doc.noun_chunks):
             if noun_phrase.string.endswith(' '):
@@ -40,17 +50,29 @@ class GFPreProcessor:
 
         return sentence
 
-
     def to_lower(self, words):
+        """
+
+        :param words:
+        :return:
+        """
         return words.lower()
 
-
     def remove_special_characters(self, txt):
+        """
+
+        :param txt:
+        :return:
+        """
         cleaned_text = re.sub("[^a-zA-Z. ]", '', txt)
         return cleaned_text
 
-
     def numbers_to_text(self, text):
+        """
+
+        :param text:
+        :return:
+        """
         result = ""
 
         for token in text.split():
@@ -62,8 +84,12 @@ class GFPreProcessor:
 
         return result.strip()
 
-
     def _textify_token(self, token):
+        """
+
+        :param token:
+        :return:
+        """
         result = ""
         for digit in token:
             result += self._textify_number(digit)
@@ -71,8 +97,12 @@ class GFPreProcessor:
 
         return result.strip()
 
-
     def _textify_number(self, digit):
+        """
+
+        :param digit:
+        :return:
+        """
         numbers = {
             '0': 'zero',
             '1': 'one',
@@ -87,9 +117,14 @@ class GFPreProcessor:
         }
         return numbers[digit]
 
+    def remove_duplicates(self, str_list):
+        """
+
+        :return:
+        """
+        return list(set(str_list))
+
 
 #    def insert_pump_name(self, data, pump_name):
 #        data = data.replace("the_pump", pump_name)
 #        return data
-
-
