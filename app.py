@@ -1,7 +1,12 @@
+import threading
+
 from word_count import WordFrequencyHandler
 from doc_classification import *
 from api import ImportApi
 import uvicorn
+
+def runApi():
+    uvicorn.run(ImportApi.app)
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
@@ -10,8 +15,9 @@ def pipeline():
 
     #while True:
     # TODO: Await API "call"
-    #Startes the api(does not run async.. :/ )
-    uvicorn.run(ImportApi.app)
+    #Start a seperate thread for the API to avoid blocking
+    api_thread = threading.Thread(target=runApi)
+    api_thread.start()
 
     temp_data = {"type": "Schema_Manual"}
 
