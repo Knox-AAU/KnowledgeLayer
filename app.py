@@ -22,7 +22,7 @@ def runApi():
 def processApiInput(listOfFiles):
     for item in listOfFiles:
 
-        with open(item + ".json") as json_file:
+        with open(filePath + item) as json_file:
             content = json.load(json_file)
 
         # Classify documents and call appropriate pre-processor
@@ -52,12 +52,14 @@ def pipeline():
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    while True:
-        listOfFiles = os.listdir(filePath)
-        if not len(listOfFiles) == 0:
-            processApiInput()
-        else:
-            time.sleep(30)
+    #while True:
+    listOfFiles = os.listdir(filePath)
+    if not len(listOfFiles) == 0:
+        print("Process api input")
+        processApiInput(listOfFiles)
+    else:
+        print("Filepath empty, waiting 30 seconds")
+        time.sleep(30)
 
 
     #print("End of Knowledge Layer!")
