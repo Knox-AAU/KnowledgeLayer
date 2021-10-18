@@ -6,7 +6,7 @@ from api import ImportApi
 import uvicorn
 
 def runApi():
-    uvicorn.run(ImportApi.app)
+    uvicorn.run(ImportApi.app, host="0.0.0.0")
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
