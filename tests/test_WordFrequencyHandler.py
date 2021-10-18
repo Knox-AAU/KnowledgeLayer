@@ -21,14 +21,14 @@ class Test:
         assert len(handler.word_frequencies_ready_for_sending) == 0
         assert len(handler.tf[test_title]) == 0
 
-        handler.do_word_count_for_article(test_title, test_content, test_extracted_list)
+        handler.word_count_document(test_title, test_content, test_extracted_list)
 
         assert len(handler.word_frequencies_ready_for_sending) == 1
 
-        handler.do_word_count_for_article(test_title, test_content, test_extracted_list)
-        handler.do_word_count_for_article(test_title, test_content, test_extracted_list)
-        handler.do_word_count_for_article(test_title, test_content, test_extracted_list)
-        handler.do_word_count_for_article(test_title, test_content, test_extracted_list)
+        handler.word_count_document(test_title, test_content, test_extracted_list)
+        handler.word_count_document(test_title, test_content, test_extracted_list)
+        handler.word_count_document(test_title, test_content, test_extracted_list)
+        handler.word_count_document(test_title, test_content, test_extracted_list)
 
         assert len(handler.word_frequencies_ready_for_sending) == 5
 

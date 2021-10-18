@@ -17,10 +17,10 @@ class WordFrequencyHandler:
         self.back_up_file_prefix = 'word_count_'
         self.word_frequencies_ready_for_sending = []
 
-    def do_word_count_for_article(self, article_title: str, article_content: str, extracted_from_list: List) -> None:
+    def word_count_document(self, document_title: str, article_content: str, extracted_from_list: List) -> None:
         """
         Inputs:
-            article_title: str - The title of the article the word counting is done for
+            document_title: str - The title of the article the word counting is done for
             article_content: str - The content of the article to do word counting
             extracted_from_list: list - A list of strings containing the file names the article was extracted from
 
@@ -30,13 +30,13 @@ class WordFrequencyHandler:
         # article_content = re.sub(r'[.,\-\/:;!"\\@?\'¨~^#%&()<>[\]{}]','',article_content)
 
         # Process the article text
-        self.tf.process(article_title, article_content)
+        self.tf.process(document_title, article_content)
 
         # Create extracted from string
         extracted_from: str = self.__concatenate_extracted_from__(extracted_from_list)
 
         # Convert the word counting data into a class instance representing the JSON
-        self.__convert_to_word_frequency_JSON_object__(article_title, extracted_from)
+        self.__convert_to_word_frequency_JSON_object__(document_title, extracted_from)
         # Reset the handler to make it ready for the next article
         self.__reset__()
 
@@ -73,7 +73,7 @@ class WordFrequencyHandler:
         frequency_data = self.tf[title]
         frequency_object = __WordFrequency__(title, extracted_from, frequency_data)
 
-        if frequency_object.article_title == '':
+        if frequency_object.document_title == '':
             print('Found empty title. Skipping', 'debug')
             return
 
@@ -92,29 +92,6 @@ class WordFrequencyHandler:
         self.tf = TermFrequency()
         if hard_reset:
             self.word_frequencies_ready_for_sending = []
-
-    # def send_pending_counts(self, backup_file_name: str, error_dir: str = ev.instance.get_value(ev.instance.ERROR_DIRECTORY)) -> None:
-    #     """
-    #     Inputs:
-    #         backup_file_name: str - The file name of the backup file generated on unsuccessful transfer to Data layer
-    #         error_dir: str - The relative path from project root to create backup file (default: ERROR_DIRECTORY set in Environment Variables)
-    #
-    #     Sends the pending word frequency data to the Data layer DB
-    #     """
-    #     success: bool = True
-    #     for word_count_json in self.word_frequencies_ready_for_sending:
-    #         success: bool = send_json_data_to_db(word_count_json, ev.instance.WORD_COUNT_DATA_ENDPOINT)
-    #         if not success:
-    #             print(f'Sending word count data to Data layer failed for <{word_count_json}>, stopping sending and creating back_up...', 'error')
-    #             break
-    #
-    #     if not success:
-    #         self.__create_file_back_up__(backup_file_name, error_dir)
-    #     else:
-    #         print('Successfully sent pending word count data to database', 'info')
-    #
-    #     # Do hard reset, all have been sent
-    #     self.__reset__(True)
 
     def get_next_pending_wordcount(self):
         """
@@ -165,9 +142,8 @@ class __WordFrequency__:
             count = frequency_data[word]
             self.words.append(__Word__(word, count))
 
-        self.article_title: str = title
+        self.document_title: str = title
         self.filepath: str = extracted_from
-        self.total_words_in_article: int = len(self.words)
 
 
 class __Word__:
