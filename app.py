@@ -1,9 +1,14 @@
 from word_count import WordFrequencyHandler
 from doc_classification import *
+# from environment import *
+from environment import EnvironmentVariables as Ev
 
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
+
+    # Instantiate EnvironmentVariables class for future use
+    Ev()
 
     word_counter = WordFrequencyHandler()
 
@@ -23,7 +28,6 @@ def pipeline():
         print(str(word_counter.get_next_pending_wordcount()))
     except IndexError:
         print("No elements")
-    # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
 
     # TODO: (Out of scope for now) Construct knowledge graph depending on document type
 

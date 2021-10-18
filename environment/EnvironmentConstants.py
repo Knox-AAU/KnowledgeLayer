@@ -1,8 +1,8 @@
-from __future__ import annotations
-# from dotenv import load_dotenv
+# from __future__ import annotations
+from dotenv import load_dotenv
 import os
 
-# TODO: Find a better way to access environment constants
+
 class EnvironmentVariables:
     """
     The singleton Environment wrapper for the inner class
@@ -12,21 +12,16 @@ class EnvironmentVariables:
         The inner classe with only one instance
         """
         def __init__(self):
-            # self.INPUT_DIRECTORY = "INPUT_DIRECTORY"
-            # self.OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY"
-            # self.ERROR_DIRECTORY = "ERROR_DIRECTORY"
-            # self.RDF_OUTPUT_FOLDER = "RDF_OUTPUT_FOLDER"
-            # self.OUTPUT_FORMAT = "OUTPUT_FORMAT"
-            # self.OUTPUT_FILE_NAME = "OUTPUT_FILE_NAME"
-            # self.ONTOLOGY_FILEPATH = "ONTOLOGY_FILEPATH"
-            # self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
-            # self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
-
-            # TODO: This is temporary, find an alternative
-            self.INPUT_DIRECTORY = "./input/"
-            self.OUTPUT_DIRECTORY = "./output/"
-            self.ERROR_DIRECTORY = "./error/"
-            #load_dotenv()
+            self.INPUT_DIRECTORY = "INPUT_DIRECTORY"
+            self.OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY"
+            self.ERROR_DIRECTORY = "ERROR_DIRECTORY"
+            self.RDF_OUTPUT_FOLDER = "RDF_OUTPUT_FOLDER"
+            self.OUTPUT_FORMAT = "OUTPUT_FORMAT"
+            self.OUTPUT_FILE_NAME = "OUTPUT_FILE_NAME"
+            self.ONTOLOGY_FILEPATH = "ONTOLOGY_FILEPATH"
+            self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
+            self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
+            load_dotenv()
             
         def get_value(self, key: str, default = None):
             """
@@ -40,6 +35,7 @@ class EnvironmentVariables:
             return os.environ.get(key) if os.environ.get(key) is not None else default
     
     instance: __EnvironmentVariables = None
+
     def __new__(cls):
         """
         Overrides __new__ dunder method to return the instance of the inner class each time an object is called.
@@ -48,4 +44,3 @@ class EnvironmentVariables:
         if not EnvironmentVariables.instance:
             EnvironmentVariables.instance = EnvironmentVariables.__EnvironmentVariables()
         return EnvironmentVariables.instance
-
