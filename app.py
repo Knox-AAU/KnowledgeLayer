@@ -1,17 +1,50 @@
+import json
 import threading
+import os
+import time
 
+from os.path import exists
 from word_count import WordFrequencyHandler
 from doc_classification import *
 from api import ImportApi
 import uvicorn
 
+word_counter = WordFrequencyHandler()
+
+# Makes a directory for the queue (Also done in the api). Only runs once.
+filePath = "./queue/"
+if not exists(filePath):
+    os.mkdir(filePath)
+
 def runApi():
     uvicorn.run(ImportApi.app)
 
+def processApiInput(listOfFiles):
+    for item in listOfFiles:
+
+        with open(item + ".json") as json_file:
+            content = json.load(json_file)
+
+        # Classify documents and call appropriate pre-processor
+        document = DocumentClassifier.classify(content)
+
+        # TODO: Lemmatization of some form
+
+        # TODO: Word count
+
+        word_counter.do_word_count_for_article("DOCTITLE", "TEXT_BODY", ["PathList"])
+        try:
+            print(str(word_counter.get_next_pending_wordcount()))
+        except IndexError:
+            print("No elements")
+        # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
+
+        # TODO: (Out of scope for now) Construct knowledge graph depending on document type
+
+        # TODO: Upload to database
+
 def pipeline():
     print("Beginning of Knowledge Layer!")
-
-    word_counter = WordFrequencyHandler()
 
     #while True:
     # TODO: Await API "call"
@@ -19,27 +52,15 @@ def pipeline():
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    temp_data = {"type": "Schema_Manual"}
+    while True:
+        listOfFiles = os.listdir(filePath)
+        if not len(listOfFiles) == 0:
+            processApiInput()
+        else:
+            time.sleep(30)
 
-    # Classify documents and call appropriate pre-processor
-    document = DocumentClassifier.classify(temp_data)
 
-    # TODO: Lemmatization of some form
-
-    # TODO: Word count
-
-    word_counter.do_word_count_for_article("DOCTITLE", "TEXT_BODY", ["PathList"])
-    try:
-        print(str(word_counter.get_next_pending_wordcount()))
-    except IndexError:
-        print("No elements")
-    # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
-
-    # TODO: (Out of scope for now) Construct knowledge graph depending on document type
-
-    # TODO: Upload to database
-
-    print("End of Knowledge Layer!")
+    #print("End of Knowledge Layer!")
 
 
 if __name__ == "__main__":
