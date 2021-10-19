@@ -1,0 +1,7 @@
+pytest
+fastapi == 0.70.0
+knox-source-data-io == 0.0.7
+uvicorn[standard]
+spacy
+requests
+python-dotenv
