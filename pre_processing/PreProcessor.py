@@ -1,5 +1,3 @@
-from abc import abstractmethod
-
 
 class PreProcessor:
     """
@@ -13,6 +11,5 @@ class PreProcessor:
         # TODO: Call lemmatization API here
         raise NotImplementedError
 
-    #@abstractmethod
     def process(self, json_data):
-        pass
+        print("Not overridden")

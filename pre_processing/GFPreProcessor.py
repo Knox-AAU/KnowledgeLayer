@@ -1,6 +1,6 @@
 import spacy
 import re
-from pre_processing import PreProcessor
+from pre_processing.PreProcessor import PreProcessor
 from pre_processing import JsonWrapper as Content
 
 
