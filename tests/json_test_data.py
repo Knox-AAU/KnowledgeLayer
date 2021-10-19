@@ -72,8 +72,6 @@ correctJson = json.dumps({
 })
 
 incorrectJson = json.dumps({
-    "__class__": "Wrapper",
-    "__module__": "knox_source_data_io.models.wrapper",
     "type": "TestType",
     "schema": "TestSchema",
     "generator": {
