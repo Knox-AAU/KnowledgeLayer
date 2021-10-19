@@ -1,6 +1,5 @@
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
 Ev()
-import os
 import pytest
 from word_count.WordFrequencyHandler import *
 import json
@@ -80,8 +79,8 @@ class Test:
         json_string = handler.word_frequencies_ready_for_sending[0]
         
         json_object = json.loads(json_string)
-        assert json_object['article_title'] == test_title
-        assert json_object['total_words_in_article'] == distinct_word_count
+        assert json_object['document_title'] == test_title
+        assert json_object['total_words'] == distinct_word_count
 
 #
 
@@ -125,25 +124,3 @@ class Test:
         # Confirm empty
         assert len(handler.tf[test_title]) == 0
         assert len(handler.word_frequencies_ready_for_sending) == 0
-
-#
-
-    def test___create_file_back_up__can_craete_backup_file_with_content(self):
-        # Setup
-        error_dir = Ev.instance.get_value(Ev.instance.ERROR_DIRECTORY, './')
-        test_file = 'thisIsSpecificForTest__create_file_back_up__.json'
-        handler = WordFrequencyHandler()
-
-        handler.__create_file_back_up__(test_file, error_dir)
-
-        abs_path = os.path.abspath(error_dir + handler.back_up_file_prefix + test_file)
-        assert os.path.exists(abs_path)
-
-        with open(abs_path, 'r', encoding='utf-8') as file:
-            content = file.readlines()
-            assert '{\n' in content
-            assert '\t\"back_up\": [\n' in content
-            assert '\t]\n' in content
-            assert '}' in content
-        # Clean up
-        os.remove(abs_path)

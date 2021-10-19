@@ -95,39 +95,13 @@ class WordFrequencyHandler:
         """
         return self.word_frequencies_ready_for_sending.pop()
 
-    def __create_file_back_up__(self, file_name: str, error_dir: str) -> None:
-        """
-        Writes the content of pending word count data to a JSON file with the specified name in the specified directory.
-
-        :param file_name: Name of the backup file to create
-        :param error_dir: The relative path from project root to create backup file
-        """
-        if not error_dir:
-            raise EnvironmentError(f'Environment Variable <{Ev.instance.ERROR_DIRECTORY}> not specified...')
-
-        file_path: str = error_dir + self.back_up_file_prefix + file_name
-
-        with open(file_path, 'w', encoding='utf-8') as file:
-            file.write('{\n')
-            file.write('\t\"back_up\": [\n')
-            count_max = len(self.word_frequencies_ready_for_sending)
-            count_current = 1
-            for sending_json in self.word_frequencies_ready_for_sending:
-                file.write(sending_json)
-                if count_current < count_max:
-                    file.write(',')
-                file.write('\n')
-                count_current += 1
-
-            file.write('\t]\n}')
-
 
 class __WordFrequency__:
     """
     Parent wrapper class holding the word count data transformed into JSON
     """
 
-    def __init__(self, title: str, extracted_from: str, frequency_data: List, totalWords: int) -> None:
+    def __init__(self, title: str, extracted_from: str, frequency_data: List, total_words: int) -> None:
         self.words: List = []
         for word in frequency_data:
             if word == '':
@@ -139,7 +113,7 @@ class __WordFrequency__:
 
         self.document_title: str = title
         self.filepath: str = extracted_from
-        self.totalWords = totalWords
+        self.total_words = total_words
 
 
 class __Word__:
