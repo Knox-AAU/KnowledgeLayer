@@ -153,7 +153,7 @@ class __Word__:
 
     def __init__(self, word: str, word_count: int) -> None:
         self.word = word
-        self.amount = word_count
+        self.count = word_count
 
 
 class __WordFrequencyEncoder__(JSONEncoder):

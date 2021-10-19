@@ -18,7 +18,7 @@ def pipeline():
 
     # TODO: Word count
 
-    word_counter.word_count_document("DOCTITLE", "TEXT_BODY", ["PathList"])
+    word_counter.word_count_document("DOCTITLE", "Count this sentence", ["Path"])
     try:
         print(str(word_counter.get_next_pending_wordcount()))
     except IndexError:
