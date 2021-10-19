@@ -1,11 +1,11 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 
-class PreProcessor(ABC):
+class PreProcessor:
     """
 
     """
-    def lemmatize(self):
+    def lemmatize(self, text):
         """
 
         :return:
@@ -13,6 +13,6 @@ class PreProcessor(ABC):
         # TODO: Call lemmatization API here
         raise NotImplementedError
 
-    @abstractmethod
+    #@abstractmethod
     def process(self, json_data):
         pass

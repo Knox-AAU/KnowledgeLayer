@@ -1,11 +1,10 @@
-from abc import ABC
-
 import spacy
 import re
-from pre_processing.PreProcessor import PreProcessor
+from pre_processing import PreProcessor
+from pre_processing import JsonWrapper as Content
 
 
-class GFPreProcessor(PreProcessor, ABC):
+class GFPreProcessor(PreProcessor):
     """
 
     """
@@ -17,12 +16,24 @@ class GFPreProcessor(PreProcessor, ABC):
 
         :return:
         """
-        # TODO: Do actual processing
-        print("PREPROCESSOR BEGIN")
-        # Lemmatizer can be called through: super().lemmatize()
-        return json_data
+
+        corpus = self.extract_all_text_from_paragraphs(json_data)
+        corpus = self.remove_special_characters(corpus)
+        corpus = self.numbers_to_text(corpus)
+        # corpus = super().lemmatize(corpus)
+        corpus = self.bigrams(corpus)
+        corpus = self.to_lower(corpus)
+
+        return corpus
 
     # TODO: Review all methods below and ensure that they are relevant and correct
+
+    def extract_all_text_from_paragraphs(self, data: Content):
+        text: str = ''
+        for sec in data.sections:
+            for para in sec.paragraphs:
+                text += para.text
+        return text
 
     def bigrams(self, sentence: str) -> str:
         """

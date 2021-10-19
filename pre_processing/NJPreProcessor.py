@@ -1,12 +1,12 @@
-from pre_processing.PreProcessor import PreProcessor
+from pre_processing import PreProcessor
+
 
 class NJPreProcessor(PreProcessor):
     """
 
     """
-    def __init__(self, model):
-        super().__init__(model)
-        self.nlp = spacy.load(self.spacyModel)
+    def __init__(self):
+        None
 
     def process(self, json_data):
         """
