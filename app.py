@@ -7,7 +7,7 @@ from environment import EnvironmentVariables as Ev
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
-    # Instantiate EnvironmentVariables class for future use
+    # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
     Ev()
 
     word_counter = WordFrequencyHandler()
