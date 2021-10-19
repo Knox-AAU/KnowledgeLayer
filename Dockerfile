@@ -3,8 +3,8 @@
 FROM python:3.8-slim-buster
 
 # Installing Git
-#RUN apt-get -y update
-#RUN apt-get -y install git
+RUN apt-get -y update
+RUN apt-get -y install git
 
 # Add a user to avoid running as root
 # RUN useradd -rm -d /home/appuser -s /bin/bash -g root -G sudo -u 1001 appuser
