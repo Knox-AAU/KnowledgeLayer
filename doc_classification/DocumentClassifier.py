@@ -21,5 +21,5 @@ class DocumentClassifier:
             nj_pre_proc = NJPreProcessor()
             return nj_pre_proc.process(json_data)
         elif json_data["type"] == "Schema_Manual":
-            gf_pre_proc = GFPreProcessor()
+            gf_pre_proc = GFPreProcessor("en_core_web_sm")
             return gf_pre_proc.process(json_data)
