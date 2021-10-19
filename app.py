@@ -17,7 +17,7 @@ if not exists(filePath):
     os.mkdir(filePath)
 
 def runApi():
-    uvicorn.run(ImportApi.app)
+    uvicorn.run(ImportApi.app, host="0.0.0.0")
 
 def processApiInput(listOfFiles):
     for item in listOfFiles:
