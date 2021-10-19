@@ -67,7 +67,7 @@ class WordFrequencyHandler:
         :param extracted_from: A single comma seperated string of the path names the article was extracted from
         """
         frequency_data = self.tf[title]
-        frequency_object = __WordFrequency__(title, extracted_from, frequency_data)
+        frequency_object = __WordFrequency__(title, extracted_from, frequency_data, self.tf[title].length)
 
         if frequency_object.document_title == '':
             print('Found empty title. Skipping', 'debug')
@@ -127,7 +127,7 @@ class __WordFrequency__:
     Parent wrapper class holding the word count data transformed into JSON
     """
 
-    def __init__(self, title: str, extracted_from: str, frequency_data: List) -> None:
+    def __init__(self, title: str, extracted_from: str, frequency_data: List, totalWords: int) -> None:
         self.words: List = []
         for word in frequency_data:
             if word == '':
@@ -139,6 +139,7 @@ class __WordFrequency__:
 
         self.document_title: str = title
         self.filepath: str = extracted_from
+        self.totalWords = totalWords
 
 
 class __Word__:
