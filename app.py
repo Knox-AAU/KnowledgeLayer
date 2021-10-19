@@ -47,8 +47,6 @@ def processApiInput(listOfFiles):
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
-    #while True:
-    # TODO: Await API "call"
     #Start a seperate thread for the API to avoid blocking
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
@@ -63,7 +61,7 @@ def pipeline():
         time.sleep(30)
 
 
-    #print("End of Knowledge Layer!")
+    print("End of Knowledge Layer!")
 
 
 if __name__ == "__main__":
