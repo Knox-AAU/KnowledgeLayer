@@ -58,11 +58,11 @@ class NJPreProcessor:
 
     def convert_to_modern_danish(self, data: Publication) -> None:
         """
-
         :param content: Publication
         :return: None
         """
-        pass
+        # TODO
+        raise NotImplemented("Not implemented")
 
     def lemmatize(self, data: Publication) -> None:
         """
