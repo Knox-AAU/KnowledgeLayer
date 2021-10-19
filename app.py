@@ -13,9 +13,6 @@ def pipeline():
     # TODO: Await API "call"
     temp_data = {"type": "Schema_Manual"}
 
-    # with open('data.json') as json_file:
-    #     temp_data = json.load(json_file)
-
     # Classify documents and call appropriate pre-processor
     document = DocumentClassifier.classify(temp_data)
 

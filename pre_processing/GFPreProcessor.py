@@ -1,7 +1,6 @@
 import spacy
 import re
 from pre_processing.PreProcessor import PreProcessor
-from pre_processing import JsonWrapper as Content
 
 
 class GFPreProcessor(PreProcessor):
@@ -17,7 +16,8 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
-        corpus = self.extract_all_text_from_paragraphs(json_data)
+        # TODO: Extract text from input dictionary
+        #corpus = self.extract_all_text_from_paragraphs(json_data)
         corpus = self.remove_special_characters(corpus)
         corpus = self.numbers_to_text(corpus)
         # corpus = super().lemmatize(corpus)
@@ -28,12 +28,12 @@ class GFPreProcessor(PreProcessor):
 
     # TODO: Review all methods below and ensure that they are relevant and correct
 
-    def extract_all_text_from_paragraphs(self, data: Content):
-        text: str = ''
-        for sec in data.sections:
-            for para in sec.paragraphs:
-                text += para.text
-        return text
+    # def extract_all_text_from_paragraphs(self, data: Content):
+    #     text: str = ''
+    #     for sec in data.sections:
+    #         for para in sec.paragraphs:
+    #             text += para.text
+    #     return text
 
     def bigrams(self, sentence: str) -> str:
         """
