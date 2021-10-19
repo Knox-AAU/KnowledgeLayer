@@ -38,5 +38,5 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["python", "app.py"]
-#CMD [ "pytest", "tests/" ]
+#CMD ["python", "app.py"]
+CMD [ "pytest", "tests/api_tests.py" ]
