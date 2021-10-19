@@ -12,8 +12,9 @@ class DocumentClassifier:
     @staticmethod
     def classify(json_data):
         """
-        Classifies the JSON data according to its data source and calls the appropriate pre-processor
-        :argument json_data Dictionary containing document information
+        Classifies the JSON data according to its data source and calls the appropriate pre-processor.
+
+        :param json_data: Dictionary containing document information
         :return: Result of the appropriate pre-processing module
         """
         if json_data["type"] == "Schema_Article":

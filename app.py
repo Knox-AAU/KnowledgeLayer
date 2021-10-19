@@ -9,8 +9,12 @@ from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier
 from api import ImportApi
 import uvicorn
+from environment import EnvironmentVariables as Ev
 
-# The instantiation of the work counter
+# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
+Ev()
+
+# The instantiation of the word counter
 word_counter = WordFrequencyHandler()
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
@@ -30,11 +34,10 @@ def runApi():
 def processStoredPublications(sc):
     """
     processStoredPublications:
-
     This function processes the stored articles and manuals from Grundfos and Nordjyske.
     This includes the extraction of data from the .json files, the lemmatization and wordcount,
     uploading data to the database.
-
+    
     :param sc: scheduler
     :return: No return
     """
