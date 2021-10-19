@@ -36,6 +36,7 @@ RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.
 #COPY --chown=appuser:root . .
 COPY . .
 
+# Expose the containers internal port
 EXPOSE 8000
 
 #CMD ["python", "app.py"]
