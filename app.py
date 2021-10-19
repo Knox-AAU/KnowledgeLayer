@@ -28,10 +28,11 @@ def processApiInput(listOfFiles):
         # Classify documents and call appropriate pre-processor
         document = DocumentClassifier.classify(content)
 
+        # Run the processed data through the kemmatizer
         # TODO: Lemmatization of some form
 
+        # Wordcount the lemmatized data
         # TODO: Word count
-
         word_counter.do_word_count_for_article("DOCTITLE", "TEXT_BODY", ["PathList"])
         try:
             print(str(word_counter.get_next_pending_wordcount()))
