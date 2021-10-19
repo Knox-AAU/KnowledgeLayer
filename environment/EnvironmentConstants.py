@@ -20,6 +20,7 @@ class EnvironmentVariables:
             # self.OUTPUT_FILE_NAME = "OUTPUT_FILE_NAME"
             # self.ONTOLOGY_FILEPATH = "ONTOLOGY_FILEPATH"
             # self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
+            self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             load_dotenv()
             

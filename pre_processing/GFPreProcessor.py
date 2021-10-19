@@ -16,7 +16,6 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
-        # TODO: Extract text from input dictionary
         corpus = self.extract_all_text_from_paragraphs(json_data)
         corpus = self.remove_special_characters(corpus)
         corpus = self.numbers_to_text(corpus)
@@ -26,16 +25,16 @@ class GFPreProcessor(PreProcessor):
 
         return corpus
 
-    # TODO: Review all methods below and ensure that they are relevant and correct
-
     def extract_all_text_from_paragraphs(self, data):
         """
 
         :param data:
         :return:
         """
-        # TODO: Implement
+        # TODO: Implement this method
         raise NotImplementedError
+
+    # TODO: Review all methods below and ensure that they are relevant and correct
 
     def bigrams(self, sentence: str) -> str:
         """
