@@ -15,3 +15,4 @@ def test_incorrect_post():
     response = client.post("/uploadJsonDoc/", postItem)
     assert response.status_code == 403
     assert response.json() == "Json file not following schema"
+

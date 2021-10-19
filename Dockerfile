@@ -39,5 +39,5 @@ COPY . .
 # Expose the containers internal port
 EXPOSE 8000
 
-#CMD ["python", "app.py"]
-CMD [ "pytest", "tests/api_tests.py" ]
+CMD ["python", "app.py"]
+#CMD [ "pytest", "tests/api_tests.py" ]
