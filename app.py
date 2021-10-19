@@ -6,7 +6,7 @@ import time
 
 from os.path import exists
 from word_count import WordFrequencyHandler
-from doc_classification import *
+from doc_classification import DocumentClassifier
 from api import ImportApi
 import uvicorn
 
@@ -46,6 +46,8 @@ def processStoredPublications(sc):
 
         # Classify documents and call appropriate pre-processor
         document = DocumentClassifier.classify(content)
+
+        # TODO: Lemmatization of some form
 
         # Run the processed data through the kemmatizer
         # TODO: Lemmatization of some form
