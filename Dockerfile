@@ -3,8 +3,8 @@
 FROM python:3.8-slim-buster
 
 # Installing Git
-#RUN apt-get -y update
-#RUN apt-get -y install git
+RUN apt-get -y update
+RUN apt-get -y install git
 
 # Add a user to avoid running as root
 # RUN useradd -rm -d /home/appuser -s /bin/bash -g root -G sudo -u 1001 appuser
@@ -29,8 +29,9 @@ COPY requirements.txt requirements.txt
 # Installing Required dependencies
 RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.txt
 
-# Download the required spaCy large Danish model
+# Download the required spaCy large Danish and small English model
 RUN python3 -m spacy download da_core_news_lg
+RUN python3 -m spacy download en_core_web_sm
 
 # Copy the source code to the work directory
 #COPY --chown=appuser:root . .
@@ -40,4 +41,4 @@ COPY . .
 EXPOSE 8000
 
 CMD ["python", "app.py"]
-#CMD [ "pytest", "tests/api_tests.py" ]
+# CMD [ "pytest", "tests/" ]
