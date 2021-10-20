@@ -1,5 +1,8 @@
+from typing import List
+
 import exceptions
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
+
 Ev()
 import spacy
 from spacy.lang.da.stop_words import STOP_WORDS
@@ -29,7 +32,9 @@ class NJPreProcessor:
         except exceptions.PostFailedException as e:
             raise e
         except Exception as e:
-            raise exceptions.UnparsableException(e.message)
+            if hasattr(e, 'message'):
+                raise exceptions.UnparsableException(e.message)
+            raise exceptions.UnparsableException("ERROR: Input unparseable")
         return data
 
     def remove_stopwords(self, data: Publication) -> None:
@@ -37,8 +42,8 @@ class NJPreProcessor:
         :param data: Publication
         :return: None
         """
-        for i in range(len(data.articles)):
-            data.articles[i].paragraphs = [self.remove_paragraph_stopwords(p) for p in data.articles[i].paragraphs]
+        for article in data.articles:
+            article.paragraphs = [self.remove_paragraph_stopwords(paragraph) for paragraph in article.paragraphs]
 
     def remove_paragraph_stopwords(self, paragraph: Paragraph) -> Paragraph:
         """
@@ -49,16 +54,17 @@ class NJPreProcessor:
         Furthermore, commas and periods will be removed, as these are included as stopwords
         (see: https://ordnet.dk/ddo/ordbog?query=stopord)
         """
-        content = re.sub(r'(\[\d+\])|[.,?]', '', paragraph.value)
+        content: str = re.sub(r'(\[\d+\])|[.,?]', '', paragraph.value)
 
         # Filter out stopwords
-        return_word_list = [i for i in content.split(' ') if i not in STOP_WORDS]
+        return_word_list: List[str] = [i for i in content.split(' ') if i not in STOP_WORDS]
         paragraph.value = ' '.join(word for word in return_word_list)
+
         return paragraph
 
     def convert_to_modern_danish(self, data: Publication) -> None:
         """
-        :param content: Publication
+        :param data:
         :return: None
         """
         # TODO
@@ -69,9 +75,9 @@ class NJPreProcessor:
         :param data: Publication - The publication to be lemmatized
         :return: None
         """
-        for i in range(len(data.articles)):
-            data.articles[i].paragraphs = [Paragraph(kind=p.kind, value=self.call_lemmatize_api(p.value))
-                                           for p in data.articles[i].paragraphs]
+        for article in data.articles:
+            article.paragraphs = [Paragraph(kind=paragraph.kind, value=self.call_lemmatize_api(paragraph.value))
+                                  for paragraph in article.paragraphs]
 
     def call_lemmatize_api(self, content: str) -> str:
         """

@@ -1,8 +1,11 @@
 from typing import List
-
 import pytest
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 import unittest
+
+import requests.exceptions
+
+import exceptions
 from pre_processing import NJPreProcessor
 from knox_source_data_io.models.publication import Publication, Article, Paragraph
 from knox_source_data_io.models.wrapper import Wrapper, Generator
@@ -47,7 +50,19 @@ class Test(unittest.TestCase):
         output = self.preproc.process(data).content.articles[0].paragraphs[0].value
 
         # Assert
-        assert output == "hej gerne testes"
+        self.assertEqual(output, "hej gerne testes")
+
+    @patch('pre_processing.NJPreProcessor.call_lemmatize_api')
+    def test__process__removes_stopwords_multiple(self, mock_post):
+        # Arrange
+        data = self.setup_data(["hej, jeg vil gerne. testes..,", "hej, jeg vil gerne. testes.., I. DAG. TAK."])
+        mock_post.side_effect = lambda x: x
+
+        # Act
+        output = [p.value for p in self.preproc.process(data).content.articles[0].paragraphs]
+
+        # Assert
+        self.assertEqual(output, ["hej gerne testes", "hej gerne testes I DAG TAK"])
 
     @patch('pre_processing.NJPreProcessor.call_lemmatize_api')
     def test__process__lemmatize(self, mock_post):
@@ -59,4 +74,24 @@ class Test(unittest.TestCase):
         output = self.preproc.process(data).content.articles[0].paragraphs[0].value
 
         # Assert
-        assert output == "tanken fyldet op"
+        self.assertEqual(output, "tanken fyldet op")
+
+    @patch('requests.post')
+    def test__process__lemmatize_raise_unparseable(self, mock_post):
+        # Arrange
+        data = self.setup_data(["tanken er fyldt op"])
+        mock_post.return_value = Exception("Test Exception")
+
+        # Act & Assert
+        with self.assertRaises(exceptions.UnparsableException) as ctx:
+            self.preproc.process(data)
+
+    @patch('requests.post')
+    def test__process__lemmatize_raise_postFailed(self, mock_post):
+        # Arrange
+        data = self.setup_data(["tanken er fyldt op"])
+        mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
+
+        # Act & Assert
+        with self.assertRaises(exceptions.PostFailedException):
+            self.preproc.process(data)
