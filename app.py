@@ -3,6 +3,7 @@ import threading
 import os
 import sched
 import time
+import logging
 
 from os.path import exists
 from word_count import WordFrequencyHandler
@@ -10,7 +11,7 @@ from doc_classification import DocumentClassifier
 from api import ImportApi
 import uvicorn
 
-#The instantiation of the work counter
+# The instantiation of the work counter
 word_counter = WordFrequencyHandler()
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
@@ -20,6 +21,10 @@ if not exists(filePath):
 
 #Instantiation of the scheduler
 s = sched.scheduler(time.time, time.sleep)
+
+# Instantiation of logging functionalities 
+logger = logging.getLogger()
+logger.setLevel(logging.NOTSET)
 
 def runApi():
     uvicorn.run(ImportApi.app, host="0.0.0.0")
@@ -67,10 +72,10 @@ def processStoredPublications(sc):
 
         #Removes the current file that has been processed
         os.remove(filePath + file)
-        print(filePath + file + " Has been processed")
+        logger.warning(filePath + file + " Has been processed")
 
-    print("No more files! \nWaiting for 30 seconds before rerun.")
-    s.enter(30, 1, processStoredPublications, (sc,))
+    logger.warning("No more files! \nWaiting for 30 seconds before rerun.")
+    s.enter(5, 1, processStoredPublications, (sc,))
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
@@ -79,7 +84,7 @@ def pipeline():
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    s.enter(30, 1, processStoredPublications, (s,))
+    s.enter(5, 1, processStoredPublications, (s,))
     s.run()
 
     print("End of Knowledge Layer!")
