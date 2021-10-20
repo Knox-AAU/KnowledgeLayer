@@ -1,1 +1,1 @@
-from .WordCountDao import *
+from .WordCountDao import WordCountDao

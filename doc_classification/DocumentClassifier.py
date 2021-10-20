@@ -10,16 +10,33 @@ class DocumentClassifier:
     further pre-processing.
     """
     @staticmethod
-    def classify(json_data):
+    def classify(document_dict):
         """
         Classifies the JSON data according to its data source and calls the appropriate pre-processor.
 
-        :param json_data: Dictionary containing document information
-        :return: Result of the appropriate pre-processing module
+        :param document_dict: Dictionary containing document information
+        :return: Document object containing document title, body, publisher, and path
         """
-        if json_data["type"] == "Schema_Article":
+        doc_title = document_dict["content"]["title"]
+        doc_publisher = document_dict["content"]["publisher"]
+        # TODO: Insert correct field when this is known
+        doc_path = "TEMP_PATH"
+
+        document = Document(doc_title, doc_publisher, doc_path)
+
+        if document_dict["type"] == "Schema_Article":
             nj_pre_proc = NJPreProcessor()
-            return nj_pre_proc.process(json_data)
-        elif json_data["type"] == "Schema_Manual":
+            document.body = nj_pre_proc.process(document_dict)
+        elif document_dict["type"] == "Schema_Manual":
             gf_pre_proc = GFPreProcessor("en_core_web_sm")
-            return gf_pre_proc.process(json_data)
+            document.body = gf_pre_proc.process(document_dict)
+
+        return document
+
+
+class Document:
+    def __init__(self, title, publisher, path):
+        self.title = title
+        self.publisher = publisher
+        self.path = path
+        self.body = ""

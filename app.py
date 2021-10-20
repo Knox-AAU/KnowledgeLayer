@@ -6,10 +6,11 @@ import time
 
 from os.path import exists
 from word_count import WordFrequencyHandler
-from doc_classification import DocumentClassifier
+from doc_classification import DocumentClassifier, Document
 from api import ImportApi
 import uvicorn
 from environment import EnvironmentVariables as Ev
+from data_access import WordCountDao
 
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
 Ev()
@@ -48,20 +49,16 @@ def process_stored_publications(sc):
             content = json.load(json_file)
 
         # Classify documents and call appropriate pre-processor
-        document = DocumentClassifier.classify(content)
+        document: Document = DocumentClassifier.classify(content)
 
         # Wordcount the lemmatized data
         # TODO: Word count
-        word_counter.word_count_document("DOCTITLE", "TEXT_BODY", ["PathList"])
-        try:
-            print(str(word_counter.get_next_pending_wordcount()))
-        except IndexError:
-            print("No elements")
-        # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
+        word_counter.word_count_document(document)
 
         # TODO: (Out of scope for now) Construct knowledge graph depending on document type
 
         # TODO: Upload to database
+        WordCountDao.send_word_count(word_counter.get_next_pending_wordcount())
 
         # Removes the current file that has been processed
         os.remove(filePath + file)

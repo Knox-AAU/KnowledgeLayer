@@ -16,12 +16,15 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
-        corpus = self.extract_all_text_from_paragraphs(json_data)
-        corpus = self.remove_special_characters(corpus)
-        corpus = self.numbers_to_text(corpus)
-        # corpus = super().lemmatize(corpus)
-        corpus = self.bigrams(corpus)
-        corpus = self.to_lower(corpus)
+        # corpus = self.extract_all_text_from_paragraphs(json_data)
+        # corpus = self.remove_special_characters(corpus)
+        # corpus = self.numbers_to_text(corpus)
+        # # corpus = super().lemmatize(corpus)
+        # corpus = self.bigrams(corpus)
+        # corpus = self.to_lower(corpus)
+
+        # TODO: Do actual processing
+        corpus = "I am a testing sentence or something"
 
         return corpus
 

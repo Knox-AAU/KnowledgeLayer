@@ -1,3 +1,4 @@
+from doc_classification import Document
 from word_count.TermFrequency import *
 from typing import List
 # from knox_util import print
@@ -17,7 +18,7 @@ class WordFrequencyHandler:
         self.back_up_file_prefix = 'word_count_'
         self.word_frequencies_ready_for_sending = []
 
-    def word_count_document(self, document_title: str, article_content: str, extracted_from_list: List) -> None:
+    def word_count_document(self, document : Document) -> None:
         """
         Entry point for running word counting on a string og text
 
@@ -29,13 +30,10 @@ class WordFrequencyHandler:
         # article_content = re.sub(r'[.,\-\/:;!"\\@?\'¨~^#%&()<>[\]{}]','',article_content)
 
         # Process the article text
-        self.tf.process(document_title, article_content)
-
-        # Create extracted from string
-        extracted_from: str = self.__concatenate_extracted_from__(extracted_from_list)
+        self.tf.process(document.title, document.body)
 
         # Convert the word counting data into a class instance representing the JSON
-        self.__convert_to_word_frequency_JSON_object__(document_title, extracted_from)
+        self.__convert_to_word_frequency_JSON_object__(document)
         # Reset the handler to make it ready for the next article
         self.__reset__()
 
@@ -59,24 +57,26 @@ class WordFrequencyHandler:
 
         return ret_val
 
-    def __convert_to_word_frequency_JSON_object__(self, title: str, extracted_from: str) -> None:
+    def __convert_to_word_frequency_JSON_object__(self, document: Document) -> None:
         """
         Converts the word counting data into an class instance for sending to the Data layer.
 
         :param title: The title of the article that had word frequency done
         :param extracted_from: A single comma seperated string of the path names the article was extracted from
         """
-        frequency_data = self.tf[title]
-        frequency_object = __WordFrequency__(title, extracted_from, frequency_data, self.tf[title].length)
+        frequency_data = self.tf[document.title]
+        total_words = self.tf[document.title].length
+        frequency_object = __WordFrequency__(document.title, document.path, frequency_data, total_words, document.publisher)
 
-        if frequency_object.document_title == '':
+        if frequency_object.articletitle == '':
             print('Found empty title. Skipping', 'debug')
             return
 
         json_object = json.dumps(frequency_object, cls=__WordFrequencyEncoder__, sort_keys=True, indent=4,
                                  ensure_ascii=False)
 
-        self.word_frequencies_ready_for_sending.append(json_object)
+        # TODO: Find a better way to array-ify the JSON
+        self.word_frequencies_ready_for_sending.append("[" + json_object + "]")
 
     def __reset__(self, hard_reset=False):
         """
@@ -101,7 +101,7 @@ class __WordFrequency__:
     Parent wrapper class holding the word count data transformed into JSON
     """
 
-    def __init__(self, title: str, extracted_from: str, frequency_data: List, total_words: int) -> None:
+    def __init__(self, title: str, extracted_from: str, frequency_data: List, total_words: int, publication: str) -> None:
         self.words: List = []
         for word in frequency_data:
             if word == '':
@@ -111,9 +111,10 @@ class __WordFrequency__:
             count = frequency_data[word]
             self.words.append(__Word__(word, count))
 
-        self.document_title: str = title
+        self.articletitle: str = title
         self.filepath: str = extracted_from
-        self.total_words = total_words
+        self.totalwordsinarticle = total_words
+        self.publication = publication
 
 
 class __Word__:
@@ -123,7 +124,7 @@ class __Word__:
 
     def __init__(self, word: str, word_count: int) -> None:
         self.word = word
-        self.count = word_count
+        self.amount = word_count
 
 
 class __WordFrequencyEncoder__(JSONEncoder):
