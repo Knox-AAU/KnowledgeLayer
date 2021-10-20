@@ -10,9 +10,10 @@ import re
 import requests
 from knox_source_data_io.models.wrapper import Wrapper
 from knox_source_data_io.models.publication import Paragraph, Publication
+from .PreProcessor import PreProcessor
 
 
-class NJPreProcessor:
+class NJPreProcessor(PreProcessor):
     """
 
     """
