@@ -26,6 +26,8 @@ class EnvironmentVariables:
             self.INPUT_DIRECTORY = "./input/"
             self.OUTPUT_DIRECTORY = "./output/"
             self.ERROR_DIRECTORY = "./error/"
+            self.QUEUE_PATH = "QUEUE_PATH"
+
             #load_dotenv()
             
         def get_value(self, key: str, default = None):
