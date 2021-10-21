@@ -1,13 +1,8 @@
 import json
 import logging
 import os
-import sched
-import time
 
 from os.path import exists
-
-# Instantiation of the scheduler
-s = sched.scheduler(time.time, time.sleep)
 
 # Instantiation of logging functionalities
 logger = logging.getLogger()
@@ -37,4 +32,4 @@ def queue(callBack):
 def scheduler(sc, callBack):
     logger.warning("No more files! \nWaiting for 30 seconds before rerun.")
     queue(callBack)
-    sc.enter(30, 1, scheduler, (sc, callBack))
+    sc.enter(30, 1, scheduler, (sc, scheduler))

@@ -3,7 +3,7 @@ import os
 import sched
 import time
 import uvicorn
-import scheduler
+from scheduler import scheduler
 
 from os.path import exists
 from word_count import WordFrequencyHandler
