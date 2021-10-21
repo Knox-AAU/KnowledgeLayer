@@ -2,15 +2,14 @@ import threading
 import os
 import sched
 import time
-import logging
+import uvicorn
+import scheduler
 
 from os.path import exists
-
-from queue import queue
 from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier
 from api import ImportApi
-import uvicorn
+
 
 # The instantiation of the work counter
 word_counter = WordFrequencyHandler()
@@ -66,7 +65,7 @@ def pipeline():
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    s.enter(5, 1, queue, (s, processStoredPublications))
+    s.enter(5, 1, scheduler, (s, processStoredPublications))
     s.run()
 
     print("End of Knowledge Layer!")
