@@ -27,6 +27,11 @@ class NJPreProcessor(PreProcessor):
         :param data: Wrapper
         :return: Wrapper
         """
+        if self.nlp is None:
+            raise Exception("No spaCy model configured.")
+        if self.nlp.lang != 'da':
+            raise Exception("Function 'convert_to_modern_danish' requires a danish spaCy model.")
+
         try:
             self.remove_stopwords(data.content)
             self.convert_to_modern_danish(data.content)
@@ -68,12 +73,6 @@ class NJPreProcessor(PreProcessor):
         :param data:
         :return: None
         """
-
-        if self.nlp is None:
-            raise Exception("No spaCy model configured.")
-        if self.nlp.lang != 'da':
-            raise Exception("Function 'convert_to_modern_danish' requires a danish spaCy model.")
-
         for article in data.articles:
             article.paragraphs = [self.convert_paragraph_to_modern_danish(paragraph)
                                   for paragraph in article.paragraphs]
