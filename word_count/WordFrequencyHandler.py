@@ -66,7 +66,7 @@ class WordFrequencyHandler:
         """
         frequency_data = self.tf[document.title]
         total_words = self.tf[document.title].length
-        frequency_object = __WordFrequency__(document.title, document.path, frequency_data, total_words, document.publisher)
+        frequency_object = __WordFrequency__(document.title, document.paths, frequency_data, total_words, document.publisher)
 
         if frequency_object.articletitle == '':
             print('Found empty title. Skipping', 'debug')

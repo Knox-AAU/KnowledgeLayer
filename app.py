@@ -4,16 +4,16 @@ import os
 import sched
 import time
 
+from environment import EnvironmentVariables as Ev
+# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
+Ev()
+
 from os.path import exists
 from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier, Document
 from api import ImportApi
 import uvicorn
-from environment import EnvironmentVariables as Ev
 from data_access import WordCountDao
-
-# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
-Ev()
 
 # The instantiation of the word counter
 word_counter = WordFrequencyHandler()

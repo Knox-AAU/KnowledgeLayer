@@ -17,12 +17,15 @@ class DocumentClassifier:
         :param document_dict: Dictionary containing document information
         :return: Document object containing document title, body, publisher, and path
         """
-        doc_title = document_dict["content"]["title"]
+        doc_title = document_dict["content"]["publication"]
         doc_publisher = document_dict["content"]["publisher"]
-        # TODO: Insert correct field when this is known
-        doc_path = "TEMP_PATH"
+        doc_paths: list = DocumentClassifier.extract_doc_paths(document_dict)
 
-        document = Document(doc_title, doc_publisher, doc_path)
+        # Converts the list to a comma-separated string
+        doc_path_str = str(doc_paths)[1:-1]
+        doc_path_str = doc_path_str.replace("'", "")
+
+        document = Document(doc_title, doc_publisher, doc_path_str)
 
         if document_dict["type"] == "Schema_Article":
             nj_pre_proc = NJPreProcessor()
@@ -33,10 +36,20 @@ class DocumentClassifier:
 
         return document
 
+    @staticmethod
+    def extract_doc_paths(doc):
+        paths = []
+
+        for article in doc["content"]["articles"]:
+            if "extracted_from" in article:
+                for path in article["extracted_from"]:
+                    paths.append(path)
+
+        return paths
 
 class Document:
-    def __init__(self, title, publisher, path):
+    def __init__(self, title, publisher, paths):
         self.title = title
         self.publisher = publisher
-        self.path = path
+        self.paths = paths
         self.body = ""
