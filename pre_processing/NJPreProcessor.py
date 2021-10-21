@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 import exceptions
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
@@ -29,6 +29,7 @@ class NJPreProcessor(PreProcessor):
         """
         try:
             self.remove_stopwords(data.content)
+            self.convert_to_modern_danish(data.content)
             self.lemmatize(data.content)
         except exceptions.PostFailedException as e:
             raise e
@@ -56,7 +57,6 @@ class NJPreProcessor(PreProcessor):
         (see: https://ordnet.dk/ddo/ordbog?query=stopord)
         """
         content: str = re.sub(r'(\[\d+\])|[.,?]', '', paragraph.value)
-
         # Filter out stopwords
         return_word_list: List[str] = [i for i in content.split(' ') if i not in STOP_WORDS]
         paragraph.value = ' '.join(word for word in return_word_list)
@@ -68,8 +68,36 @@ class NJPreProcessor(PreProcessor):
         :param data:
         :return: None
         """
-        # TODO
-        raise NotImplemented("Not implemented")
+
+        if self.nlp is None:
+            raise Exception("No spaCy model configured.")
+        if self.nlp.lang != 'da':
+            raise Exception("Function 'convert_to_modern_danish' requires a danish spaCy model.")
+
+        for article in data.articles:
+            article.paragraphs = [self.convert_paragraph_to_modern_danish(paragraph)
+                                  for paragraph in article.paragraphs]
+
+    def convert_paragraph_to_modern_danish(self, paragraph: Paragraph) -> Paragraph:
+        """
+        Replaces aa, Aa, oe, Oe, aa, Aa -> æ, Æ, ø, Ø, å, Å as well as replacing any kind of whitespace with a single
+        space. Also converts all NOUN's, as defined in spacy.lang.da.STOP_WORDS, to lowercase.
+
+        :param paragraph: Paragraph - The paragraph to convert to modern danish
+        :return: Paragraph - The processed paragraph
+        """
+        content: str = paragraph.value
+
+        replacements: List[Tuple[str, str]] = [(r'aa', 'å'), (r'Aa', 'Å'), (r'ei', 'ej'), (r'oe', 'ø'), (r'Øe', 'Ø'),
+                                               (r'ae', 'æ'), (r'Ae', 'Æ'), (r'\-(\r?)\n', ''), (r'\r?\n', ' ')]
+        for regex, sub in replacements:
+            content = re.sub(regex, sub, content)
+
+        lower_noun = lambda word: word.lower() if self.nlp(word)[0].pos_ == 'NOUN' else word
+        words = [lower_noun(word) for word in re.split(r'\s+', content)]
+        paragraph.value = ' '.join(words)
+        return paragraph
+
 
     def lemmatize(self, data: Publication) -> None:
         """
