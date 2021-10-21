@@ -1,4 +1,3 @@
-import json
 import threading
 import os
 import sched
@@ -6,6 +5,8 @@ import time
 import logging
 
 from os.path import exists
+
+from queue import queue
 from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier
 from api import ImportApi
@@ -22,10 +23,6 @@ if not exists(filePath):
 #Instantiation of the scheduler
 s = sched.scheduler(time.time, time.sleep)
 
-# Instantiation of logging functionalities 
-logger = logging.getLogger()
-logger.setLevel(logging.NOTSET)
-
 def runApi():
     uvicorn.run(ImportApi.app, host="0.0.0.0")
 
@@ -39,16 +36,7 @@ uploading data to the database.
 :param sc: scheduler
 :return: No return
 '''
-def processStoredPublications(sc):
-    # TODO Test this function when all the components are done
-    #Creates a list of all files in the folder defined as filePath.
-    listOfFiles = os.listdir(filePath)
-
-    for file in listOfFiles:
-
-        with open(filePath + file) as json_file:
-            content = json.load(json_file)
-
+def processStoredPublications(content):
         # Classify documents and call appropriate pre-processor
         document = DocumentClassifier.classify(content)
 
@@ -70,12 +58,6 @@ def processStoredPublications(sc):
 
         # TODO: Upload to database
 
-        #Removes the current file that has been processed
-        os.remove(filePath + file)
-        logger.warning(filePath + file + " Has been processed")
-
-    logger.warning("No more files! \nWaiting for 30 seconds before rerun.")
-    s.enter(5, 1, processStoredPublications, (sc,))
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
@@ -84,7 +66,7 @@ def pipeline():
     api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    s.enter(5, 1, processStoredPublications, (s,))
+    s.enter(5, 1, queue, (s, processStoredPublications))
     s.run()
 
     print("End of Knowledge Layer!")
