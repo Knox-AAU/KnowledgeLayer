@@ -8,5 +8,5 @@ services:
         volumes:
             - .:/home/appuser/app
         environment:
-            - spacy_model=da_core_news_lg
-            - lemmatizer_endpoint=TODO
+            - SPACY_MODEL=da_core_news_lg
+            - LEMMATIZER_ENDPOINT=TODO

@@ -26,13 +26,13 @@ class EnvironmentVariables:
             self.INPUT_DIRECTORY = "./input/"
             self.OUTPUT_DIRECTORY = "./output/"
             self.ERROR_DIRECTORY = "./error/"
-            self.NJ_SPACY_MODEL = "spacy_model"
-            self.LEMMATIZER_ENDPOINT = "lemmatizer_endpoint"
+            self.NJ_SPACY_MODEL = "SPACY_MODEL"
+            self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
             #load_dotenv()
             self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             load_dotenv()
-            
+
         def get_value(self, key: str, default = None):
             """
             Reads the .env file and returns the requested value.
