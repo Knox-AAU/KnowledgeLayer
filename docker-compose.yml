@@ -9,3 +9,5 @@ services:
             - .:/home/appuser/app
         environment:
             - QUEUE_PATH = "./queue/"
+            - SPACY_MODEL=da_core_news_lg
+            - LEMMATIZER_ENDPOINT=TODO
