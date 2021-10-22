@@ -23,35 +23,24 @@ class GFPreProcessor(PreProcessor):
         corpus = self.numbers_to_text(corpus)
         corpus = super().lemmatize(corpus)
         # corpus = self.bigrams(corpus)
+
         corpus = self.to_lower(corpus)
 
         return corpus
 
     def bigrams(self, sentence: str) -> str:
-        """
+        # This is an experiment! Can be the basis for greatness later on
 
-        :param sentence:
-        :return:
-        """
-        doc = self.nlp(sentence)
-
-        for noun_phrase in list(doc.noun_chunks):
-            if noun_phrase.string.endswith(' '):
-                bigram = noun_phrase.string
-                # Remove trailing whitespace in noun_phrase to avoid:
-                # "ice cream " --> "ice_cream_"
-                # Instead of "ice cream " --> "ice_cream "
-                bigram = bigram.strip(' ')
-                bigram = bigram.replace(' ', '_')
-                bigram += ' '
-            else:
-                bigram = noun_phrase.string
-                bigram = bigram.strip(' ')
-                bigram = bigram.replace(' ', '_')
-
-            sentence = sentence.replace(noun_phrase.string, bigram)
-
-        return sentence
+        # self.nlp.add_pipe("merge_noun_chunks")
+        #
+        # doc = self.nlp(corpus)
+        # print("spaCy text: " + doc.text)
+        # for chunk in list(doc.noun_chunks):
+        #     print(chunk)
+        #
+        # for token in doc:
+        #     print(token.text + ", " + token.pos_)
+        return True
 
     def to_lower(self, words):
         """
