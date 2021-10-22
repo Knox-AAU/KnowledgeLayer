@@ -2,6 +2,10 @@ import math
 import sched
 from scheduler import queue
 import time
+from environment import EnvironmentVariables as Ev
+
+# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
+Ev()
 
 # Instantiation of the scheduler
 s = sched.scheduler(time.time, time.sleep)
@@ -10,7 +14,7 @@ s = sched.scheduler(time.time, time.sleep)
 assertContent = []
 
 def generate_mock_data(numberOfFiles: int):
-    filePath = "./queue/"
+    filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
     unixTime = 0
 
     for n in range(numberOfFiles):

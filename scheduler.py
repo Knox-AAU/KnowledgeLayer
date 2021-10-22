@@ -3,13 +3,18 @@ import logging
 import os
 
 from os.path import exists
+from environment import EnvironmentVariables as Ev
+
+
+# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
+Ev()
 
 # Instantiation of logging functionalities
 logger = logging.getLogger()
 logger.setLevel(logging.NOTSET)
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
-filePath = "./queue/"
+filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
 if not exists(filePath):
     os.mkdir(filePath)
 
