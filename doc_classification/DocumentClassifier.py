@@ -1,3 +1,4 @@
+from model.Document import Document
 from pre_processing import *
 
 
@@ -46,10 +47,3 @@ class DocumentClassifier:
                     paths.append(path)
 
         return paths
-
-class Document:
-    def __init__(self, title, publisher, paths):
-        self.title = title
-        self.publisher = publisher
-        self.paths = paths
-        self.body = ""

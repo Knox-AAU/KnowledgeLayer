@@ -1,8 +1,6 @@
-
 from dataclasses import dataclass
 from typing import List
-
-from word_count.WordFrequencyHandler import Word
+from model.Word import Word
 
 
 @dataclass
