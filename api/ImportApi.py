@@ -13,8 +13,8 @@ async def read_doc(request: Request):
     data = await request.body()
 
     try:
-        #handler.validate_json(request.json())
-        json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
+        handler.validate_json(request.json())
+        #json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
     except:
         raise HTTPException(status_code=403, detail="Json file not following schema")
 

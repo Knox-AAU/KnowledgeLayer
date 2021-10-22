@@ -5,3 +5,4 @@ uvicorn[standard]
 spacy
 requests
 python-dotenv
+jsonschema

@@ -67,7 +67,7 @@ def pipeline():
     print("Beginning of Knowledge Layer!")
 
     #Start a seperate thread for the API to avoid blocking
-    api_thread = threading.Thread(target=runApi)
+    api_thread = threading.Thread(target=run_api)
     api_thread.start()
 
     s.enter(5, 1, scheduler, (s, processStoredPublications))
