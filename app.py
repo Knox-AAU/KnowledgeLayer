@@ -3,12 +3,13 @@ import threading
 import os
 import sched
 import time
+import uvicorn
+from scheduler import scheduler
 
 from os.path import exists
 from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier
 from api import ImportApi
-import uvicorn
 from environment import EnvironmentVariables as Ev
 
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
@@ -29,30 +30,28 @@ s = sched.scheduler(time.time, time.sleep)
 def run_api():
     uvicorn.run(ImportApi.app, host="0.0.0.0")
 
+'''
+processStoredPublications:
 
-def process_stored_publications(sc):
-    """
-    This function processes the stored articles and manuals from Grundfos and Nordjyske.
-    This includes the extraction of data from the .json files, the lemmatization and wordcount,
-    uploading data to the database.
-    
-    :param sc: scheduler
-    """
-    # TODO Test this function when all the components are done
-    # Creates a list of all files in the folder defined as filePath.
-    list_of_files = os.listdir(filePath)
+This function processes the stored articles and manuals from Grundfos and Nordjyske.
+This includes the extraction of data from the .json files, the lemmatization and wordcount,
+uploading data to the database.
 
-    for file in list_of_files:
-
-        with open(filePath + file) as json_file:
-            content = json.load(json_file)
-
+:param sc: scheduler
+:return: No return
+'''
+def processStoredPublications(content):
         # Classify documents and call appropriate pre-processor
         document = DocumentClassifier.classify(content)
 
+        # TODO: Lemmatization of some form
+
+        # Run the processed data through the kemmatizer
+        # TODO: Lemmatization of some form
+
         # Wordcount the lemmatized data
         # TODO: Word count
-        word_counter.word_count_document("DOCTITLE", "TEXT_BODY", ["PathList"])
+        word_counter.do_word_count_for_article("DOCTITLE", "TEXT_BODY", ["PathList"])
         try:
             print(str(word_counter.get_next_pending_wordcount()))
         except IndexError:
@@ -63,22 +62,15 @@ def process_stored_publications(sc):
 
         # TODO: Upload to database
 
-        # Removes the current file that has been processed
-        os.remove(filePath + file)
-        print(filePath + file + " Has been processed")
-
-    print("No more files! \nWaiting for 30 seconds before rerun.")
-    s.enter(30, 1, process_stored_publications, (sc,))
-
 
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
-    # Start a separate thread for the API to avoid blocking
-    api_thread = threading.Thread(target=run_api)
+    #Start a seperate thread for the API to avoid blocking
+    api_thread = threading.Thread(target=runApi)
     api_thread.start()
 
-    s.enter(30, 1, process_stored_publications, (s,))
+    s.enter(5, 1, scheduler, (s, processStoredPublications))
     s.run()
 
     print("End of Knowledge Layer!")
