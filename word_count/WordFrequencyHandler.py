@@ -109,7 +109,7 @@ class __WordFrequency__:
                 continue
 
             count = frequency_data[word]
-            self.words.append(__Word__(word, count))
+            self.words.append(Word(word, count))
 
         self.articletitle: str = title
         self.filepath: str = extracted_from
@@ -117,7 +117,7 @@ class __WordFrequency__:
         self.publication = publication
 
 
-class __Word__:
+class Word:
     """
     Wrapper class for a single word in the word count data
     """
