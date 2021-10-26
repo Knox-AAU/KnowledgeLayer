@@ -27,10 +27,8 @@ class EnvironmentVariables:
             self.OUTPUT_DIRECTORY = "./output/"
             self.ERROR_DIRECTORY = "./error/"
             self.QUEUE_PATH = "QUEUE_PATH"
-
             self.NJ_SPACY_MODEL = "SPACY_MODEL"
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
-            #load_dotenv()
             self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             load_dotenv()

@@ -5,7 +5,6 @@ import sched
 import time
 import uvicorn
 from scheduler import scheduler
-
 from os.path import exists
 from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier
@@ -26,32 +25,25 @@ if not exists(filePath):
 # Instantiation of the scheduler
 s = sched.scheduler(time.time, time.sleep)
 
-
 def run_api():
     uvicorn.run(ImportApi.app, host="0.0.0.0")
 
-'''
-processStoredPublications:
+    """
+    This function processes the stored articles and manuals from Grundfos and Nordjyske.
+    This includes the extraction of data from the .json files, the lemmatization and wordcount,
+    uploading data to the database.
+    
+    :param content: json file
+    :return: No return
+    """
 
-This function processes the stored articles and manuals from Grundfos and Nordjyske.
-This includes the extraction of data from the .json files, the lemmatization and wordcount,
-uploading data to the database.
-
-:param sc: scheduler
-:return: No return
-'''
 def processStoredPublications(content):
         # Classify documents and call appropriate pre-processor
         document = DocumentClassifier.classify(content)
 
-        # TODO: Lemmatization of some form
-
-        # Run the processed data through the kemmatizer
-        # TODO: Lemmatization of some form
-
         # Wordcount the lemmatized data
         # TODO: Word count
-        word_counter.do_word_count_for_article("DOCTITLE", "TEXT_BODY", ["PathList"])
+        word_counter.word_count_document("DOCTITLE", "TEXT_BODY", ["PathList"])
         try:
             print(str(word_counter.get_next_pending_wordcount()))
         except IndexError:
@@ -62,7 +54,6 @@ def processStoredPublications(content):
 
         # TODO: Upload to database
 
-
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
@@ -72,9 +63,7 @@ def pipeline():
 
     s.enter(5, 1, scheduler, (s, processStoredPublications))
     s.run()
-
     print("End of Knowledge Layer!")
-
 
 if __name__ == "__main__":
     pipeline()
