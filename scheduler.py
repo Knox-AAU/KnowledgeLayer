@@ -14,7 +14,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.NOTSET)
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
-filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
+filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
 if not exists(filePath):
     os.mkdir(filePath)
 
@@ -37,4 +37,4 @@ def queue(callBack):
 def scheduler(sc, callBack):
     logger.warning("No more files! \nWaiting for 30 seconds before rerun.")
     queue(callBack)
-    sc.enter(30, 1, scheduler, (sc, scheduler))
+    sc.enter(30, 1, scheduler, (sc, callBack))

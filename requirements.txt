@@ -1,7 +1,8 @@
 pytest
 fastapi == 0.70.0
-knox-source-data-io == 0.0.9
+knox-source-data-io == 0.0.10
 uvicorn[standard]
 spacy
 requests
 python-dotenv
+jsonschema

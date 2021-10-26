@@ -18,7 +18,7 @@ Ev()
 word_counter = WordFrequencyHandler()
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
-filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
+filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
 if not exists(filePath):
     os.mkdir(filePath)
 

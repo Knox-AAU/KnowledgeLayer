@@ -6,14 +6,15 @@ import json
 
 app = FastAPI()
 file_writer = FileWriter()
-handler = IOHandler(Generator(app="This app", version=1.0), "https://repos.knox.cs.aau.dk/schema/publication.schema.json")
+handler = IOHandler(Generator(app="This app", version=1.0), "./schema.json")
 
 @app.post("/uploadJsonDoc/",status_code=200)
 async def read_doc(request: Request):
     data = await request.body()
 
+    IOHandler.validate_json(await request.json(), "./schema.json")
     try:
-        handler.validate_json(await request.json())
+        print("hello")
         #json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
     except:
         raise HTTPException(status_code=403, detail="Json file not following schema")
