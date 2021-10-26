@@ -12,10 +12,9 @@ handler = IOHandler(Generator(app="This app", version=1.0), "./schema.json")
 async def read_doc(request: Request):
     data = await request.body()
 
-    IOHandler.validate_json(await request.json(), "./schema.json")
     try:
-        print("hello")
-        #json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
+        IOHandler.validate_json(await request.json(), "./schema.json")
+        json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
     except:
         raise HTTPException(status_code=403, detail="Json file not following schema")
 
