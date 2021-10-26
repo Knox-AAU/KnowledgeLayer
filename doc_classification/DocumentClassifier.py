@@ -1,4 +1,4 @@
-from model.Document import Document
+from model.Document import Document, Article
 from pre_processing import *
 
 
@@ -18,24 +18,33 @@ class DocumentClassifier:
         :param document_dict: Dictionary containing document information
         :return: Document object containing document title, body, publisher, and path
         """
-        doc_title = document_dict["content"]["publication"]
-        doc_publisher = document_dict["content"]["publisher"]
-        doc_paths: list = DocumentClassifier.extract_doc_paths(document_dict)
 
-        # Converts the list to a comma-separated string
-        doc_path_str = str(doc_paths)[1:-1]
-        doc_path_str = doc_path_str.replace("'", "")
+        # Construct Document object from document_dict
+        publisher = document_dict["content"]["publisher"]
+        document = Document(publisher)
 
-        document = Document(doc_title, doc_publisher, doc_path_str)
+        for article in document_dict["content"]["articles"]:
+            title = article["headline"]
+            # TODO: Why is extracted_from a list? Figure this out
+            path = article["extracted_from"][0]
+            body = ""
+
+            for paragraph in article["paragraphs"]:
+                body += paragraph["value"]
+
+            article = Article(title, body, path)
+            document.articles.append(article)
 
         if document_dict["type"] == "Schema_Article":
             nj_pre_proc = NJPreProcessor()
-            document.body = nj_pre_proc.process(document_dict)
+            processed_document = nj_pre_proc.process(document)
         elif document_dict["type"] == "Schema_Manual":
             gf_pre_proc = GFPreProcessor("en_core_web_sm")
-            document.body = gf_pre_proc.process(document_dict)
+            processed_document = gf_pre_proc.process(document)
+        else:
+            raise Exception("Unable to classify document")
 
-        return document
+        return processed_document
 
     @staticmethod
     def extract_doc_paths(doc):

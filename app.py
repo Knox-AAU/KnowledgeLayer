@@ -50,16 +50,18 @@ def process_stored_publications(sc):
         # Classify documents and call appropriate pre-processor
         document: Document = DocumentClassifier.classify(content)
 
-        # Wordcount the lemmatized data
-        # TODO: Word count
-        word_counts = WordCounter.count_words(document.body)
+        # Wordcount the lemmatized data and create Data Transfer Objects
+        dtos = []
+        for article in document.articles:
+            word_counts = WordCounter.count_words(article.body)
+            dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
+            dtos.append(dto)
+
 
         # TODO: (Out of scope for now) Construct knowledge graph depending on document type
 
-        # TODO: Upload to database
-        word_count_dto = \
-            DocumentWordCountDto(document.title, document.paths, word_counts[0], word_counts[1], document.publisher)
-        WordCountDao.send_word_count([word_count_dto])
+        # Send word count data to database
+        WordCountDao.send_word_count(dtos)
 
         # Removes the current file that has been processed
         os.remove(filePath + file)

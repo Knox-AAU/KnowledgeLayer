@@ -10,23 +10,21 @@ class GFPreProcessor(PreProcessor):
     def __init__(self, model):
         self.nlp = spacy.load(model)
 
-    def process(self, json_data):
+    def process(self, document):
         """
 
         :return:
         """
 
-        corpus = super().extract_all_text_from_paragraphs(json_data)
+        for article in document.articles:
+            # TODO: Decide what to do with emails, links, etc. in corpus
+            corpus = self.remove_special_characters(article.body)
+            corpus = self.numbers_to_text(corpus)
+            # corpus = super().lemmatize(corpus, "en")
+            corpus = self.to_lower(corpus)
+            article.body = corpus
 
-        # TODO: Decide what to do with emails, links, etc. in corpus
-        corpus = self.remove_special_characters(corpus)
-        corpus = self.numbers_to_text(corpus)
-        corpus = super().lemmatize(corpus, "en")
-        # corpus = self.bigrams(corpus)
-
-        corpus = self.to_lower(corpus)
-
-        return corpus
+        return document
 
     def bigrams(self, sentence: str) -> str:
         # This is an experiment! Can be the basis for greatness later on
