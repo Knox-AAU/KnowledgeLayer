@@ -16,51 +16,31 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
-        corpus = self.extract_all_text_from_paragraphs(json_data)
+        corpus = super().extract_all_text_from_paragraphs(json_data)
+
+        # TODO: Decide what to do with emails, links, etc. in corpus
         corpus = self.remove_special_characters(corpus)
         corpus = self.numbers_to_text(corpus)
-        # corpus = super().lemmatize(corpus)
-        corpus = self.bigrams(corpus)
+        corpus = super().lemmatize(corpus, "en")
+        # corpus = self.bigrams(corpus)
+
         corpus = self.to_lower(corpus)
 
         return corpus
 
-    def extract_all_text_from_paragraphs(self, data):
-        """
-
-        :param data:
-        :return:
-        """
-        # TODO: Implement this method
-        raise NotImplementedError
-
-    # TODO: Review all methods below and ensure that they are relevant and correct
-
     def bigrams(self, sentence: str) -> str:
-        """
+        # This is an experiment! Can be the basis for greatness later on
 
-        :param sentence:
-        :return:
-        """
-        doc = self.nlp(sentence)
-
-        for noun_phrase in list(doc.noun_chunks):
-            if noun_phrase.string.endswith(' '):
-                bigram = noun_phrase.string
-                # Remove trailing whitespace in noun_phrase to avoid:
-                # "ice cream " --> "ice_cream_"
-                # Instead of "ice cream " --> "ice_cream "
-                bigram = bigram.strip(' ')
-                bigram = bigram.replace(' ', '_')
-                bigram += ' '
-            else:
-                bigram = noun_phrase.string
-                bigram = bigram.strip(' ')
-                bigram = bigram.replace(' ', '_')
-
-            sentence = sentence.replace(noun_phrase.string, bigram)
-
-        return sentence
+        # self.nlp.add_pipe("merge_noun_chunks")
+        #
+        # doc = self.nlp(corpus)
+        # print("spaCy text: " + doc.text)
+        # for chunk in list(doc.noun_chunks):
+        #     print(chunk)
+        #
+        # for token in doc:
+        #     print(token.text + ", " + token.pos_)
+        return True
 
     def to_lower(self, words):
         """
@@ -76,43 +56,14 @@ class GFPreProcessor(PreProcessor):
         :param txt:
         :return:
         """
-        cleaned_text = re.sub("[^a-zA-Z. ]", '', txt)
+        cleaned_text = re.sub("[^a-zA-Z0-9 ]", '', txt)
         return cleaned_text
 
+    # TODO: Consider researching string builders for this
     def numbers_to_text(self, text):
         """
 
         :param text:
-        :return:
-        """
-        result = ""
-
-        for token in text.split():
-            if token.isdigit():
-                result += self._textify_token(token)
-            else:
-                result += token
-            result += " "
-
-        return result.strip()
-
-    def _textify_token(self, token):
-        """
-
-        :param token:
-        :return:
-        """
-        result = ""
-        for digit in token:
-            result += self._textify_number(digit)
-            result += " "
-
-        return result.strip()
-
-    def _textify_number(self, digit):
-        """
-
-        :param digit:
         :return:
         """
         numbers = {
@@ -127,15 +78,21 @@ class GFPreProcessor(PreProcessor):
             '8': 'eight',
             '9': 'nine'
         }
-        return numbers[digit]
 
-    def remove_duplicates(self, str_list):
-        """
+        result = ""
+        just_seen_digit = False
 
-        :return:
-        """
-        return list(set(str_list))
+        for character in text:
+            if character.isnumeric():
+                if just_seen_digit:
+                    result += "_"
+                result += numbers[character]
+                just_seen_digit = True
+            else:
+                result += character
+                just_seen_digit = False
 
+        return result.strip()
 
 #    def insert_pump_name(self, data, pump_name):
 #        data = data.replace("the_pump", pump_name)
