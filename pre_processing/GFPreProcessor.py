@@ -21,7 +21,7 @@ class GFPreProcessor(PreProcessor):
         # TODO: Decide what to do with emails, links, etc. in corpus
         corpus = self.remove_special_characters(corpus)
         corpus = self.numbers_to_text(corpus)
-        corpus = super().lemmatize(corpus)
+        corpus = super().lemmatize(corpus, "en")
         # corpus = self.bigrams(corpus)
 
         corpus = self.to_lower(corpus)
