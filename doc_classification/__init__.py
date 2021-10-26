@@ -1,1 +1,1 @@
-from .DocumentClassifier import DocumentClassifier
+from .DocumentClassifier import DocumentClassifier, Document

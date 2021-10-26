@@ -4,18 +4,18 @@ import os
 import sched
 import time
 
-from os.path import exists
-from word_count import WordFrequencyHandler
-from doc_classification import DocumentClassifier
-from api import ImportApi
-import uvicorn
+from data_access.data_transfer_objects.DocumentWordCountDto import DocumentWordCountDto
 from environment import EnvironmentVariables as Ev
-
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
+from word_count.WordCounter import WordCounter
+
 Ev()
 
-# The instantiation of the word counter
-word_counter = WordFrequencyHandler()
+from os.path import exists
+from doc_classification import DocumentClassifier, Document
+from api import ImportApi
+import uvicorn
+from data_access import WordCountDao
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
 filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
@@ -48,20 +48,18 @@ def process_stored_publications(sc):
             content = json.load(json_file)
 
         # Classify documents and call appropriate pre-processor
-        document = DocumentClassifier.classify(content)
+        document: Document = DocumentClassifier.classify(content)
 
         # Wordcount the lemmatized data
         # TODO: Word count
-        word_counter.word_count_document("DOCTITLE", "TEXT_BODY", ["PathList"])
-        try:
-            print(str(word_counter.get_next_pending_wordcount()))
-        except IndexError:
-            print("No elements")
-        # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
+        word_counts = WordCounter.count_words(document.body)
 
         # TODO: (Out of scope for now) Construct knowledge graph depending on document type
 
         # TODO: Upload to database
+        word_count_dto = \
+            DocumentWordCountDto(document.title, document.paths, word_counts[0], word_counts[1], document.publisher)
+        WordCountDao.send_word_count([word_count_dto])
 
         # Removes the current file that has been processed
         os.remove(filePath + file)

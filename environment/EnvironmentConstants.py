@@ -22,6 +22,7 @@ class EnvironmentVariables:
             # self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
             self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
+            self.LEMMATIZATION_ENDPOINT_URL = "LEMMATIZATION_ENDPOINT_URL"
             load_dotenv()
             
         def get_value(self, key: str, default = None):

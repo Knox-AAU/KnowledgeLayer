@@ -3,12 +3,13 @@ from os.path import exists
 import time
 from fastapi import FastAPI, Request, HTTPException
 from knox_source_data_io.io_handler import IOHandler, Generator
+from environment import EnvironmentVariables as Ev
 import json
 
 app = FastAPI()
 handler = IOHandler(Generator(app="This app", version=1.0), "https://repos.knox.cs.aau.dk/schema/publication.schema.json")
 
-filePath = "./queue/"
+filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
 if not exists(filePath):
     os.mkdir(filePath)
 
