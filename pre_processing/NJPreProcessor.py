@@ -115,7 +115,7 @@ class NJPreProcessor(PreProcessor):
         """
         try:
             endpoint: str = Ev.instance.get_value(Ev.instance.LEMMATIZER_ENDPOINT)
-            response: requests.Response = requests.post(endpoint, content)
+            response: requests.Response = requests.post(endpoint, f'{{"language":"dk", "string":"{content}"}}')
         except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
             raise exceptions.PostFailedException("ERROR: Error contacting Lemmatize API", e.response)
         except:
