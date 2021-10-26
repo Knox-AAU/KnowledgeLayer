@@ -10,8 +10,7 @@ class PreProcessor:
 
         :return:
         """
-        return requests.get(f"{Ev.instance.get_value(Ev.instance.LEMMATIZATION_ENDPOINT_URL)}",
-                            params={"text": text, "language": language}).content.decode()
+        raise NotImplementedError
 
     def extract_all_text_from_paragraphs(self, data):
         """
