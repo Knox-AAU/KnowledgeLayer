@@ -1,3 +1,4 @@
+from model.Document import Document
 from pre_processing import *
 
 
@@ -10,16 +11,39 @@ class DocumentClassifier:
     further pre-processing.
     """
     @staticmethod
-    def classify(json_data):
+    def classify(document_dict):
         """
         Classifies the JSON data according to its data source and calls the appropriate pre-processor.
 
-        :param json_data: Dictionary containing document information
-        :return: Result of the appropriate pre-processing module
+        :param document_dict: Dictionary containing document information
+        :return: Document object containing document title, body, publisher, and path
         """
-        if json_data["type"] == "Schema_Article":
+        doc_title = document_dict["content"]["publication"]
+        doc_publisher = document_dict["content"]["publisher"]
+        doc_paths: list = DocumentClassifier.extract_doc_paths(document_dict)
+
+        # Converts the list to a comma-separated string
+        doc_path_str = str(doc_paths)[1:-1]
+        doc_path_str = doc_path_str.replace("'", "")
+
+        document = Document(doc_title, doc_publisher, doc_path_str)
+
+        if document_dict["type"] == "Schema_Article":
             nj_pre_proc = NJPreProcessor()
-            return nj_pre_proc.process(json_data)
-        elif json_data["type"] == "Schema_Manual":
+            document.body = nj_pre_proc.process(document_dict)
+        elif document_dict["type"] == "Schema_Manual":
             gf_pre_proc = GFPreProcessor("en_core_web_sm")
-            return gf_pre_proc.process(json_data)
+            document.body = gf_pre_proc.process(document_dict)
+
+        return document
+
+    @staticmethod
+    def extract_doc_paths(doc):
+        paths = []
+
+        for article in doc["content"]["articles"]:
+            if "extracted_from" in article:
+                for path in article["extracted_from"]:
+                    paths.append(path)
+
+        return paths
