@@ -39,3 +39,4 @@ class WordCountDao:
             print("Error type: " + str(type(error)))
 
         return True
+    
