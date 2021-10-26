@@ -7,7 +7,6 @@ Ev()
 import spacy
 from spacy.lang.da.stop_words import STOP_WORDS
 import re
-import requests
 from knox_source_data_io.models.wrapper import Wrapper
 from knox_source_data_io.models.publication import Paragraph, Publication
 from .PreProcessor import PreProcessor
@@ -35,7 +34,7 @@ class NJPreProcessor(PreProcessor):
         try:
             self.remove_stopwords(data.content)
             self.convert_to_modern_danish(data.content)
-            self.lemmatize(data.content)
+            self.lemmatize_publication(data.content)
         except exceptions.PostFailedException as e:
             raise e
         except Exception as e:
@@ -97,27 +96,11 @@ class NJPreProcessor(PreProcessor):
         paragraph.value = ' '.join(words)
         return paragraph
 
-
-    def lemmatize(self, data: Publication) -> None:
+    def lemmatize_publication(self, data: Publication) -> None:
         """
         :param data: Publication - The publication to be lemmatized
         :return: None
         """
         for article in data.articles:
-            article.paragraphs = [Paragraph(kind=paragraph.kind, value=self.call_lemmatize_api(paragraph.value))
+            article.paragraphs = [Paragraph(kind=paragraph.kind, value=super().lemmatize(paragraph.value, "dk"))
                                   for paragraph in article.paragraphs]
-
-    def call_lemmatize_api(self, content: str) -> str:
-        """
-        Post's to the lemmatizer API defined in the environment (Ev)
-        :param content: str - The content to be lemmatized
-        :return: str - The lemmatized content
-        """
-        try:
-            endpoint: str = Ev.instance.get_value(Ev.instance.LEMMATIZER_ENDPOINT)
-            response: requests.Response = requests.post(endpoint, f'{{"language":"dk", "string":"{content}"}}')
-        except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
-            raise exceptions.PostFailedException("ERROR: Error contacting Lemmatize API", e.response)
-        except:
-            raise exceptions.UnparsableException("ERROR: Unparseable by Lemmatize API")
-        return response.json()
