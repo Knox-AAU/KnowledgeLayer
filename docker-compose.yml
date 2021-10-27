@@ -8,6 +8,7 @@ services:
         volumes:
             - .:/home/appuser/app
         environment:
-            - QUEUE_PATH="./queue/"
+            - QUEUE_PATH=./queue/
             - SPACY_MODEL=da_core_news_lg
-            - LEMMATIZER_ENDPOINT=TODO
+            - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
+            - DB_ENDPOINT=http://localhost:5000/wordcount

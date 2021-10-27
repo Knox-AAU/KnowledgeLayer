@@ -7,10 +7,12 @@ Ev()
 import spacy
 from spacy.lang.da.stop_words import STOP_WORDS
 import re
+import requests
+from knox_source_data_io.io_handler import IOHandler, Generator
 from knox_source_data_io.models.wrapper import Wrapper
-from knox_source_data_io.models.publication import Paragraph, Publication
+from knox_source_data_io.models.publication import Paragraph, Publication, Article
 from .PreProcessor import PreProcessor
-
+import json
 
 class NJPreProcessor(PreProcessor):
     """
@@ -19,6 +21,7 @@ class NJPreProcessor(PreProcessor):
 
     def __init__(self):
         self.nlp = spacy.load(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
+        self.io_handler = IOHandler(Generator(), "")
 
     def process(self, data: Wrapper) -> Wrapper:
         """
@@ -30,7 +33,7 @@ class NJPreProcessor(PreProcessor):
             raise Exception("No spaCy model configured.")
         if self.nlp.lang != 'da':
             raise Exception("Function 'convert_to_modern_danish' requires a danish spaCy model.")
-
+        publication = json.loads(json.dumps(data), object_hook=IOHandler.convert_dict_to_obj)
         try:
             self.remove_stopwords(data.content)
             self.convert_to_modern_danish(data.content)
@@ -38,16 +41,15 @@ class NJPreProcessor(PreProcessor):
         except exceptions.PostFailedException as e:
             raise e
         except Exception as e:
-            if hasattr(e, 'message'):
-                raise exceptions.UnparsableException(e.message)
-            raise exceptions.UnparsableException("ERROR: Input unparseable")
-        return data
+            raise e
+        return publication
 
     def remove_stopwords(self, data: Publication) -> None:
         """
         :param data: Publication
         :return: None
         """
+        print(data)
         for article in data.articles:
             article.paragraphs = [self.remove_paragraph_stopwords(paragraph) for paragraph in article.paragraphs]
 
