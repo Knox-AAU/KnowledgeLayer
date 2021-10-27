@@ -20,7 +20,7 @@ class GFPreProcessor(PreProcessor):
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
-            # corpus = super().lemmatize(corpus, "en")
+            corpus = super().lemmatize(corpus, "en")
             corpus = self.to_lower(corpus)
             article.body = corpus
 

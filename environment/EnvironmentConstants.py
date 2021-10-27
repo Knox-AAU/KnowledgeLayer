@@ -12,28 +12,12 @@ class EnvironmentVariables:
         The inner class with only one instance
         """
         def __init__(self):
-            # self.INPUT_DIRECTORY = "INPUT_DIRECTORY"
-            # self.OUTPUT_DIRECTORY = "OUTPUT_DIRECTORY"
-            # self.ERROR_DIRECTORY = "ERROR_DIRECTORY"
-            # self.RDF_OUTPUT_FOLDER = "RDF_OUTPUT_FOLDER"
-            # self.OUTPUT_FORMAT = "OUTPUT_FORMAT"
-            # self.OUTPUT_FILE_NAME = "OUTPUT_FILE_NAME"
-            # self.ONTOLOGY_FILEPATH = "ONTOLOGY_FILEPATH"
-            # self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
-            # self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
 
             # TODO: This is temporary, find an alternative
-            self.INPUT_DIRECTORY = "./input/"
-            self.OUTPUT_DIRECTORY = "./output/"
-            self.ERROR_DIRECTORY = "./error/"
             self.QUEUE_PATH = "QUEUE_PATH"
-            self.NJ_SPACY_MODEL = "SPACY_MODEL"
-            self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
-            self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
-            self.QUEUE_PATH = "QUEUE_PATH"
-            self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
-            self.LEMMATIZATION_ENDPOINT_URL = "LEMMATIZATION_ENDPOINT_URL"
             self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
+            self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
+            self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             load_dotenv()
 
         def get_value(self, key: str, default = None):

@@ -10,8 +10,12 @@ class DocumentClassifier:
     Ex. Data with type "Schema_Manual" is classified as Grundfos data and is passed to the GFPreProcessor for
     further pre-processing.
     """
-    @staticmethod
-    def classify(document_dict):
+
+    def __init__(self):
+        self.nj_preprocessor = NJPreProcessor()
+        self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
+
+    def classify(self, document_dict):
         """
         Classifies the JSON data according to its data source and calls the appropriate pre-processor.
 
@@ -36,11 +40,9 @@ class DocumentClassifier:
             document.articles.append(article)
 
         if document_dict["type"] == "Schema_Article":
-            nj_pre_proc = NJPreProcessor()
-            processed_document = nj_pre_proc.process(document)
+            processed_document = self.nj_preprocessor.process(document)
         elif document_dict["type"] == "Schema_Manual":
-            gf_pre_proc = GFPreProcessor("en_core_web_sm")
-            processed_document = gf_pre_proc.process(document)
+            processed_document = self.gf_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
 
