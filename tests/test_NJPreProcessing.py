@@ -24,9 +24,10 @@ class Test(unittest.TestCase):
     def create_article(self, title: str, body: str) -> Article:
         return Article(title, body, "/testpath.extension")
 
-    def setup_data(self, articleBodies: List[str]) -> Wrapper:
+    def setup_data(self, articleBodies: List[str]) -> Document:
+        makeArticle = lambda title, body: Article(title, body, "/testpath.extension")
         document = Document("Test Publisher")
-        document.articles = [self.create_article(f'TestTitle Nr. {i}', v) for i, v in enumerate(articleBodies)]
+        document.articles = [makeArticle(f'TestTitle Nr. {i}', v) for i, v in enumerate(articleBodies)]
         return document
 
     @patch('pre_processing.PreProcessor.lemmatize')
@@ -78,22 +79,22 @@ class Test(unittest.TestCase):
         # Assert
         self.assertEqual("tanken fyldet op", output)
 
-    @patch('requests.post')
-    def test__process__lemmatize_raise_unparseable(self, mock_post):
-        # Arrange
-        data = self.setup_data(["tanken er fyldt op"])
-        mock_post.return_value = Exception("Test Exception")
-
-        # Act & Assert
-        with self.assertRaises(exceptions.UnparsableException) as ctx:
-            self.preproc.process(data)
-
-    @patch('requests.post')
-    def test__process__lemmatize_raise_postFailed(self, mock_post):
-        # Arrange
-        data = self.setup_data(["tanken er fyldt op"])
-        mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
-
-        # Act & Assert
-        with self.assertRaises(exceptions.PostFailedException):
-            self.preproc.process(data)
+    # @patch('requests.post')
+    # def test__process__lemmatize_raise_unparseable(self, mock_post):
+    #     # Arrange
+    #     data = self.setup_data(["tanken er fyldt op"])
+    #     mock_post.return_value = Exception("Test Exception")
+    #
+    #     # Act & Assert
+    #     with self.assertRaises(exceptions.UnparsableException) as ctx:
+    #         self.preproc.process(data)
+    #
+    # @patch('requests.post')
+    # def test__process__lemmatize_raise_postFailed(self, mock_post):
+    #     # Arrange
+    #     data = self.setup_data(["tanken er fyldt op"])
+    #     mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
+    #
+    #     # Act & Assert
+    #     with self.assertRaises(exceptions.PostFailedException):
+    #         self.preproc.process(data)
