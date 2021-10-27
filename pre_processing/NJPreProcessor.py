@@ -1,6 +1,5 @@
 from typing import List, Tuple
 
-import exceptions
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
 from model.Document import Document, Article
 
