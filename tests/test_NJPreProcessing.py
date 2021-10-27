@@ -2,7 +2,7 @@ from typing import List
 import pytest
 from unittest.mock import patch
 import unittest
-
+from requests import Request
 import requests.exceptions
 import spacy.lang.da
 
