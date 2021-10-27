@@ -25,7 +25,8 @@ jobs:
         docker-compose build
         docker-compose up -d
     - name: Test
-      run: docker-compose exec -T app pytest
+      run: |
+        docker-compose exec -T web pytest
 #    - name: Install dependencies
 #      run: |
 #        python -m pip install --upgrade pip
