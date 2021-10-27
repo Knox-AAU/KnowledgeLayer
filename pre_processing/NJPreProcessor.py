@@ -74,7 +74,14 @@ class NJPreProcessor(PreProcessor):
         for regex, sub in replacements:
             content = re.sub(regex, sub, content)
 
-        lower_noun = lambda word: word.lower() if self.nlp(word)[0].pos_ == 'NOUN' else word
-        words = [lower_noun(word) for word in re.split(r'\s+', content)]
+        #lower_noun = lambda word: word.lower() if self.nlp(word)[0].pos_ == 'NOUN' else word
+        words = [self.lower_noun(word) for word in re.split(r'\s+', content)]
         article.body = ' '.join(words)
         return article
+
+    def lower_noun(self, word):
+        token = self.nlp(word)
+        if len(token) > 0 and token[0].pos_ == 'NOUN':
+            return word.lower()
+        else:
+            return word

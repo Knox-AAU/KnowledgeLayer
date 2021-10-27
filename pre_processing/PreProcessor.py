@@ -3,7 +3,10 @@ from knox_source_data_io.models.publication import Paragraph, Publication
 import exceptions
 from environment import EnvironmentVariables as Ev
 from model import Document
+import logging
 
+logger = logging.getLogger()
+logger.setLevel(logging.NOTSET)
 
 
 class PreProcessor:
@@ -18,7 +21,9 @@ class PreProcessor:
         """
         try:
             endpoint: str = Ev.instance.get_value(Ev.instance.LEMMATIZER_ENDPOINT)
-            response: requests.Response = requests.post(endpoint, f'{{"language":{language}, "string":"{content}"}}')
+            # TODO Add language when those gosh darn lemmatizer people get it back
+            response: requests.Response = requests.post(endpoint, json={'string': content})
+            response.raise_for_status()
         except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
             raise exceptions.PostFailedException("ERROR: Error contacting Lemmatize API", e.response)
         except:
