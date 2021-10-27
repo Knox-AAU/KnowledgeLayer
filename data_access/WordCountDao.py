@@ -7,7 +7,10 @@ import requests
 from data_access.data_transfer_objects.DocumentWordCountDto import DocumentWordCountDto
 from environment import EnvironmentVariables as Ev
 from requests.exceptions import ConnectionError
+import logging
 
+logger = logging.getLogger()
+logger.warning(logging.NOTSET)
 
 class WordCountDao:
     """
@@ -34,10 +37,12 @@ class WordCountDao:
             res.raise_for_status()
             print(res)
         except ConnectionError as error:
-            print("Connection error: " + str(error))
+            logger.warning("Connection error: " + str(error))
+            raise error
         except Exception as error:
-            print("Something unexpected happened: " + str(error))
-            print("Error type: " + str(type(error)))
+            logger.warning("Something unexpected happened: " + str(error))
+            logger.warning("Error type: " + str(type(error)))
+            raise error
 
         return True
     
