@@ -41,7 +41,7 @@ class DocumentClassifier:
 
         if document_dict["type"] == "Schema_Article":
             processed_document = self.nj_preprocessor.process(document)
-        elif document_dict["type"] == "Schema_Manual":
+        elif document_dict["generator"]["app"] == "GrundfosManuals_Handler":
             processed_document = self.gf_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
