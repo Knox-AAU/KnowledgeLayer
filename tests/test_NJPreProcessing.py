@@ -89,12 +89,12 @@ class Test(unittest.TestCase):
         with self.assertRaises(exceptions.UnparsableException) as ctx:
             self.preproc.process(data)
 
-    @patch('requests.post')
-    def test__process__lemmatize_raise_postFailed(self, mock_post):
-        # Arrange
-        data = self.setup_data(["tanken er fyldt op"])
-        mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
-
-        # Act & Assert
-        with self.assertRaises(exceptions.PostFailedException):
-            self.preproc.process(data)
+    # @patch('requests.post')
+    # def test__process__lemmatize_raise_postFailed(self, mock_post):
+    #     # Arrange
+    #     data = self.setup_data(["tanken er fyldt op"])
+    #     mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
+    #
+    #     # Act & Assert
+    #     with self.assertRaises(exceptions.PostFailedException):
+    #         self.preproc.process(data)
