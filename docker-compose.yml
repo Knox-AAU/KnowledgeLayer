@@ -12,3 +12,4 @@ services:
             - NJ_SPACY_MODEL=da_core_news_lg
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - DB_ENDPOINT=http://localhost:5000/wordcount
+            
