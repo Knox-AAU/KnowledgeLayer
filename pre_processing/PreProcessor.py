@@ -28,7 +28,7 @@ class PreProcessor:
             raise exceptions.PostFailedException("ERROR: Error contacting Lemmatize API", e.response)
         except:
             raise exceptions.UnparsableException("ERROR: Unparseable by Lemmatize API")
-        return response.json()
+        return response.json()['lemmatized_string']
 
     def process(self, document: Document) -> Document:
         print("Not overridden")
