@@ -1,15 +1,14 @@
-version: '3.8'
+version: '3.3'
 services:
     web:
         build: .
         user: root
         ports:
-            - "8000:8000"
-        volumes:
-            - .:/home/appuser/app
+            - "8000:5050"
         environment:
             - QUEUE_PATH=./queue/
             - NJ_SPACY_MODEL=da_core_news_lg
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - WORD_COUNT_DATA_ENDPOINT=http://localhost:5000/wordcount
-            
+        restart: always
+

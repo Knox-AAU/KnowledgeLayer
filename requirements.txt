@@ -1,6 +1,6 @@
 pytest
 fastapi == 0.70.0
-knox-source-data-io == 0.0.10
+knox-source-data-io == 0.0.11
 uvicorn[standard]
 spacy
 requests

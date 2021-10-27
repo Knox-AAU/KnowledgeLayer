@@ -31,6 +31,9 @@ if not exists(filePath):
 # Instantiation of the scheduler
 s = sched.scheduler(time.time, time.sleep)
 
+# Instantiante DocumentClassifier
+document_classifier = DocumentClassifier()
+
 def run_api():
     uvicorn.run(ImportApi.app, host="0.0.0.0")
 
@@ -45,7 +48,7 @@ def run_api():
 
 def processStoredPublications(content):
         # Classify documents and call appropriate pre-processor
-        document: Document = DocumentClassifier.classify(content)
+        document: Document = document_classifier.classify(content)
 
         # Wordcount the lemmatized data and create Data Transfer Objects
         dtos = []
