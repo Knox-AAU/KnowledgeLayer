@@ -2,6 +2,8 @@ import requests
 from knox_source_data_io.models.publication import Paragraph, Publication
 import exceptions
 from environment import EnvironmentVariables as Ev
+from model import Document
+
 
 
 class PreProcessor:
@@ -23,19 +25,5 @@ class PreProcessor:
             raise exceptions.UnparsableException("ERROR: Unparseable by Lemmatize API")
         return response.json()
 
-    def extract_all_text_from_paragraphs(self, data):
-        """
-
-        :param data:
-        :return:
-        """
-        corpus = ""
-
-        for article in data["content"]["articles"]:
-            for paragraph in article["paragraphs"]:
-                corpus += paragraph["value"] + " "
-
-        return corpus
-
-    def process(self, json_data):
+    def process(self, document: Document) -> Document:
         print("Not overridden")
