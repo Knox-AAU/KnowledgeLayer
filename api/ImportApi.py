@@ -1,31 +1,21 @@
-import os
-from os.path import exists
-import time
 from fastapi import FastAPI, Request, HTTPException
-from knox_source_data_io.io_handler import IOHandler, Generator
-from environment import EnvironmentVariables as Ev
-import json
+from knox_source_data_io.io_handler import IOHandler
+from file_io.FileWriter import FileWriter
+import os
 
 app = FastAPI()
-handler = IOHandler(Generator(app="This app", version=1.0), "https://repos.knox.cs.aau.dk/schema/publication.schema.json")
-
-filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
-if not exists(filePath):
-    os.mkdir(filePath)
+file_writer = FileWriter()
 
 @app.post("/uploadJsonDoc/",status_code=200)
-async def read_doc(jsondoc: Request):
-    data = await jsondoc.body()
-
+async def read_doc(request: Request):
     try:
-        json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
+        path = os.path.dirname(os.path.abspath(__file__))
+        IOHandler.validate_json(await request.json(), os.path.join(path, '..', 'schema.json'))
     except:
         raise HTTPException(status_code=403, detail="Json file not following schema")
-
-    unixTime = int(time.time())
-    fileName = str(unixTime)+".json"
-
-    with open(filePath+fileName, "w", encoding="utf-8") as f:
-        f.write(json.dumps(await jsondoc.json()))
+    try:
+        await file_writer.add_to_queue(request)
+    except:
+        raise HTTPException(status_code=500, detail="File not added to queue")
 
     return "Json file successfully created"
