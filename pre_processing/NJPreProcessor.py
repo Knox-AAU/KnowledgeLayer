@@ -22,9 +22,10 @@ class NJPreProcessor(PreProcessor):
 
     def process(self, document: Document) -> Document:
         """
-        Takes a Wrapper object and applies two preprocessing steps to it, removal of stop words and lemmatization.
-        :param data: Wrapper
-        :return: Wrapper
+        Takes a Document object and applies three preprocessing steps to it, removal of stop words,
+        conversion to modern Danish and lemmatization.
+        :param document: Document
+        :return: Document
         """
         if self.nlp is None:
             raise Exception("No spaCy model configured.")
