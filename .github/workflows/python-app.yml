@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: docker
+    - uses: actions/checkout@v2
 #    - name: Set up Python 3.9
 #      uses: actions/setup-python@v2
 #      with:
 #        python-version: 3.8
     - name: Build/Run Compose
-      run:
+      run: |
         docker-compose build
         docker-compose up -d
     - name: Test
-      run:
+      run: |
         docker-compose exec -T app pytest
 #    - name: Install dependencies
 #      run: |
