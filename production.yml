@@ -4,11 +4,11 @@ services:
         build: .
         user: root
         ports:
-            - "8000:5050"
+            - "5050:8000"
         environment:
             - QUEUE_PATH=./queue/
             - NJ_SPACY_MODEL=da_core_news_lg
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
-            - WORD_COUNT_DATA_ENDPOINT=http://localhost:5000/wordcount
+            - WORD_COUNT_DATA_ENDPOINT=192.38.49.147:5000/wordcount
         restart: always
 

@@ -30,7 +30,8 @@ class WordCountDao:
 
         # TODO: Do error handling, since connection errors crashes the application
         try:
-            res = requests.post(url, data=dto_as_json)
+            res = requests.post(url, json=dto_as_json)
+            res.raise_for_status()
             print(res)
         except ConnectionError as error:
             print("Connection error: " + str(error))
