@@ -23,6 +23,7 @@ class EnvironmentVariables:
             self.QUEUE_DIRECTORY = "QUEUE_DIRECTORY"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             self.LEMMATIZATION_ENDPOINT_URL = "LEMMATIZATION_ENDPOINT_URL"
+            self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
             load_dotenv()
             
         def get_value(self, key: str, default = None):

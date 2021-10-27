@@ -30,7 +30,7 @@ class DocumentClassifier:
             body = ""
 
             for paragraph in article["paragraphs"]:
-                body += paragraph["value"]
+                body += ' ' + paragraph["value"]
 
             article = Article(title, body, path)
             document.articles.append(article)
