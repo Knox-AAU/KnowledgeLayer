@@ -14,7 +14,7 @@ s = sched.scheduler(time.time, time.sleep)
 assertContent = []
 
 def generate_mock_data(numberOfFiles: int):
-    filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
+    filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
     unixTime = 0
 
     for n in range(numberOfFiles):

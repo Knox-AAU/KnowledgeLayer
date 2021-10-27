@@ -88,7 +88,6 @@
                 "__class__",
                 "__module__",
                 "publication",
-                "published_at",
                 "publisher",
                 "pages",
                 "articles"

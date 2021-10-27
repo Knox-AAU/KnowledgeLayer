@@ -6,15 +6,11 @@ import json
 
 app = FastAPI()
 file_writer = FileWriter()
-handler = IOHandler(Generator(app="This app", version=1.0), "./schema.json")
 
 @app.post("/uploadJsonDoc/",status_code=200)
 async def read_doc(request: Request):
-    data = await request.body()
-
     try:
-        IOHandler.validate_json(await request.json(), "./schema.json")
-        #json.loads(data, object_hook=IOHandler.convert_dict_to_obj)
+        IOHandler.validate_json(await request.json(), "../schema.json")
     except:
         raise HTTPException(status_code=403, detail="Json file not following schema")
     try:

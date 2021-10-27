@@ -6,6 +6,7 @@ import unittest
 import requests.exceptions
 import spacy.lang.da
 
+import exceptions
 from model.Document import Document, Article
 from pre_processing import NJPreProcessor
 from knox_source_data_io.models.publication import Publication, Paragraph
@@ -78,22 +79,22 @@ class Test(unittest.TestCase):
         # Assert
         self.assertEqual("tanken fyldet op", output)
 
-    # @patch('requests.post')
-    # def test__process__lemmatize_raise_unparseable(self, mock_post):
-    #     # Arrange
-    #     data = self.setup_data(["tanken er fyldt op"])
-    #     mock_post.return_value = Exception("Test Exception")
-    #
-    #     # Act & Assert
-    #     with self.assertRaises(exceptions.UnparsableException) as ctx:
-    #         self.preproc.process(data)
-    #
-    # @patch('requests.post')
-    # def test__process__lemmatize_raise_postFailed(self, mock_post):
-    #     # Arrange
-    #     data = self.setup_data(["tanken er fyldt op"])
-    #     mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
-    #
-    #     # Act & Assert
-    #     with self.assertRaises(exceptions.PostFailedException):
-    #         self.preproc.process(data)
+    @patch('requests.post')
+    def test__process__lemmatize_raise_unparseable(self, mock_post):
+        # Arrange
+        data = self.setup_data(["tanken er fyldt op"])
+        mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.InvalidSchema())
+
+        # Act & Assert
+        with self.assertRaises(exceptions.UnparsableException) as ctx:
+            self.preproc.process(data)
+
+    @patch('requests.post')
+    def test__process__lemmatize_raise_postFailed(self, mock_post):
+        # Arrange
+        data = self.setup_data(["tanken er fyldt op"])
+        mock_post.side_effect = lambda x, y: (_ for _ in ()).throw(requests.exceptions.ConnectionError())
+
+        # Act & Assert
+        with self.assertRaises(exceptions.PostFailedException):
+            self.preproc.process(data)

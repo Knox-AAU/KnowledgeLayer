@@ -1,6 +1,5 @@
 from typing import List, Tuple
 
-import exceptions
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
 from model.Document import Document, Article
 
@@ -8,12 +7,9 @@ Ev()
 import spacy
 from spacy.lang.da.stop_words import STOP_WORDS
 import re
-import requests
 from knox_source_data_io.io_handler import IOHandler, Generator
-from knox_source_data_io.models.wrapper import Wrapper
-from knox_source_data_io.models.publication import Paragraph, Publication
 from .PreProcessor import PreProcessor
-import json
+
 
 class NJPreProcessor(PreProcessor):
     """
@@ -37,9 +33,6 @@ class NJPreProcessor(PreProcessor):
 
         try:
             document.articles = [self.process_article(article) for article in document.articles]
-            # self.remove_stopwords(document)
-            # self.convert_to_modern_danish(document)
-            # self.lemmatize_publication(document)
         except Exception as e:
             raise e
         return document
@@ -49,15 +42,6 @@ class NJPreProcessor(PreProcessor):
         self.convert_to_modern_danish(article)
         article.body = super().lemmatize(article.body, "dk")
         return article
-    # def remove_stopwords(self, document: Document) -> None:
-    #     """
-    #     :param data: Publication
-    #     :return: None
-    #     """
-    #     document.articles = [self.remove_paragraph_stopwords(article) for article in document.articles]
-    #     # for article in document.articles:
-    #     #     article.body =
-    #     #     article.paragraphs = [self.remove_paragraph_stopwords(paragraph) for paragraph in article.paragraphs]
 
     def remove_stopwords(self, article: Article) -> Article:
         """
@@ -75,23 +59,12 @@ class NJPreProcessor(PreProcessor):
 
         return article
 
-    # def convert_to_modern_danish(self, document: Document) -> None:
-    #     """
-    #     :param data:
-    #     :return: None
-    #     """
-    #     document.articles = [self.convert_paragraph_to_modern_danish(article) for article in document.articles]
-    #     # for article in document.articles:
-    #     #     article.paragraphs = [self.convert_paragraph_to_modern_danish(paragraph)
-    #     #                           for paragraph in article.paragraphs]
-
     def convert_to_modern_danish(self, article: Article) -> Article:
         """
         Replaces aa, Aa, oe, Oe, aa, Aa -> æ, Æ, ø, Ø, å, Å as well as replacing any kind of whitespace with a single
         space. Also converts all NOUN's, as defined in spacy.lang.da.STOP_WORDS, to lowercase.
 
-        :param paragraph: Paragraph - The paragraph to convert to modern danish
-        :return: Paragraph - The processed paragraph
+        :param article:
         """
         content: str = article.body
 
@@ -104,12 +77,3 @@ class NJPreProcessor(PreProcessor):
         words = [lower_noun(word) for word in re.split(r'\s+', content)]
         article.body = ' '.join(words)
         return article
-
-    # def lemmatize_publication(self, document: Document) -> None:
-    #     """
-    #     :param data: Publication - The publication to be lemmatized
-    #     :return: None
-    #     """
-    #     for article in data.articles:
-    #         article.paragraphs = [Paragraph(kind=paragraph.kind, value=super().lemmatize(paragraph.value, "dk"))
-    #                               for paragraph in article.paragraphs]

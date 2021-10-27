@@ -9,7 +9,6 @@ import requests
 import uvicorn
 from scheduler import scheduler
 from os.path import exists
-from word_count import WordFrequencyHandler
 from doc_classification import DocumentClassifier, Document
 from api import ImportApi
 from data_access.data_transfer_objects.DocumentWordCountDto import DocumentWordCountDto
@@ -23,8 +22,6 @@ Ev()
 logger = logging.getLogger()
 logger.setLevel(logging.NOTSET)
 
-# The instantiation of the word counter
-word_counter = WordFrequencyHandler()
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
 filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
@@ -56,28 +53,6 @@ def processStoredPublications(content):
             word_counts = WordCounter.count_words(article.body)
             dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
             dtos.append(dto)
-
-
-        for article in document.content.articles:
-            content = ' '.join([ paragraph.value for paragraph in article.paragraphs])
-            word_counter.word_count_document(article.headline, content, article.extracted_from, document.content.publication)
-
-        logger.warning(word_counter.word_frequencies_ready_for_sending)
-
-        request_body = [v for v in word_counter.entry_generator()]
-        #
-        # try:
-        #     print(str(request_body))
-        # except IndexError:
-        #     print("No elements")
-        # Word counts can then be accessed with: word_counter[DOCTITLE][TERM]
-        db_endpoint = Ev.instance.get_value(Ev.instance.WORD_COUNT_DATA_ENDPOINT)
-        try:
-            requests.post(db_endpoint, json=request_body)
-        except Exception as e:
-            print(e)
-            
-        # TODO: (Out of scope for now) Construct knowledge graph depending on document type
 
         # Send word count data to database
         WordCountDao.send_word_count(dtos)
