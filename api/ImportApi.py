@@ -9,7 +9,7 @@ import json
 app = FastAPI()
 handler = IOHandler(Generator(app="This app", version=1.0), "https://repos.knox.cs.aau.dk/schema/publication.schema.json")
 
-filePath = Ev.instance.get_value(Ev.instance.QUEUE_DIRECTORY)
+filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
 if not exists(filePath):
     os.mkdir(filePath)
 
