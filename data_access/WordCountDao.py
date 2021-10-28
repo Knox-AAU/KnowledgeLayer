@@ -24,12 +24,12 @@ class WordCountDao:
         :param documentWordCounts:
         :return:
         """
-        objects_as_dict = map(lambda x: dataclasses.asdict(x), documentWordCounts)
+        objects_as_dict = list(map(lambda x: dataclasses.asdict(x), documentWordCounts))
         url = Ev.instance.get_value(Ev.instance.WORD_COUNT_DATA_ENDPOINT)
 
         # TODO: Do error handling, since connection errors crashes the application
         try:
-            res = requests.post(url, json=object_as_dict)
+            res = requests.post(url, json=objects_as_dict)
             res.raise_for_status()
             logger.warning(res)
         except ConnectionError as error:
