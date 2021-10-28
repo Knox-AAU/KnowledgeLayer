@@ -31,7 +31,7 @@ class WordCountDao:
         try:
             res = requests.post(url, json=objects_as_dict)
             res.raise_for_status()
-            logger.warning(res)
+            logger.warning(str(res) + ": " + str(res.text))
         except ConnectionError as error:
             logger.warning("Connection error: " + str(error))
             raise error
