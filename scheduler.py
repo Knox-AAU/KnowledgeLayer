@@ -27,11 +27,18 @@ def queue(callBack):
         with open(filePath + file) as json_file:
             content = json.load(json_file)
 
-        callBack(content)
+        try:
+            callBack(content)
 
-        #Removes the current file that has been processed
-        os.remove(filePath + file)
-        logger.warning(filePath + file + " Has been processed")
+            #Removes the current file that has been processed
+            os.remove(filePath + file)
+
+            logger.warning(filePath + file + " Has been processed")
+        except ConnectionError as error:
+            logger.warning("Connection error: Adding to queue again")
+        except Exception as error:
+            logger.warning("Unexpected error: Removed from queue")
+            os.remove(filePath + file)
 
 
 def scheduler(sc, callBack):
