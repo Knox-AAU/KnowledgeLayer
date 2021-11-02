@@ -26,4 +26,3 @@ class FileWriter:
 
         with open(queue_path + file_name, "w", encoding="utf-8") as f:
             f.write(json.dumps(await request.json()))
-            print(file_name)
