@@ -1,4 +1,6 @@
 import os
+import uuid
+
 from fastapi import FastAPI, Request, HTTPException
 import time
 from os.path import exists
@@ -18,12 +20,10 @@ class FileWriter:
         :return: None
         """
         queue_path: str = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
-        if not exists(queue_path):
-            os.mkdir(queue_path)
 
         unix_time: int = int(time.time())
-        file_name: str = str(unix_time)+".json"
+        file_name: str = str(uuid.uuid4()) + str(unix_time)+".json"
 
         with open(queue_path + file_name, "w", encoding="utf-8") as f:
             f.write(json.dumps(await request.json()))
-
+            print(file_name)

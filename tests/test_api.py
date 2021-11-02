@@ -26,3 +26,10 @@ class Test(unittest.TestCase):
         mock_queue.return_value = None
         assert response.status_code == 403
         assert response.json()["detail"] == "Json file not following schema"
+
+    def test_correct_post_with_real_queue(self):
+        for i in range(5):
+            postItem = correctJson
+            response = self.client.post("/uploadJsonDoc/", postItem)
+            assert response.status_code == 200
+            assert response.json() == "Json file successfully created"
