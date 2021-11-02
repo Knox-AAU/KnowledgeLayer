@@ -11,11 +11,11 @@ async def read_doc(request: Request):
     try:
         path = os.path.dirname(os.path.abspath(__file__))
         IOHandler.validate_json(await request.json(), os.path.join(path, '..', 'schema.json'))
-    except:
-        raise HTTPException(status_code=403, detail="Json file not following schema")
+    except Exception as e:
+        raise HTTPException(status_code=403, detail="Json file not following schema with error: " + str(e))
     try:
         await file_writer.add_to_queue(request)
-    except:
-        raise HTTPException(status_code=500, detail="File not added to queue")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="File not added to queue with error: " + str(e))
 
     return "Json file successfully created"
