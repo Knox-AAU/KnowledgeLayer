@@ -39,7 +39,7 @@ class DocumentClassifier:
             article = Article(title, body, path)
             document.articles.append(article)
 
-        if document_dict["type"] == "Schema_Article":
+        if document_dict["type"] == "Publication":
             processed_document = self.nj_preprocessor.process(document)
         elif document_dict["generator"]["app"] == "GrundfosManuals_Handler":
             processed_document = self.gf_preprocessor.process(document)
