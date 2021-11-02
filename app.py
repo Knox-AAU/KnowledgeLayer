@@ -58,8 +58,12 @@ def processStoredPublications(content):
             dtos.append(dto)
 
         # Send word count data to database
-        WordCountDao.send_word_count(dtos)
-
+        try:
+            WordCountDao.send_word_count(dtos)
+        except ConnectionError as error:
+            raise error
+        except Exception as error:
+            raise error
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
