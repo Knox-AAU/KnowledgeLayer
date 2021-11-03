@@ -24,10 +24,11 @@ def queue(callBack):
     listOfFiles = os.listdir(filePath)
 
     for file in sorted(listOfFiles):
-        with open(filePath + file) as json_file:
-            content = json.load(json_file)
 
         try:
+            with open(filePath + file) as json_file:
+                content = json.load(json_file)
+
             callBack(content)
 
             #Removes the current file that has been processed
@@ -38,6 +39,7 @@ def queue(callBack):
             logger.warning("Connection error: Adding to queue again")
         except Exception as error:
             logger.warning("Unexpected error: Removed from queue")
+            logger.warning("Error with message: " + str(error))
             os.remove(filePath + file)
 
 

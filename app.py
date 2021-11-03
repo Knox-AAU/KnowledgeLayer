@@ -19,6 +19,11 @@ from data_access import WordCountDao
 
 Ev()
 
+logging.basicConfig(
+    format='%(asctime) | %(message)',
+    datefmt='%Y %m %d @ %H:%M:%S'
+)
+
 logger = logging.getLogger()
 logger.setLevel(logging.NOTSET)
 
@@ -49,14 +54,20 @@ def run_api():
 def processStoredPublications(content):
         # Classify documents and call appropriate pre-processor
         document: Document = document_classifier.classify(content)
-
+        total_number_of_articles = len(document.articles)
+        total_number_of_processed_articles = 0
         # Wordcount the lemmatized data and create Data Transfer Objects
         dtos = []
         for article in document.articles:
+            logger.info(f"Wordcount {document.publisher} - {int(total_number_of_articles/total_number_of_processed_articles)}%")
             word_counts = WordCounter.count_words(article.body)
             dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
             dtos.append(dto)
+            total_number_of_processed_articles += 1
 
+        logger.info(f"Wordcount {document.publisher} - 100%")
+
+        logger.info(f"Sending {document.publisher}")
         # Send word count data to database
         try:
             WordCountDao.send_word_count(dtos)

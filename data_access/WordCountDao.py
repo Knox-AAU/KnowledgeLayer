@@ -9,6 +9,11 @@ from environment import EnvironmentVariables as Ev
 from requests.exceptions import ConnectionError
 import logging
 
+logging.basicConfig(
+    format='%(asctime) | %(message)',
+    datefmt='%Y %m %d @ %H:%M:%S'
+)
+
 logger = logging.getLogger()
 logger.warning(logging.NOTSET)
 
@@ -27,7 +32,6 @@ class WordCountDao:
         objects_as_dict = list(map(lambda x: dataclasses.asdict(x), documentWordCounts))
         url = Ev.instance.get_value(Ev.instance.WORD_COUNT_DATA_ENDPOINT)
 
-        # TODO: Do error handling, since connection errors crashes the application
         try:
             res = requests.post(url, json=objects_as_dict)
             res.raise_for_status()
