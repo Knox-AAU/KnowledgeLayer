@@ -31,8 +31,8 @@ class DocumentClassifier:
         total_number_of_processed_articles = 0
 
         for article in document_dict["content"]["articles"]:
-            logging.LogF.log(f"Preprocces {publisher} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
             title = article["headline"]
+            logging.LogF.log(f"Preprocces {publisher} - {title} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
             # TODO: Why is extracted_from a list? Figure this out
             path = article["extracted_from"][0]
             body = ""
