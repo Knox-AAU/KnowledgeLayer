@@ -20,7 +20,7 @@ class GFPreProcessor(PreProcessor):
         total_number_of_processed_articles = 0
 
         for article in document.articles:
-            logging.LogF.log(f"GFPreprocces {article.publisher} - {int(total_number_of_processed_articles/total_number_of_articles)}%")
+            logging.LogF.log(f"GFPreprocces {article.publisher} - {article.title} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
