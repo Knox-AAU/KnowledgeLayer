@@ -1,13 +1,17 @@
 import datetime
+import os
 import uvicorn
 from fastapi import FastAPI, Request
 import threading
 import logging
+from api.ImportApi import read_doc, app
 
 from publication_generator import PublicationGenerator
 from performace_test_suite import PerformanceTestSuite
 from doc_classification import PipelineManager
 from unittest.mock import patch
+from fastapi.testclient import TestClient
+from knox_source_data_io.io_handler import IOHandler
 
 logger = logging.getLogger()
 import data_access.WordCountDao
@@ -64,8 +68,37 @@ def run_tests(mock_lemma, mock_send_word):
     # import numpy as np
     # print(((len(data) - 1) * wordcount) / np.array(data[1:]).sum())
 
+# @patch('file_io.FileWriter.FileWriter.add_to_queue')
+# def read_doc_benchmark(mock_queue):
+#     mock_queue.return_value = None
+#     client = TestClient(app);
+#     test_func = lambda json: client.post("/uploadJsonDoc/", json)
+#     suite = PerformanceTestSuite(test_func, None)
+#     with open('./test_read_doc.csv', 'a') as f:
+#         f.write("paragraph_amount;article_amount;data\n")
+#         for paragraph_amount in range(1, 11):
+#             for article_amount in range(1, 11):
+#                 generator = PublicationGenerator("NJ", paragraph_amount = paragraph_amount,
+#                                                  article_amount = article_amount, paragraph_word_count = 10)
+#                 generator.set_seed(paragraph_amount + article_amount)
+#                 suite.data_generator = generator.publication_generator()
+#                 f.write(f'{paragraph_amount};{article_amount};{suite.run()}\n')
+
+
+def read_doc_benchmark():
+    path = os.path.dirname(os.path.abspath(__file__))
+    test_func = lambda json: IOHandler.validate_json(json, os.path.join(path, '../..', 'schema.json'))
+    suite = PerformanceTestSuite(test_func, None)
+    with open('./test_read_doc.csv', 'a') as f:
+        f.write("paragraph_amount;article_amount;data\n")
+        for paragraph_amount in range(1, 11):
+            for article_amount in range(1, 11):
+                generator = PublicationGenerator("NJ", paragraph_amount = paragraph_amount,
+                                                 article_amount = article_amount, paragraph_word_count = 10)
+                generator.set_seed(paragraph_amount + article_amount)
+                suite.data_generator = generator.publication_generator()
+                f.write(f'{paragraph_amount};{article_amount};{suite.run()}\n')
 
 if __name__ == "__main__":
-    with open('./max_data.txt', 'a') as f:
-        generator = PublicationGenerator("NJ", paragraph_amount=10, paragraph_word_count=1000, stop_word_density=0.0, seed=0)
-        f.write(f'{next(generator.publication_generator())}')
+    #run_tests()
+    read_doc_benchmark()
