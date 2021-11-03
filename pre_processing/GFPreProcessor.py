@@ -23,26 +23,24 @@ class GFPreProcessor(PreProcessor):
 
         for article in document.articles:
             logging.LogF.log(
-                f"GFPreprocces {document.publisher} - {article.title} - {int((total_number_of_processed_articles * 100) / total_number_of_articles)}%")
-            # TODO: Decide what to do with emails, links, etc. in corpus
-            text = self.__process_text__(document, article.title)
-            article.title = text
-            text = self.__process_text__(document, article.body)
-            article.body = text
+                f"{int((total_number_of_processed_articles * 100) / total_number_of_articles)}% : GFPreProcessing of {document.publisher} - {article.title}")
+            article.title = self.__process_text__(document, article.title)
+            article.body = self.__process_text__(document, article.body)
             total_number_of_processed_articles += 1
 
-        logging.LogF.log(f"GFPreprocces {document.publisher} - 100%")
+        logging.LogF.log(f"100% : GFPreProcessing of {document.publisher}")
 
         return document
 
     def __process_text__(self, document, text: str):
+        # TODO: Decide what to do with emails, links, etc. in corpus
         corpus = self.remove_special_characters(text)
         corpus = self.numbers_to_text(corpus)
         logging.LogF.log(
-            f"GFLemmatize {document.publisher}")
+            f"Call Lemmatization for {document.publisher}")
         corpus = super().lemmatize(corpus, "en")
         logging.LogF.log(
-            f"GFLemmatize {document.publisher}")
+            f"Response from Lemmatization for {document.publisher}")
         return self.to_lower(corpus)
 
     def bigrams(self, sentence: str) -> str:
