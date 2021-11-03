@@ -3,7 +3,7 @@ import json
 correctJson = json.dumps({
     "__class__": "Wrapper",
     "__module__": "knox_source_data_io.models.wrapper",
-    "type": "Schema_Article",
+    "type": "Publication",
     "schema": "TestSchema",
     "generator": {
         "app": "This App",

@@ -318,8 +318,7 @@
                                         "required": [
                                             "__class__",
                                             "__module__",
-                                            "name",
-                                            "email"
+                                            "name"
                                         ],
                                         "properties": {
                                             "__class__": {
