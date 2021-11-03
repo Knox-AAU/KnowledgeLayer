@@ -2,13 +2,12 @@ import logging
 from model.Document import Document, Article
 from pre_processing import *
 
-logging.basicConfig(
-    format='%(asctime) | %(message)',
-    datefmt='%Y %m %d @ %H:%M:%S'
-)
+# logging.basicConfig(
+#     format='%(asctime) | %(message)',
+#     datefmt='%Y %m %d @ %H:%M:%S'
+# )
 
 logger = logging.getLogger()
-logger.setLevel(logging.NOTSET)
 
 class DocumentClassifier:
     """

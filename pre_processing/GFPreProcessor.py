@@ -3,13 +3,12 @@ import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
 
-logging.basicConfig(
-    format='%(asctime) | %(message)',
-    datefmt='%Y %m %d @ %H:%M:%S'
-)
+# logging.basicConfig(
+#     format='%(asctime) | %(message)',
+#     datefmt='%Y %m %d @ %H:%M:%S'
+# )
 
 logger = logging.getLogger()
-logger.setLevel(logging.NOTSET)
 
 
 class GFPreProcessor(PreProcessor):

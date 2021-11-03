@@ -11,7 +11,6 @@ Ev()
 
 # Instantiation of logging functionalities
 logger = logging.getLogger()
-logger.setLevel(logging.NOTSET)
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
 filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)

@@ -9,13 +9,12 @@ from environment import EnvironmentVariables as Ev
 from requests.exceptions import ConnectionError
 import logging
 
-logging.basicConfig(
-    format='%(asctime) | %(message)',
-    datefmt='%Y %m %d @ %H:%M:%S'
-)
+# logging.basicConfig(
+#     format='%(asctime) | %(message)',
+#     datefmt='%Y %m %d @ %H:%M:%S'
+# )
 
 logger = logging.getLogger()
-logger.warning(logging.NOTSET)
 
 class WordCountDao:
     """

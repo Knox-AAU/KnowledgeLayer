@@ -20,12 +20,11 @@ from data_access import WordCountDao
 Ev()
 
 logging.basicConfig(
-    format='%(asctime) | %(message)',
+    format='%(asctime) %(message)',
     datefmt='%Y %m %d @ %H:%M:%S'
 )
 
 logger = logging.getLogger()
-logger.setLevel(logging.NOTSET)
 
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
