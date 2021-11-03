@@ -44,13 +44,17 @@ def run_tests(mock_lemma, mock_send_word):
 
     # with open(f'test_{datetime.datetime.now().date()}_2.txt', "a") as f:
     #     f.write(str(suite.run()))
+    generator = PublicationGenerator("NJ")
+    generator.repeat_amount = 5
+    generator.article_amount = 2
     with open('./test_overall.csv', 'a') as f:
         f.write("paragraph_amount;word_count;stop_dens;data\n")
         for paragraph_amount in range(1, 11):
             for word_count in range(100, 1100, 100):
                 for stop_dens in range(11):
-                    print(paragraph_amount, word_count, stop_dens/10)
-                    generator = make_generator(paragraph_amount, word_count, stop_dens)
+                    generator.stop_word_density = stop_dens/10
+                    generator.paragraph_amount = paragraph_amount
+                    generator.paragraph_word_count = word_count
                     generator.set_seed(paragraph_amount+word_count+stop_dens)
                     suite.data_generator = generator.publication_generator()
                     f.write(f'{paragraph_amount};{word_count};{stop_dens};{suite.run()}\n')
@@ -62,4 +66,6 @@ def run_tests(mock_lemma, mock_send_word):
 
 
 if __name__ == "__main__":
-    run_tests()
+    with open('./max_data.txt', 'a') as f:
+        generator = PublicationGenerator("NJ", paragraph_amount=10, paragraph_word_count=1000, stop_word_density=0.0, seed=0)
+        f.write(f'{next(generator.publication_generator())}')

@@ -7,6 +7,7 @@ from spacy.lang.da.stop_words import STOP_WORDS
 
 
 class PublicationGenerator:
+    spacy_model = spacy.load("da_core_news_lg")
     def __init__(self, data_classification: str, repeat_amount: int = 1, article_amount: int = 1, paragraph_amount: int = 1,
                  paragraph_word_count: int = 200, stop_word_density: decimal = 0, seed: Optional[int] = None):
         self.stop_word_density = stop_word_density
@@ -15,9 +16,9 @@ class PublicationGenerator:
         self.paragraph_amount = paragraph_amount
         self.repeat_amount = repeat_amount
         self.data_classification = data_classification
-        self.spacy_model = spacy.load("da_core_news_lg")
         self.seed = seed
         self.__randomState = np.random.RandomState()
+        self.spacy_model = PublicationGenerator.spacy_model
 
     def publication_generator(self):
         for i in range(self.repeat_amount):
