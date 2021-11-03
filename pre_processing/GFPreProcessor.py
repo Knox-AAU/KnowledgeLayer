@@ -3,10 +3,12 @@ from utils import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
 
+
 class GFPreProcessor(PreProcessor):
     """
 
     """
+
     def __init__(self, model):
         self.nlp = spacy.load(model)
 
@@ -20,22 +22,28 @@ class GFPreProcessor(PreProcessor):
         total_number_of_processed_articles = 0
 
         for article in document.articles:
-            logging.LogF.log(f"GFPreprocces {document.publisher} - {article.title} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
+            logging.LogF.log(
+                f"GFPreprocces {document.publisher} - {article.title} - {int((total_number_of_processed_articles * 100) / total_number_of_articles)}%")
             # TODO: Decide what to do with emails, links, etc. in corpus
-            corpus = self.remove_special_characters(article.body)
-            corpus = self.numbers_to_text(corpus)
-            logging.LogF.log(
-                f"GFLemmatize {document.publisher}")
-            corpus = super().lemmatize(corpus, "en")
-            logging.LogF.log(
-                f"GFLemmatize {document.publisher}")
-            corpus = self.to_lower(corpus)
-            article.body = corpus
+            text = self.__process_text__(document, article.title)
+            article.title = text
+            text = self.__process_text__(document, article.body)
+            article.body = text
             total_number_of_processed_articles += 1
 
         logging.LogF.log(f"GFPreprocces {document.publisher} - 100%")
 
         return document
+
+    def __process_text__(self, document, text: str):
+        corpus = self.remove_special_characters(text)
+        corpus = self.numbers_to_text(corpus)
+        logging.LogF.log(
+            f"GFLemmatize {document.publisher}")
+        corpus = super().lemmatize(corpus, "en")
+        logging.LogF.log(
+            f"GFLemmatize {document.publisher}")
+        return self.to_lower(corpus)
 
     def bigrams(self, sentence: str) -> str:
         # This is an experiment! Can be the basis for greatness later on

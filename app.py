@@ -52,7 +52,7 @@ def processStoredPublications(content):
         dtos = []
         for article in document.articles:
             logging.LogF.log(f"Wordcount {document.publisher} - {int(total_number_of_processed_articles/total_number_of_articles)}%")
-            word_counts = WordCounter.count_words(article.body)
+            word_counts = WordCounter.count_words(article.title + " " + article.body)
             dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
             dtos.append(dto)
             total_number_of_processed_articles += 1
