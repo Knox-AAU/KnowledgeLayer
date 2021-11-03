@@ -1,15 +1,7 @@
 import spacy
-import logging
+from utils import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
-
-# logging.basicConfig(
-#     format='%(asctime) | %(message)',
-#     datefmt='%Y %m %d @ %H:%M:%S'
-# )
-
-logger = logging.getLogger()
-
 
 class GFPreProcessor(PreProcessor):
     """
@@ -28,7 +20,7 @@ class GFPreProcessor(PreProcessor):
         total_number_of_processed_articles = 0
 
         for article in document.articles:
-            logger.info(f"GFPreprocces {article.publisher} - {int(total_number_of_articles / total_number_of_processed_articles)}%")
+            logging.LogF.log(f"GFPreprocces {article.publisher} - {int(total_number_of_articles / total_number_of_processed_articles)}%")
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
@@ -37,7 +29,7 @@ class GFPreProcessor(PreProcessor):
             article.body = corpus
             total_number_of_processed_articles += 1
 
-        logger.info(f"GFPreprocces {document.articles[0].publisher} - 100%")
+        logging.LogF.log(f"GFPreprocces {document.articles[0].publisher} - 100%")
 
         return document
 

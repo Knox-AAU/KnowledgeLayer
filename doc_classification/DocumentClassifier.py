@@ -1,13 +1,7 @@
-import logging
+from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
 
-# logging.basicConfig(
-#     format='%(asctime) | %(message)',
-#     datefmt='%Y %m %d @ %H:%M:%S'
-# )
-
-logger = logging.getLogger()
 
 class DocumentClassifier:
     """
@@ -37,7 +31,7 @@ class DocumentClassifier:
         total_number_of_processed_articles = 0
 
         for article in document_dict["content"]["articles"]:
-            logger.info(f"Preprocces {publisher} - {int(total_number_of_articles/total_number_of_processed_articles)}%")
+            logging.LogF.log(f"Preprocces {publisher} - {int(total_number_of_articles/total_number_of_processed_articles)}%")
             title = article["headline"]
             # TODO: Why is extracted_from a list? Figure this out
             path = article["extracted_from"][0]
@@ -49,12 +43,12 @@ class DocumentClassifier:
             article = Article(title, body, path)
             document.articles.append(article)
 
-        logger.info(f"Preprocces {document.publisher} - 100%")
+        logging.LogF.log(f"Preprocces {document.publisher} - 100%")
         if document_dict["type"] == "Publication":
-            logger.info(f"NJPreprocces {document.publisher} - 0%")
+            logging.LogF.log(f"NJPreprocces {document.publisher} - 0%")
             processed_document = self.nj_preprocessor.process(document)
         elif document_dict["generator"]["app"] == "GrundfosManuals_Handler":
-            logger.info(f"GFPreprocces {document.publisher} - 0%")
+            logging.LogF.log(f"GFPreprocces {document.publisher} - 0%")
             processed_document = self.gf_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")

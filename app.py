@@ -1,5 +1,4 @@
 import json
-import logging
 import threading
 import os
 import sched
@@ -16,15 +15,9 @@ from environment import EnvironmentVariables as Ev
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
 from word_count.WordCounter import WordCounter
 from data_access import WordCountDao
+from utils import logging
 
 Ev()
-
-logging.basicConfig(
-    format='%(asctime) %(message)',
-    datefmt='%Y %m %d @ %H:%M:%S'
-)
-
-logger = logging.getLogger()
 
 
 # Makes a directory for the queue (Also done in the api). Only runs once.
@@ -58,15 +51,15 @@ def processStoredPublications(content):
         # Wordcount the lemmatized data and create Data Transfer Objects
         dtos = []
         for article in document.articles:
-            logger.info(f"Wordcount {document.publisher} - {int(total_number_of_articles/total_number_of_processed_articles)}%")
+            logging.LogF.log(f"Wordcount {document.publisher} - {int(total_number_of_articles/total_number_of_processed_articles)}%")
             word_counts = WordCounter.count_words(article.body)
             dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
             dtos.append(dto)
             total_number_of_processed_articles += 1
 
-        logger.info(f"Wordcount {document.publisher} - 100%")
+        logging.LogF.log(f"Wordcount {document.publisher} - 100%")
 
-        logger.info(f"Sending {document.publisher}")
+        logging.LogF.log(f"Sending {document.publisher}")
         # Send word count data to database
         try:
             WordCountDao.send_word_count(dtos)
