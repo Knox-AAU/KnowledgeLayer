@@ -24,7 +24,11 @@ class GFPreProcessor(PreProcessor):
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
+            logging.LogF.log(
+                f"GFLemmatize {article.publisher}")
             corpus = super().lemmatize(corpus, "en")
+            logging.LogF.log(
+                f"GFLemmatize {article.publisher}")
             corpus = self.to_lower(corpus)
             article.body = corpus
             total_number_of_processed_articles += 1
