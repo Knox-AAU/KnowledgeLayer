@@ -1,7 +1,7 @@
 import spacy
+from utils import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
-
 
 class GFPreProcessor(PreProcessor):
     """
@@ -16,13 +16,24 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
+        total_number_of_articles = len(document.articles)
+        total_number_of_processed_articles = 0
+
         for article in document.articles:
+            logging.LogF.log(f"GFPreprocces {article.publisher} - {int(total_number_of_processed_articles/total_number_of_articles)}%")
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
+            logging.LogF.log(
+                f"GFLemmatize {article.publisher}")
             corpus = super().lemmatize(corpus, "en")
+            logging.LogF.log(
+                f"GFLemmatize {article.publisher}")
             corpus = self.to_lower(corpus)
             article.body = corpus
+            total_number_of_processed_articles += 1
+
+        logging.LogF.log(f"GFPreprocces {document.articles[0].publisher} - 100%")
 
         return document
 

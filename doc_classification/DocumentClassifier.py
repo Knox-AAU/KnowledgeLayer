@@ -1,3 +1,4 @@
+from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
 
@@ -26,8 +27,11 @@ class DocumentClassifier:
         # Construct Document object from document_dict
         publisher = document_dict["content"]["publisher"]
         document = Document(publisher)
+        total_number_of_articles = len(document_dict["content"]["articles"])
+        total_number_of_processed_articles = 0
 
         for article in document_dict["content"]["articles"]:
+            logging.LogF.log(f"Preprocces {publisher} - {int(total_number_of_processed_articles/total_number_of_articles)}%")
             title = article["headline"]
             # TODO: Why is extracted_from a list? Figure this out
             path = article["extracted_from"][0]
@@ -39,9 +43,12 @@ class DocumentClassifier:
             article = Article(title, body, path)
             document.articles.append(article)
 
+        logging.LogF.log(f"Preprocces {document.publisher} - 100%")
         if document_dict["type"] == "Publication":
+            logging.LogF.log(f"NJPreprocces {document.publisher} - 0%")
             processed_document = self.nj_preprocessor.process(document)
         elif document_dict["generator"]["app"] == "GrundfosManuals_Handler":
+            logging.LogF.log(f"GFPreprocces {document.publisher} - 0%")
             processed_document = self.gf_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
