@@ -36,7 +36,7 @@ class PublicationGenerator:
 
     def __generate_NJ_publication(self) -> dict:
         articles = [self.__generate_article() for _ in range(self.article_amount)]
-        return dict(__class__="Wrapper", __module__="knox_source_data_io.models.wrapper", type="Schema_Article",
+        return dict(__class__="Wrapper", __module__="knox_source_data_io.models.wrapper", type="Publication",
                     schema="TestSchema",
                     generator=dict(app="This App", version="0.0.0.1", generated_at="Some time ago"),
                     content=dict(__class__="Publication", __module__="knox_source_data_io.models.publication",
