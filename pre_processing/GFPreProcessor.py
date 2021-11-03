@@ -20,20 +20,20 @@ class GFPreProcessor(PreProcessor):
         total_number_of_processed_articles = 0
 
         for article in document.articles:
-            logging.LogF.log(f"GFPreprocces {article.publisher} - {article.title} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
+            logging.LogF.log(f"GFPreprocces {document.publisher} - {article.title} - {int((total_number_of_processed_articles*100)/total_number_of_articles)}%")
             # TODO: Decide what to do with emails, links, etc. in corpus
             corpus = self.remove_special_characters(article.body)
             corpus = self.numbers_to_text(corpus)
             logging.LogF.log(
-                f"GFLemmatize {article.publisher}")
+                f"GFLemmatize {document.publisher}")
             corpus = super().lemmatize(corpus, "en")
             logging.LogF.log(
-                f"GFLemmatize {article.publisher}")
+                f"GFLemmatize {document.publisher}")
             corpus = self.to_lower(corpus)
             article.body = corpus
             total_number_of_processed_articles += 1
 
-        logging.LogF.log(f"GFPreprocces {document.articles[0].publisher} - 100%")
+        logging.LogF.log(f"GFPreprocces {document.publisher} - 100%")
 
         return document
 
