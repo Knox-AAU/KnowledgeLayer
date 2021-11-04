@@ -6,14 +6,17 @@ import uvicorn
 from fastapi import FastAPI, Request
 import threading
 import logging
-from api.ImportApi import read_doc, app
 
+from api.ImportApi import read_doc, app
 from publication_generator import PublicationGenerator
 from performace_test_suite import PerformanceTestSuite
 from doc_classification import PipelineManager
 from unittest.mock import patch
 from fastapi.testclient import TestClient
 from knox_source_data_io.io_handler import IOHandler
+from word_count.WordCounter import WordCounter
+from pre_processing.NJPreProcessor import NJPreProcessor
+from model.Document import Article
 
 logger = logging.getLogger()
 import data_access.WordCountDao
@@ -44,18 +47,17 @@ def make_generator(paragraph_amount, word_count, stop_dens):
 
 @patch('data_access.WordCountDao.send_word_count')
 @patch('pre_processing.PreProcessor.lemmatize')
-def run_tests(mock_lemma, mock_send_word):
+def overall_benchmark(mock_lemma, mock_send_word):
+    #benchmark on processStoredPublications()
     pipeline = PipelineManager()
     mock_lemma.side_effect = lambda x, y: x
     mock_send_word.return_value = None
     suite = PerformanceTestSuite(pipeline.processStoredPublications, make_generator(0, 0, 0).publication_generator())
 
-    # with open(f'test_{datetime.datetime.now().date()}_2.txt', "a") as f:
-    #     f.write(str(suite.run()))
     generator = PublicationGenerator("NJ")
     generator.repeat_amount = 1
     generator.article_amount = 1
-    with open('./test_overall.csv', 'a') as f:
+    with open('./output/test_overall.csv', 'a') as f:
         f.write("paragraph_amount;word_count;stop_dens;data\n")
         for paragraph_amount in range(1, 11):
             for word_count in range(100, 1100, 100):
@@ -67,35 +69,13 @@ def run_tests(mock_lemma, mock_send_word):
                     suite.data_generator = generator.publication_generator()
                     f.write(f'{paragraph_amount};{word_count};{stop_dens};{suite.run()}\n')
                     logger.warning(f'{paragraph_amount};{word_count};{stop_dens};{suite.run()}\n')
-    #
-    # wordcount = generator.article_amount * generator.paragraph_amount * generator.paragraph_word_count
-    # data = suite.run()
-    # import numpy as np
-    # print(((len(data) - 1) * wordcount) / np.array(data[1:]).sum())
-
-
-# @patch('file_io.FileWriter.FileWriter.add_to_queue')
-# def read_doc_benchmark(mock_queue):
-#     mock_queue.return_value = None
-#     client = TestClient(app);
-#     test_func = lambda json: client.post("/uploadJsonDoc/", json)
-#     suite = PerformanceTestSuite(test_func, None)
-#     with open('./test_read_doc.csv', 'a') as f:
-#         f.write("paragraph_amount;article_amount;data\n")
-#         for paragraph_amount in range(1, 11):
-#             for article_amount in range(1, 11):
-#                 generator = PublicationGenerator("NJ", paragraph_amount = paragraph_amount,
-#                                                  article_amount = article_amount, paragraph_word_count = 10)
-#                 generator.set_seed(paragraph_amount + article_amount)
-#                 suite.data_generator = generator.publication_generator()
-#                 f.write(f'{paragraph_amount};{article_amount};{suite.run()}\n')
 
 
 def read_doc_benchmark():
     path = os.path.dirname(os.path.abspath(__file__))
     test_func = lambda json: IOHandler.validate_json(json, os.path.join(path, '../..', 'schema.json'))
     suite = PerformanceTestSuite(test_func, None)
-    with open('./test_read_doc.csv', 'a') as f:
+    with open('./output/test_read_doc.csv', 'a') as f:
         f.write("paragraph_amount;article_amount;data\n")
         for paragraph_amount in range(1, 11):
             for article_amount in range(1, 11):
@@ -106,36 +86,37 @@ def read_doc_benchmark():
                 f.write(f'{paragraph_amount};{article_amount};{suite.run()}\n')
 
 
-def get_slice_of_data(data: Dict, paragraph_count: int, word_count: int) -> Dict:
-    proc_data = data
-    proc_data['content']['articles'][0]['paragraphs'] = proc_data['content']['articles'][0]['paragraphs'][:paragraph_count]
-    join_list = PublicationGenerator.join_list
-    for paragraph in proc_data['content']['articles'][0]['paragraphs']:
-        print(paragraph, paragraph['value'])
-        words = re.split(''.join(join_list), )
-        words = paragraph['value'].split(join_list)[:word_count]
-        value = ''
-        for i in range(len(words)):
-            seperator = np.random.choice(1, join_list)
-            value = value + seperator + words[i]
-        paragraph['value'] = value
-    return proc_data
+def word_counter_benchmark():
+    wc = WordCounter.count_words
+
+    gen = PublicationGenerator("NJ")
+    data = []
+    for i in range(100, 1100, 100):
+        gen.paragraph_word_count = i
+        data.append(gen.generate_paragraph()['value'])
+    print(data)
+    suite = PerformanceTestSuite(wc, data)
+    with open('./output/test_word_counter.csv', 'a') as f:
+        f.write("word_amount;data\n")
+        f.write(f'{[i for i in range(100, 1100, 100)]};{suite.run()}\n')
+
+def stop_word_benchmark():
+    remove_stop_words = NJPreProcessor().remove_stopwords
+    suite = PerformanceTestSuite(remove_stop_words, None)
+
+    gen = PublicationGenerator("NJ")
+    with open('./output/test_stop_words.csv', 'a') as f:
+        f.write("word_amount;stop_word_dens;data\n")
+        for word_amount in range(100, 1100, 100):
+            for stop_word_dens in range(11):
+                gen.paragraph_word_count = word_amount
+                gen.stop_word_density = stop_word_dens/10
+                suite.data_generator = [Article("",gen.generate_paragraph()['value'],"")]
+                f.write(f'{word_amount};{stop_word_dens/10};{suite.run()}\n')
 
 
 if __name__ == "__main__":
-    run_tests()
-    # read_doc_benchmark()
-
-
-    # gen = PublicationGenerator("NJ")
-    # gen.article_amount = 1
-    # gen.paragraph_amount = 10
-    # gen.paragraph_word_count = 1000
-    # gen.stop_word_density = 0.0
-    # gen.set_seed(0)
-    # with open('./max_data2.json', 'w', encoding='utf8') as f:
-    #     f.write(json.dumps(next(gen.publication_generator())))
-    # with open('./max_data2.json', 'r', encoding='utf8') as f:
-    #     data = json.load(f)
-    # proc_data = get_slice_of_data(data, 5, 3)
-    # print(proc_data)
+    stop_word_benchmark()
+    #word_counter_benchmark()
+    #overall_benchmark()
+    #read_doc_benchmark()

@@ -48,18 +48,18 @@ class PublicationGenerator:
         pass
 
     def __generate_article(self) -> dict:
-        paragraphs = [self.__generate_paragraph() for _ in range(self.paragraph_amount)]
+        paragraphs = [self.generate_paragraph() for _ in range(self.paragraph_amount)]
         return dict(__class__="Article", __module__="knox_source_data_io.models.publication",
                     headline="This is a test headline", id=0, extracted_from=["/testpath"], paragraphs=paragraphs)
 
-    def __generate_paragraph(self) -> dict:
-        content = self.__get_random_sentence()
+    def generate_paragraph(self) -> dict:
+        content = self.get_random_sentence()
         self.__insert_stop_words(content)
         value = self.__join_content(content)
         return dict(__class__="Paragraph", __module__="knox_source_data_io.models.publication",
                     kind="Test Kind", value=value)
 
-    def __get_random_sentence(self):
+    def get_random_sentence(self):
         vocab = list(self.spacy_model.vocab.strings)
         vocab_length = len(vocab)
 
