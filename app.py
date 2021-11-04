@@ -51,13 +51,13 @@ def processStoredPublications(content):
         # Wordcount the lemmatized data and create Data Transfer Objects
         dtos = []
         for article in document.articles:
-            logging.LogF.log(f"Wordcount {document.publisher} - {int(total_number_of_processed_articles/total_number_of_articles)}%")
-            word_counts = WordCounter.count_words(article.body)
+            logging.LogF.log(f"{int((total_number_of_processed_articles*100)/total_number_of_articles)}% : Word counting for {document.publisher} - {article.title}")
+            word_counts = WordCounter.count_words(article.title + " " + article.body)
             dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
             dtos.append(dto)
             total_number_of_processed_articles += 1
 
-        logging.LogF.log(f"Wordcount {document.publisher} - 100%")
+        logging.LogF.log(f"100% : Word counting for {document.publisher}")
 
         logging.LogF.log(f"Sending {document.publisher}")
         # Send word count data to database
