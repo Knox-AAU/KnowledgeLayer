@@ -57,7 +57,7 @@ def overall_benchmark(mock_lemma, mock_send_word):
     generator = PublicationGenerator("NJ")
     generator.repeat_amount = 1
     generator.article_amount = 1
-    with open('./output/test_overall.csv', 'a') as f:
+    with open('tests/performance_test/output/test_overall.csv', 'a') as f:
         f.write("paragraph_amount;word_count;stop_dens;data\n")
         for paragraph_amount in range(1, 11):
             for word_count in range(100, 1100, 100):
@@ -75,7 +75,7 @@ def read_doc_benchmark():
     path = os.path.dirname(os.path.abspath(__file__))
     test_func = lambda json: IOHandler.validate_json(json, os.path.join(path, '../..', 'schema.json'))
     suite = PerformanceTestSuite(test_func, None)
-    with open('./output/test_read_doc.csv', 'a') as f:
+    with open('tests/performance_test/output/test_read_doc.csv', 'a') as f:
         f.write("paragraph_amount;article_amount;data\n")
         for paragraph_amount in range(1, 11):
             for article_amount in range(1, 11):
@@ -90,22 +90,20 @@ def word_counter_benchmark():
     wc = WordCounter.count_words
 
     gen = PublicationGenerator("NJ")
-    data = []
-    for i in range(100, 1100, 100):
-        gen.paragraph_word_count = i
-        data.append(gen.generate_paragraph()['value'])
-    print(data)
-    suite = PerformanceTestSuite(wc, data)
-    with open('./output/test_word_counter.csv', 'a') as f:
+    suite = PerformanceTestSuite(wc, None)
+    with open('tests/performance_test/output/test_word_counter.csv', 'a') as f:
         f.write("word_amount;data\n")
-        f.write(f'{[i for i in range(100, 1100, 100)]};{suite.run()}\n')
+        for word_amount in range(100, 1010, 10):
+            gen.paragraph_word_count = word_amount
+            suite.data_generator = [gen.generate_paragraph()['value']]
+            f.write(f'{word_amount};{suite.run()}\n')
 
 def stop_word_benchmark():
     remove_stop_words = NJPreProcessor().remove_stopwords
     suite = PerformanceTestSuite(remove_stop_words, None)
 
     gen = PublicationGenerator("NJ")
-    with open('./output/test_stop_words.csv', 'a') as f:
+    with open('tests/performance_test/output/test_stop_words.csv', 'a') as f:
         f.write("word_amount;stop_word_dens;data\n")
         for word_amount in range(100, 1100, 100):
             for stop_word_dens in range(11):
@@ -116,7 +114,7 @@ def stop_word_benchmark():
 
 
 if __name__ == "__main__":
-    stop_word_benchmark()
-    #word_counter_benchmark()
-    #overall_benchmark()
+    #stop_word_benchmark()
+    word_counter_benchmark()
     #read_doc_benchmark()
+    #overall_benchmark()
