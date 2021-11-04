@@ -32,7 +32,6 @@ def queue(callBack):
             logging.LogF.log(filePath + file + " has been processed")
 
             logging.LogF.log(f"{len(os.listdir(filePath))} files left in queue")
-            # logging.LogF.log(f"{processed}/{len(list_of_files)} files processed")
         except ConnectionError as error:
             logging.LogF.log("Connection error: Adding to queue again")
         except Exception as error:
