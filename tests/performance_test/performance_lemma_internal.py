@@ -14,7 +14,6 @@ logger = logging.getLogger()
 ##nlp = spacy.load("da_core_news_sm")
 Lemma = da_core_news_sm.load()
 
-
 def Lemmatization(string):
     doc = Lemma(string.lower())
     return " ".join([token.lemma_ for token in doc])
@@ -30,7 +29,7 @@ def run_tests():
     preprocessor = PreProcessor()
 
 
-    while numbWordcount <= 1000:
+    while numbWordcount <= 10000:
         generator.paragraph_word_count = numbWordcount
         argList = []
 

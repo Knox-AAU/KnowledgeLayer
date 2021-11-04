@@ -17,4 +17,4 @@ services:
             - WORD_COUNT_DATA_ENDPOINT=http://localhost:5000/wordcount
             - PYTHONPATH=$PYTHONPATH:/home/appuser/app/
         working_dir: /home/appuser/app
-        command: python3 ./tests/performance_test/performance_lemma_internal.py
+        command: python3 ./tests/performance_test/performance_moderndanish.py

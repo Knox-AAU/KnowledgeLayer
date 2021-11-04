@@ -46,7 +46,7 @@ class PublicationGenerator:
     def __generate_GF_publication(self) -> dict:
         pass
 
-    def __generate_article(self) -> dict:
+    def generate_article(self) -> dict:
         paragraphs = [self.generate_paragraph() for _ in range(self.paragraph_amount)]
         return dict(__class__="Article", __module__="knox_source_data_io.models.publication",
                     headline="This is a test headline", id=0, extracted_from=["/testpath"], paragraphs=paragraphs)
