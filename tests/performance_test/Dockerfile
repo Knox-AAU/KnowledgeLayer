@@ -31,6 +31,7 @@ COPY ./tests/performance_test/test_requirements.txt test_requirements.txt
 RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.txt -r test_requirements.txt
 
 # Download the required spaCy large Danish and small English model
+RUN python3 -m spacy download da_core_news_sm
 RUN python3 -m spacy download da_core_news_lg
 RUN python3 -m spacy download en_core_web_sm
 

@@ -51,8 +51,8 @@ class PerformanceTestSuite:
     def shutdown_suite(self, func: Optional[Callable[[], Any]]):
         self.shutdown_suite_func = func
 
-    def __run_test(self, data: Any):
+    def __run_test(self, data: [Any]):
         t1 = time.time()
-        self.target(data)
+        self.target(*data)
         t2 = time.time()
         return t2 - t1
