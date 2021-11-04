@@ -5,7 +5,6 @@ import os
 from os.path import exists
 from environment import EnvironmentVariables as Ev
 
-
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
 Ev()
 
@@ -17,9 +16,9 @@ if not exists(filePath):
 
 def queue(callBack):
     # Creates a list of all files in the folder defined as filePath.
-    listOfFiles = os.listdir(filePath)
+    list_of_files = os.listdir(filePath)
 
-    for file in sorted(listOfFiles):
+    for file in sorted(list_of_files):
 
         try:
             with open(filePath + file) as json_file:
@@ -27,10 +26,12 @@ def queue(callBack):
 
             callBack(content)
 
-            #Removes the current file that has been processed
+            # Removes the current file that has been processed
             os.remove(filePath + file)
 
-            logging.LogF.log(filePath + file + " Has been processed")
+            logging.LogF.log(filePath + file + " has been processed")
+
+            logging.LogF.log(f"{len(os.listdir(filePath))} files left in queue")
         except ConnectionError as error:
             logging.LogF.log("Connection error: Adding to queue again")
         except Exception as error:
