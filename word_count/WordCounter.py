@@ -2,9 +2,17 @@ from model.Word import Word
 
 
 class WordCounter:
+    """
+    Component responsible for all word counting
+    """
 
     @staticmethod
     def count_words(text: str):
+        """
+        :param text: text of words. It is assumed to be preprocessed
+        :return: returns a tuple with the first element being the total count of words, and the second element
+        being a list of Word objects containing the name of the word and the amount of times it appears in the text.
+        """
         word_counts = {}
 
         words = text.split()
