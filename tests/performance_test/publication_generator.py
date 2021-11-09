@@ -7,7 +7,11 @@ from spacy.lang.da.stop_words import STOP_WORDS
 
 
 class PublicationGenerator:
-    def __init__(self, data_classification: str, repeat_amount: int = 1, article_amount: int = 1, paragraph_amount: int = 1,
+    spacy_model = spacy.load("da_core_news_lg")
+    join_list = [' ', ' .', ', ', '-']
+
+    def __init__(self, data_classification: str, repeat_amount: int = 1, article_amount: int = 1,
+                 paragraph_amount: int = 1,
                  paragraph_word_count: int = 200, stop_word_density: decimal = 0, seed: Optional[int] = None):
         self.stop_word_density = stop_word_density
         self.article_amount = article_amount
@@ -15,9 +19,9 @@ class PublicationGenerator:
         self.paragraph_amount = paragraph_amount
         self.repeat_amount = repeat_amount
         self.data_classification = data_classification
-        self.spacy_model = spacy.load("da_core_news_lg")
         self.seed = seed
         self.__randomState = np.random.RandomState()
+        self.spacy_model = PublicationGenerator.spacy_model
 
     def publication_generator(self):
         for i in range(self.repeat_amount):
@@ -36,7 +40,7 @@ class PublicationGenerator:
 
     def __generate_NJ_publication(self) -> dict:
         articles = [self.__generate_article() for _ in range(self.article_amount)]
-        return dict(__class__="Wrapper", __module__="knox_source_data_io.models.wrapper", type="Schema_Article",
+        return dict(__class__="Wrapper", __module__="knox_source_data_io.models.wrapper", type="Publication",
                     schema="TestSchema",
                     generator=dict(app="This App", version="0.0.0.1", generated_at="Some time ago"),
                     content=dict(__class__="Publication", __module__="knox_source_data_io.models.publication",
@@ -47,18 +51,18 @@ class PublicationGenerator:
         pass
 
     def __generate_article(self) -> dict:
-        paragraphs = [self.__generate_paragraph() for _ in range(self.paragraph_amount)]
+        paragraphs = [self.generate_paragraph() for _ in range(self.paragraph_amount)]
         return dict(__class__="Article", __module__="knox_source_data_io.models.publication",
                     headline="This is a test headline", id=0, extracted_from=["/testpath"], paragraphs=paragraphs)
 
-    def __generate_paragraph(self) -> dict:
-        content = self.__get_random_sentence()
+    def generate_paragraph(self) -> dict:
+        content = self.get_random_sentence()
         self.__insert_stop_words(content)
         value = self.__join_content(content)
         return dict(__class__="Paragraph", __module__="knox_source_data_io.models.publication",
                     kind="Test Kind", value=value)
 
-    def __get_random_sentence(self):
+    def get_random_sentence(self):
         vocab = list(self.spacy_model.vocab.strings)
         vocab_length = len(vocab)
 
@@ -67,10 +71,9 @@ class PublicationGenerator:
         return content
 
     def __join_content(self, content):
-        join_list = [' ', ' .', ', ', '-']
         value = ''
         for i in range(len(content)):
-            value = value + self.__get_random_entry(join_list) + content[i]
+            value = value + self.__get_random_entry(self.join_list) + content[i]
         return value
 
     def __insert_stop_words(self, content: List[str]) -> None:
