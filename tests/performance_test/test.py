@@ -70,6 +70,35 @@ def overall_benchmark(mock_lemma, mock_send_word):
                     f.write(f'{paragraph_amount};{word_count};{stop_dens};{suite.run()}\n')
                     logger.warning(f'{paragraph_amount};{word_count};{stop_dens};{suite.run()}\n')
 
+    #
+    # wordcount = generator.article_amount * generator.paragraph_amount * generator.paragraph_word_count
+    # data = suite.run()
+    # import numpy as np
+    # print(((len(data) - 1) * wordcount) / np.array(data[1:]).sum())
+    gen = PublicationGenerator("NJ")
+    data = []
+    for i in range(100, 1100, 100):
+        gen.paragraph_word_count =  i
+        data.append(gen.__get_random_sentence())
+
+
+@patch('file_io.FileWriter.FileWriter.add_to_queue')
+def read_doc_benchmark(mock_queue):
+    mock_queue.return_value = None
+    client = TestClient(app);
+    test_func = lambda json: client.post("/uploadJsonDoc/", json)
+    suite = PerformanceTestSuite(test_func, None)
+    with open('./test_read_doc.csv', 'a') as f:
+        f.write("paragraph_amount;article_amount;data\n")
+        for paragraph_amount in range(1, 11):
+            for article_amount in range(1, 11):
+                generator = PublicationGenerator("NJ", paragraph_amount = paragraph_amount,
+                                                 article_amount = article_amount, paragraph_word_count = 10)
+                generator.set_seed(paragraph_amount + article_amount)
+                suite.data_generator = generator.publication_generator()
+                f.write(f'{paragraph_amount};{article_amount};{suite.run()}\n')
+
+
 
 def read_doc_benchmark():
     path = os.path.dirname(os.path.abspath(__file__))
@@ -91,7 +120,7 @@ def word_counter_benchmark():
 
     gen = PublicationGenerator("NJ")
     suite = PerformanceTestSuite(wc, None)
-    with open('tests/performance_test/output/test_word_counter.csv', 'a') as f:
+    with open('./tests/performance_test/output/test_word_counter.csv', 'a') as f:
         f.write("word_amount;data\n")
         for word_amount in range(100, 1010, 10):
             gen.paragraph_word_count = word_amount
@@ -114,7 +143,10 @@ def stop_word_benchmark():
 
 
 if __name__ == "__main__":
-    #stop_word_benchmark()
+    ## !!!!!!!!!!!!!!!!!!!
+    ## LAV LIGE FOLDEREN "/tests/performance_test/output"
+    ## !!!!!!!!!!!!!!!!!!!
+    stop_word_benchmark()
     word_counter_benchmark()
-    #read_doc_benchmark()
-    #overall_benchmark()
+    read_doc_benchmark()
+    overall_benchmark()

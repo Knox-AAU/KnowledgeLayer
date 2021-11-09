@@ -8,7 +8,10 @@ from spacy.lang.da.stop_words import STOP_WORDS
 
 class PublicationGenerator:
     spacy_model = spacy.load("da_core_news_lg")
-    def __init__(self, data_classification: str, repeat_amount: int = 1, article_amount: int = 1, paragraph_amount: int = 1,
+    join_list = [' ', ' .', ', ', '-']
+
+    def __init__(self, data_classification: str, repeat_amount: int = 1, article_amount: int = 1,
+                 paragraph_amount: int = 1,
                  paragraph_word_count: int = 200, stop_word_density: decimal = 0, seed: Optional[int] = None):
         self.stop_word_density = stop_word_density
         self.article_amount = article_amount
@@ -68,10 +71,9 @@ class PublicationGenerator:
         return content
 
     def __join_content(self, content):
-        join_list = [' ', ' .', ', ', '-']
         value = ''
         for i in range(len(content)):
-            value = value + self.__get_random_entry(join_list) + content[i]
+            value = value + self.__get_random_entry(self.join_list) + content[i]
         return value
 
     def __insert_stop_words(self, content: List[str]) -> None:
