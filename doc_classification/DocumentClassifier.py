@@ -1,7 +1,9 @@
+from rdf import TripleExtractor
 from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
-
+from environment import EnvironmentVariables as Ev
+Ev()
 
 class DocumentClassifier:
     """
@@ -15,6 +17,7 @@ class DocumentClassifier:
     def __init__(self):
         self.nj_preprocessor = NJPreProcessor()
         self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
+        self.nj_triple_extractor = TripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
 
     def classify(self, document_dict):
         """
@@ -50,6 +53,7 @@ class DocumentClassifier:
             processed_document = self.gf_preprocessor.process(document)
         elif document_dict["type"] == "Publication":
             logging.LogF.log(f"0% : NJPreProcessing of {document.publisher}")
+            self.nj_triple_extractor.process_publication(document)
             processed_document = self.nj_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
