@@ -66,25 +66,25 @@ class TripleExtractor:
             self.named_individual.append([prop_1, prop_2])
 
     def extract_publication(self, document: Document) -> None:
-        if document.publication is None:
-            return
-        # Formatted name of a publisher and publication
-        publication_formatted = document.publication.replace(" ", "_")
-        publisher_formatted = document.publisher.replace(" ", "_")
+        if document.publication is not None:
+            
+            # Formatted name of a publisher and publication
+            publication_formatted = document.publication.replace(" ", "_")
+            publisher_formatted = document.publisher.replace(" ", "_")
 
-        # Adds publication as a named individual
-        self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
-        # Add publication name as data property
-        self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                      RelationTypeConstants.KNOX_NAME, document.publication)
+            # Adds publication as a named individual
+            self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
+            # Add publication name as data property
+            self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
+                                          RelationTypeConstants.KNOX_NAME, document.publication)
 
-        # Add publisher name as data property
-        self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                      RelationTypeConstants.KNOX_NAME, publisher_formatted)
-        # Add the "Publisher publishes Publication" relation
-        self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                  [TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                  RelationTypeConstants.KNOX_PUBLISHES)
+            # Add publisher name as data property
+            self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+                                          RelationTypeConstants.KNOX_NAME, publisher_formatted)
+            # Add the "Publisher publishes Publication" relation
+            self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+                                      [TripleExtractorEnum.PUBLICATION], publication_formatted,
+                                      RelationTypeConstants.KNOX_PUBLISHES)
 
     def __convert_spacy_label_to_namespace(self, string: str) -> str:
         """
