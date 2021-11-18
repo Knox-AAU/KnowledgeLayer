@@ -1,6 +1,9 @@
+from rdf import TripleExtractor
+from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
-
+from environment import EnvironmentVariables as Ev
+Ev()
 
 class DocumentClassifier:
     """
@@ -14,6 +17,7 @@ class DocumentClassifier:
     def __init__(self):
         self.nj_preprocessor = NJPreProcessor()
         self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
+        self.nj_triple_extractor = TripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
 
     def classify(self, document_dict):
         """
@@ -26,9 +30,12 @@ class DocumentClassifier:
         # Construct Document object from document_dict
         publisher = document_dict["content"]["publisher"]
         document = Document(publisher)
+        total_number_of_articles = len(document_dict["content"]["articles"])
+        total_number_of_processed_articles = 0
 
         for article in document_dict["content"]["articles"]:
             title = article["headline"]
+            logging.LogF.log(f"{int((total_number_of_processed_articles*100)/total_number_of_articles)}% : Document Construction of {publisher} - {title}")
             # TODO: Why is extracted_from a list? Figure this out
             path = article["extracted_from"][0]
             body = ""
@@ -38,11 +45,16 @@ class DocumentClassifier:
 
             article = Article(title, body, path)
             document.articles.append(article)
+            total_number_of_processed_articles += 1
 
-        if document_dict["type"] == "Publication":
-            processed_document = self.nj_preprocessor.process(document)
-        elif document_dict["generator"]["app"] == "GrundfosManuals_Handler":
+        logging.LogF.log(f"100% : Document Construction of {publisher}")
+        if document_dict["generator"]["app"] == "GrundfosManuals_Handler":
+            logging.LogF.log(f"0% : GFPreProcessing of {document.publisher}")
             processed_document = self.gf_preprocessor.process(document)
+        elif document_dict["type"] == "Publication":
+            logging.LogF.log(f"0% : NJPreProcessing of {document.publisher}")
+            self.nj_triple_extractor.process_publication(document)
+            processed_document = self.nj_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
 

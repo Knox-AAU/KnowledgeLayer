@@ -6,3 +6,5 @@ spacy
 requests
 python-dotenv
 jsonschema
+rdflib==5.0.0
+datetime

@@ -2,7 +2,6 @@ from typing import List, Tuple
 
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
 from model.Document import Document, Article
-
 Ev()
 import spacy
 from spacy.lang.da.stop_words import STOP_WORDS
@@ -17,7 +16,7 @@ class NJPreProcessor(PreProcessor):
     """
 
     def __init__(self):
-        self.nlp = spacy.load(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
+        self.nlp = spacy.load(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL), disable=["lemmatizer"])
         self.io_handler = IOHandler(Generator(), "")
 
     def process(self, document: Document) -> Document:

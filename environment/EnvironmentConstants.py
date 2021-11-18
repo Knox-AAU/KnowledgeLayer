@@ -19,6 +19,8 @@ class EnvironmentVariables:
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             self.PERFORMANCE_OUTPUT_FOLDER = "PERFORMANCE_OUTPUT_FOLDER"
+            self.ONTOLOGY_NAMESPACE = "ONTOLOGY_NAMESPACE"
+            self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
             load_dotenv()
 
         def get_value(self, key: str, default = None):

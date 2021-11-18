@@ -1,4 +1,5 @@
 import spacy
+from utils import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
 
@@ -7,6 +8,7 @@ class GFPreProcessor(PreProcessor):
     """
 
     """
+
     def __init__(self, model):
         self.nlp = spacy.load(model)
 
@@ -16,15 +18,30 @@ class GFPreProcessor(PreProcessor):
         :return:
         """
 
+        total_number_of_articles = len(document.articles)
+        total_number_of_processed_articles = 0
+
         for article in document.articles:
-            # TODO: Decide what to do with emails, links, etc. in corpus
-            corpus = self.remove_special_characters(article.body)
-            corpus = self.numbers_to_text(corpus)
-            corpus = super().lemmatize(corpus, "en")
-            corpus = self.to_lower(corpus)
-            article.body = corpus
+            logging.LogF.log(
+                f"{int((total_number_of_processed_articles * 100) / total_number_of_articles)}% : GFPreProcessing of {document.publisher} - {article.title}")
+            article.title = self.__process_text__(document, article.title)
+            article.body = self.__process_text__(document, article.body)
+            total_number_of_processed_articles += 1
+
+        logging.LogF.log(f"100% : GFPreProcessing of {document.publisher}")
 
         return document
+
+    def __process_text__(self, document, text: str):
+        # TODO: Decide what to do with emails, links, etc. in corpus
+        corpus = self.remove_special_characters(text)
+        corpus = self.numbers_to_text(corpus)
+        logging.LogF.log(
+            f"Call Lemmatization for {document.publisher}")
+        corpus = super().lemmatize(corpus, "en")
+        logging.LogF.log(
+            f"Response from Lemmatization for {document.publisher}")
+        return self.to_lower(corpus)
 
     def bigrams(self, sentence: str) -> str:
         # This is an experiment! Can be the basis for greatness later on
