@@ -1,11 +1,14 @@
 import datetime
 import logging
+import os
+import uuid
 
 from model.Document import Article
 from pre_processing import NJPreProcessor
 from publication_generator import PublicationGenerator
-from performace_test_suite import PerformanceTestSuite
-
+from performace_test_suite import PerformanceTestCase
+from environment import EnvironmentVariables as Ev
+Ev()
 logger = logging.getLogger()
 
 def run_tests():
@@ -35,10 +38,13 @@ def run_tests():
                 newArticle = Article(generatedArticle['headline'], articleBody, generatedArticle['extracted_from'][0])
                 argList.append([newArticle])
 
-            suite = PerformanceTestSuite(preprocessor.convert_to_modern_danish, argList)
+            suite = PerformanceTestCase(preprocessor.convert_to_modern_danish, argList)
 
-            with open(f'test_{datetime.datetime.now().date()}_2.txt', "a") as f:
-                f.write(str(numbParagraph) + ", " + str(numbWordcount) + ", " + str(suite.run()).replace("[", "").replace("]", "") + "\n")
+            path = os.path.join(Ev.instance.get_value(Ev.instance.PERFORMANCE_OUTPUT_FOLDER),
+                                f"test_moderndanish_{uuid.uuid4()}.csv")
+            with open(path, 'a') as f:
+                f.write(str(numbParagraph) + ", " + str(numbWordcount)
+                        + ", " + str(suite.run()).replace("[", "").replace("]", "") + "\n")
 
             numbWordcount += 1000
         numbParagraph += 1

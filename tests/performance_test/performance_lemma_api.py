@@ -1,11 +1,16 @@
 import datetime
 import logging
+import os
+import uuid
 
 from pre_processing import PreProcessor
 from publication_generator import PublicationGenerator
-from performace_test_suite import PerformanceTestSuite
+from performace_test_suite import PerformanceTestCase
+from environment import EnvironmentVariables as Ev
 
+Ev()
 logger = logging.getLogger()
+
 
 def run_tests():
     numbWordcount = 1000
@@ -17,18 +22,18 @@ def run_tests():
     generator.paragraph_word_count = numbWordcount
     preprocessor = PreProcessor()
 
-
     while numbWordcount <= 1000:
         generator.paragraph_word_count = numbWordcount
         argList = []
 
-        #generate list
+        # generate list
         for i in range(numbIterations):
             argList.append([generator.generate_paragraph()['value'], "da"])
 
-        suite = PerformanceTestSuite(preprocessor.lemmatize, argList)
-        #suite.setup_suite_func = lambda: mock_endpoint_thread.start()
-        with open(f'test_{datetime.datetime.now().date()}_2.txt', "a") as f:
+        suite = PerformanceTestCase(preprocessor.lemmatize, argList)
+        path = os.path.join(Ev.instance.get_value(Ev.instance.PERFORMANCE_OUTPUT_FOLDER),
+                            f"test_word_counter_{uuid.uuid4()}.csv")
+        with open(path, 'a') as f:
             f.write(str(numbWordcount) + ", " + str(suite.run()).replace("[", "").replace("]", "") + "\n")
 
         numbWordcount += 1000

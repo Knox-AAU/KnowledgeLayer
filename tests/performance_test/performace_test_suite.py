@@ -6,7 +6,7 @@ import logging
 logger = logging.getLogger()
 
 
-class PerformanceTestSuite:
+class PerformanceTestCase:
     def __init__(self, target: Callable[[Any], Any], arg_generator: Iterator):
         self.target = target
         self.data_generator = arg_generator

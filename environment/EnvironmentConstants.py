@@ -18,6 +18,7 @@ class EnvironmentVariables:
             self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
+            self.PERFORMANCE_OUTPUT_FOLDER = "PERFORMANCE_OUTPUT_FOLDER"
             load_dotenv()
 
         def get_value(self, key: str, default = None):

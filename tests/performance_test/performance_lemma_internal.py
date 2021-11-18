@@ -1,15 +1,17 @@
 import datetime
 import logging
+import os
+import uuid
 
 import da_core_news_sm
 
 import spacy
-
+from environment import EnvironmentVariables as Ev
 
 from pre_processing import PreProcessor
 from publication_generator import PublicationGenerator
-from performace_test_suite import PerformanceTestSuite
-
+from performace_test_suite import PerformanceTestCase
+Ev()
 logger = logging.getLogger()
 ##nlp = spacy.load("da_core_news_sm")
 Lemma = da_core_news_sm.load()
@@ -37,9 +39,11 @@ def run_tests():
         for i in range(numbIterations):
             argList.append([generator.generate_paragraph()['value']])
 
-        suite = PerformanceTestSuite(Lemmatization, argList)
+        suite = PerformanceTestCase(Lemmatization, argList)
 
-        with open(f'test_{datetime.datetime.now().date()}_2.txt', "a") as f:
+        path = os.path.join(Ev.instance.get_value(Ev.instance.PERFORMANCE_OUTPUT_FOLDER),
+                            f"test_lemma_internal_{uuid.uuid4()}.csv")
+        with open(path, 'a') as f:
             f.write(str(numbWordcount) + ", " + str(suite.run()).replace("[", "").replace("]", "") + "\n")
 
         numbWordcount += 1000
