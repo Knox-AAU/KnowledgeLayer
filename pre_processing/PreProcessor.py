@@ -20,14 +20,14 @@ class PreProcessor:
         :return: str - The lemmatized content
         """
         try:
-            endpoint: str = Ev.instance.get_value(Ev.instance.LEMMATIZER_ENDPOINT)
+            endpoint: str = "http://host.docker.internal:5050/" #Ev.instance.get_value(Ev.instance.LEMMATIZER_ENDPOINT)
             # TODO Add language when those gosh darn lemmatizer people get it back
             response: requests.Response = requests.post(endpoint, json={'string': content})
             response.raise_for_status()
         except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
             raise exceptions.PostFailedException("ERROR: Error contacting Lemmatize API", e.response)
-        except:
-            raise exceptions.UnparsableException("ERROR: Unparseable by Lemmatize API")
+        except Exception as e:
+            raise exceptions.UnparsableException("ERROR: Unparseable by Lemmatize API: " + str(e))
         return response.json()['lemmatized_string']
 
     def process(self, document: Document) -> Document:
