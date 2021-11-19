@@ -2,7 +2,7 @@ import datetime
 import logging
 import os
 import uuid
-
+from utils.logging import LogF
 import da_core_news_sm
 
 import spacy
@@ -12,7 +12,7 @@ from pre_processing import PreProcessor
 from publication_generator import PublicationGenerator
 from performace_test_suite import PerformanceTestCase
 Ev()
-logger = logging.getLogger()
+"[".encode("utf-8")
 ##nlp = spacy.load("da_core_news_sm")
 Lemma = da_core_news_sm.load()
 

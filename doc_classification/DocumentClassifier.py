@@ -3,7 +3,9 @@ from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
 from environment import EnvironmentVariables as Ev
+
 Ev()
+
 
 class DocumentClassifier:
     """
@@ -35,7 +37,8 @@ class DocumentClassifier:
 
         for article in document_dict["content"]["articles"]:
             title = article["headline"]
-            logging.LogF.log(f"{int((total_number_of_processed_articles*100)/total_number_of_articles)}% : Document Construction of {publisher} - {title}")
+            logging.LogF.log(
+                f"{int((total_number_of_processed_articles * 100) / total_number_of_articles)}% : Document Construction of {publisher} - {title}")
             # TODO: Why is extracted_from a list? Figure this out
             path = article["extracted_from"][0]
             body = ""

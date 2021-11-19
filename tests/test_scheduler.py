@@ -1,6 +1,6 @@
 import math
 import sched
-from scheduler import queue
+from utils.scheduler import IntervalScheduler
 import time
 from environment import EnvironmentVariables as Ev
 
@@ -31,7 +31,8 @@ def file_checker(content):
 def test_Scheduler_FIFO_principle():
     generate_mock_data(5000)
     check_array = [i for i in range(5000)]
-    queue(file_checker)
+    scheduler = IntervalScheduler(9999, lambda: None)
+    scheduler.queue(file_checker)
     # Assert test for one file
     for i in assertContent:
         assert i == check_array[i]

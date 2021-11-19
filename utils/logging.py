@@ -6,7 +6,6 @@ logger.setLevel(logging.NOTSET)
 
 
 class LogF:
-
     @staticmethod
     def log(text: str):
         datetime.now()

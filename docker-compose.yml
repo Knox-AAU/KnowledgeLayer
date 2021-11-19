@@ -14,7 +14,7 @@ services:
             - WORD_COUNT_DATA_ENDPOINT=http://localhost:5000/wordcount
             - TRIPLE_DATA_ENDPOINT=http://localhost:5000/knowledge_graph
             - ONTOLOGY_NAMESPACE=Knox
-            
+        command: python3 app.py
     performance_test:
         build:
             context: .

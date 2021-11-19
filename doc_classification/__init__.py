@@ -1,2 +1,1 @@
-from .DocumentClassifier import DocumentClassifier, Document
-from .PipelineManager import PipelineManager
+from .DocumentClassifier import DocumentClassifier

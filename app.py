@@ -1,23 +1,10 @@
-import json
-import threading
-import os
-import sched
-import time
-
-import requests
 import uvicorn
 
-from doc_classification.PipelineManager import PipelineManager
-from scheduler import scheduler
-from os.path import exists
-from doc_classification import DocumentClassifier, Document
 from api import ImportApi
-from data_access.data_transfer_objects.DocumentWordCountDto import DocumentWordCountDto
+from PipelineManager import PipelineManager
 from environment import EnvironmentVariables as Ev
+
 # Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
-from word_count.WordCounter import WordCounter
-from data_access import WordCountDao
-from utils import logging
 
 Ev()
 
@@ -34,30 +21,6 @@ def run_api():
     :return: No return
     """
 
-def processStoredPublications(content):
-        # Classify documents and call appropriate pre-processor
-        document: Document = document_classifier.classify(content)
-        total_number_of_articles = len(document.articles)
-        total_number_of_processed_articles = 0
-        # Wordcount the lemmatized data and create Data Transfer Objects
-        dtos = []
-        for article in document.articles:
-            logging.LogF.log(f"{int((total_number_of_processed_articles*100)/total_number_of_articles)}% : Word counting for {document.publisher} - {article.title}")
-            word_counts = WordCounter.count_words(article.title + " " + article.body)
-            dto = DocumentWordCountDto(article.title, article.path, word_counts[0], word_counts[1], document.publisher)
-            dtos.append(dto)
-            total_number_of_processed_articles += 1
 
-        logging.LogF.log(f"100% : Word counting for {document.publisher}")
-
-        logging.LogF.log(f"Sending {document.publisher}")
-        # Send word count data to database
-        try:
-            WordCountDao.send_word_count(dtos)
-        except ConnectionError as error:
-            raise error
-        except Exception as error:
-            raise error
-def pipeline():
-    if __name__ == "__main__":
-        PipelineManager().run_pipeline()
+if __name__ == "__main__":
+    PipelineManager().run_pipeline()

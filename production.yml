@@ -11,4 +11,5 @@ services:
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - WORD_COUNT_DATA_ENDPOINT=http://192.38.49.147:5000/wordcount
         restart: always
+        command: python3 app.py
 
