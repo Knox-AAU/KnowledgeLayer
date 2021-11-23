@@ -4,7 +4,8 @@ from typing import List
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from . import TripleExtractor, TripleExtractorEnum
+from .TripleExtractor import TripleExtractor
+from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 
@@ -36,7 +37,7 @@ class NJTripleExtractor(TripleExtractor):
             self.__extract_article(article, document)
 
 
-    def __process_article_text(self, article_text: str) -> List[(str, str)]:
+    def _process_article_text(self, article_text: str) -> List[(str, str)]:
         """
         Input:
             article_text: str - The entire content of an article
@@ -60,7 +61,7 @@ class NJTripleExtractor(TripleExtractor):
             if label not in self.ignore_label_list:
                 # Add entity to list, create it as named individual.
                 article_entities.append((name, label))
-                self.__queue_named_individual(name.replace(" ", "_"), self.__convert_spacy_label_to_namespace(label))
+                self._queue_named_individual(name.replace(" ", "_"), self._convert_spacy_label_to_namespace(label))
         return article_entities
 
     def __process_article(self, article: Article) -> None:
@@ -74,10 +75,10 @@ class NJTripleExtractor(TripleExtractor):
         ##content = ' '.join(para.value for para in article.paragraphs).replace('”', '"')
 
         # Does nlp on the text
-        article_entities = self.__process_article_text(article.body)
+        article_entities = self._process_article_text(article.body)
 
         for pair in article_entities:
-            self.__append_token(article, pair)
+            self._append_token(article, pair)
 
     def __extract_article(self, article: Article, document: Document) -> None:
         """
@@ -97,8 +98,8 @@ class NJTripleExtractor(TripleExtractor):
         # if len(article.extracted_from) > 0:
         #     for ocr_file in article.extracted_from:
         if article.path is not None and article.path != "":
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_LINK, article.path)
+            self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
+                                         RelationTypeConstants.KNOX_LINK, article.path)
 
     def __extract_article_byline(self, article: Article):
         # If the byline exists add the author name to the RDF triples. Author name is required if byline exists.
@@ -107,40 +108,40 @@ class NJTripleExtractor(TripleExtractor):
             # article.byline.name stores the author of the article's name, hence author_name
             author_name = byline.name.replace(" ", "_")
 
-            self.__append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
-                                          RelationTypeConstants.KNOX_NAME, byline.name)
+            self._append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
+                                         RelationTypeConstants.KNOX_NAME, byline.name)
             # Creates the author as a named individual
-            self.__queue_named_individual(author_name, TripleExtractorEnum.AUTHOR)
+            self._queue_named_individual(author_name, TripleExtractorEnum.AUTHOR)
             # Adds the Article isWrittenBy Author relation to the triples list
-            self.__append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.AUTHOR],
-                                      author_name, RelationTypeConstants.KNOX_IS_WRITTEN_BY)
+            self._append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.AUTHOR],
+                                     author_name, RelationTypeConstants.KNOX_IS_WRITTEN_BY)
             # Since email is not required in the byline, if it exists: add the authors email as a data property to the author.
             if byline.email is not None:
-                self.__append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
-                                              RelationTypeConstants.KNOX_EMAIL, byline.email)
+                self._append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
+                                             RelationTypeConstants.KNOX_EMAIL, byline.email)
 
     def __extract_article_meta(self, article: Article, document: Document):
 
         # Creates the article as a named individual
-        self.__queue_named_individual(article.id, TripleExtractorEnum.ARTICLE)
+        self._queue_named_individual(article.id, TripleExtractorEnum.ARTICLE)
 
         # Adds the Article knox:Article_Title Title data to the turtle output
-        self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                      RelationTypeConstants.KNOX_ARTICLE_TITLE, article.title)
+        self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
+                                     RelationTypeConstants.KNOX_ARTICLE_TITLE, article.title)
 
         publisher = document.publisher.replace(" ", "_")
         # Creates the publisher as a named individual
-        self.__queue_named_individual(publisher, TripleExtractorEnum.PUBLISHER)
+        self._queue_named_individual(publisher, TripleExtractorEnum.PUBLISHER)
         # Adds the Article isPublishedBy Publication relation to the turtle output
-        self.__append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.PUBLISHER],
-                                  publisher, RelationTypeConstants.KNOX_IS_PUBLISHED_BY)
+        self._append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.PUBLISHER],
+                                 publisher, RelationTypeConstants.KNOX_IS_PUBLISHED_BY)
 
         # Adds the publication date to the article, if it exists.
         if document.date is not None:
             date = datetime.date.fromisoformat(document.date)
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_DAY, str(date.day))
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_MONTH, str(date.month))
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_YEAR, str(date.year))
+            self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
+                                         RelationTypeConstants.KNOX_PUBLICATION_DAY, str(date.day))
+            self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
+                                         RelationTypeConstants.KNOX_PUBLICATION_MONTH, str(date.month))
+            self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
+                                         RelationTypeConstants.KNOX_PUBLICATION_YEAR, str(date.year))
