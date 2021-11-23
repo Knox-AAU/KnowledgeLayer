@@ -8,6 +8,7 @@ from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
 from .TripleExtractorEnum import TripleExtractorEnum
+from .TripleExtractor import TripleExtractor, Triple
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 import spacy
@@ -15,93 +16,16 @@ Ev()
 
 
 class GFTripleExtractor(TripleExtractor):
-    # nlp: OrderedDict = None
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
-        # PreProcessor.nlp = self.nlp
-        self.nlp = spacy.load(spacy_model)
-        self.namespace = Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)
-        self.triples = []
-        self.named_individual = []
         if tuple_label_list is None:
-            # TODO: Give our labels
             labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
-                      ["NORP", "Norp"]]
+                      ["NORP", "Norp"]] # TODO: write the grundfos labels
             self.tuple_label_list = [{'spacy_label': v[0], 'namespace': v[1]} for v in labels]
-        else:
-            self.tuple_label_list = tuple_label_list
 
-        # TODO: Find out if we need this
         if ignore_label_list is None:
-            self.ignore_label_list = ["MISC"]
-        else:
-            self.ignore_label_list = ignore_label_list
+            ignore_label_list = ["MISC"]
 
-    def process_publication(self, document: Document) -> List[Triple]:
-        """
-        Input:
-            publication: Publication - A Publication class which is the content of a newspaper
-            file_path : str - File path to the publication being processed
-
-        Writes entity triples to file
-        """
-        # Extract publication info and adds it to the RDF triples.
-        self.extract_publication(document)
-
-        for article in document.articles:
-            # For each article, process the text and extract non-textual data in it.
-            self.__process_article(article)
-            self.__extract_article(article, document)
-
-        # Adds named individuals to the triples list.
-        self.__append_named_individual()
-
-        # Function from rdf.RdfCreator, writes triples to file
-        store_rdf_triples(self.triples)
-
-        return self.triples
-
-    def __queue_named_individual(self, prop_1, prop_2) -> None:
-        """
-        Adds the named individuals to the named_individual list if it's not already in it.
-        """
-        if [prop_1, prop_2] not in self.named_individual:
-            self.named_individual.append([prop_1, prop_2])
-
-    def extract_publication(self, document: Document) -> None:
-        if document.publication is not None:
-            
-            # Formatted name of a publisher and publication
-            publication_formatted = document.publication.replace(" ", "_")
-            publisher_formatted = document.publisher.replace(" ", "_")
-
-            # Adds publication as a named individual
-            self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
-            # Add publication name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                          RelationTypeConstants.KNOX_NAME, document.publication)
-
-            # Add publisher name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                          RelationTypeConstants.KNOX_NAME, publisher_formatted)
-            # Add the "Publisher publishes Publication" relation
-            self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                      [TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                      RelationTypeConstants.KNOX_PUBLISHES)
-
-    def __convert_spacy_label_to_namespace(self, string: str) -> str:
-        """
-        Input:
-            string: str - A string matching a spacy label
-        Returns:
-            A string matching a class in the ontology.
-        """
-        for label in self.tuple_label_list:
-            # Assumes that tuple_label_list is a list of dicts with the format: {"spacy_label": xxx, "target_label": xxx}
-            if string == str(label['spacy_label']):
-                # return the chosen name for the spaCy label
-                return str(label['namespace'])
-        else:
-            return string
+        super().__init__(spacy_model, tuple_label_list, ignore_label_list, "Grundfos")
 
     def __process_article_text(self, article_text: str) -> List[(str, str)]:
         """
@@ -145,21 +69,6 @@ class GFTripleExtractor(TripleExtractor):
 
         for pair in article_entities:
             self.__append_token(article, pair)
-
-    def __append_token(self, article: Article, pair: Tuple[str, str]):
-        # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
-        object_ref, object_label = pair
-        object_ref = object_ref.replace(" ", "_")
-        object_label = self.__convert_spacy_label_to_namespace(object_label)
-
-        # Each entity in article added to the "Article mentions Entity" triples
-        _object = generate_uri_reference(self.namespace, [object_label], object_ref)
-        _subject = generate_uri_reference(self.namespace, [TripleExtractorEnum.ARTICLE], article.id)
-        relation = generate_relation(RelationTypeConstants.KNOX_MENTIONS)
-        self.triples.append(Triple(_subject, relation, _object))
-        # Each entity given the name data property
-        self.triples.append(
-            Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pair[0])))
 
     def __extract_article(self, article: Article, document: Document) -> None:
         """
@@ -226,44 +135,3 @@ class GFTripleExtractor(TripleExtractor):
                                           RelationTypeConstants.KNOX_PUBLICATION_MONTH, str(date.month))
             self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
                                           RelationTypeConstants.KNOX_PUBLICATION_YEAR, str(date.year))
-
-    def __append_triples_literal(self, uri_types: List[str], uri_value: Any, relation_type: str, literal: str):
-        self.triples.append(Triple(
-            generate_uri_reference(self.namespace, uri_types, uri_value),
-            generate_relation(relation_type),
-            generate_literal(literal)
-        ))
-
-    def __append_triples_uri(self, uri_types1: List[str], uri_value1: Any,
-                             uri_types2: List[str], uri_value2: Any, relation_type: str):
-        self.triples.append(Triple(
-            generate_uri_reference(self.namespace, uri_types1, uri_value1),
-            generate_relation(relation_type),
-            generate_uri_reference(self.namespace, uri_types2, uri_value2),
-        ))
-
-    def __append_named_individual(self) -> None:
-        """
-        Appends each named individual to the triples list.
-        """
-
-        # prop1 = The specific location/person/organisation or so on
-        # prop2 = The type of Knox:Class prop1 is a member of.
-        for prop1, prop2 in self.named_individual:
-            self.triples.append(Triple(
-                generate_uri_reference(self.namespace, [prop2], prop1),
-                generate_relation(RelationTypeConstants.RDF_TYPE),
-                generate_relation(RelationTypeConstants.OWL_NAMED_INDIVIDUAL)
-            ))
-
-            self.triples.append(Triple(
-                generate_uri_reference(self.namespace, [prop2], prop1),
-                generate_relation(RelationTypeConstants.RDF_TYPE),
-                generate_uri_reference(self.namespace, ref=prop2)
-            ))
-
-
-class Triple(NamedTuple):
-    subject: str
-    relation: str
-    object: str
