@@ -1,4 +1,4 @@
-from rdf import TripleExtractor
+from rdf import NJTripleExtractor
 from utils import logging
 from model.Document import Document, Article
 from pre_processing import *
@@ -17,7 +17,7 @@ class DocumentClassifier:
     def __init__(self):
         self.nj_preprocessor = NJPreProcessor()
         self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
-        self.nj_triple_extractor = TripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
+        self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
 
     def classify(self, document_dict):
         """
