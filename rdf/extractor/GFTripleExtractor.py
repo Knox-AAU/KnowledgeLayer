@@ -15,8 +15,6 @@ Ev()
 
 class GFTripleExtractor(TripleExtractor):
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
-        self.init_spacy(spacy_model)
-
         if tuple_label_list is None:
             labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
                       ["NORP", "Norp"]] # TODO: write the grundfos labels
@@ -26,16 +24,14 @@ class GFTripleExtractor(TripleExtractor):
             ignore_label_list = ["MISC"]
 
         super().__init__(spacy_model, tuple_label_list, ignore_label_list, "Grundfos")
+        self._init_spacy()
 
-    def init_spacy(self, model_path):
+    def _init_spacy(self):
         """
         Loads the custom spaCy pipeline, adds special cases for the tokenizer, and adds patterns for the
         rule-based matching of pumps.
-        :param model_path: Path to the custom pipeline model package
         """
-        self.nlp = spacy.load(model_path)
-
-        pumps = self.extract_pumps_from_patterns()
+        pumps = self.__extract_pumps_from_patterns()
 
         # Add special rules to tokenizer for each pump name
         for pump in pumps:
@@ -44,7 +40,7 @@ class GFTripleExtractor(TripleExtractor):
         # Load rule-based matching and its patterns specified in the .env
         self.nlp.add_pipe("entity_ruler").from_disk(Ev.instance.GF_PATTERN_PATH)
 
-    def extract_pumps_from_patterns(self) -> List[str]:
+    def __extract_pumps_from_patterns(self) -> List[str]:
         """
         Extracts all pump names from the file containing a list of Grundfos pumps.
         :return: List of pump names
