@@ -20,6 +20,7 @@ class EnvironmentVariables:
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             self.ONTOLOGY_NAMESPACE = "ONTOLOGY_NAMESPACE"
             self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
+            self.GF_PATTERN_PATH = "GF_PATTERN_PATH"
             load_dotenv()
 
         def get_value(self, key: str, default = None):

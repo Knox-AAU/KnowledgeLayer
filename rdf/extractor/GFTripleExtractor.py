@@ -1,17 +1,15 @@
 from __future__ import annotations
 import datetime
-from typing import List, OrderedDict, Any, Tuple, NamedTuple
-
-import spacy
+from typing import List
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
 from .TripleExtractorEnum import TripleExtractorEnum
-from .TripleExtractor import TripleExtractor, Triple
+from .TripleExtractor import TripleExtractor
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 import spacy
+from spacy.attrs import ORTH
 Ev()
 
 
@@ -26,6 +24,29 @@ class GFTripleExtractor(TripleExtractor):
             ignore_label_list = ["MISC"]
 
         super().__init__(spacy_model, tuple_label_list, ignore_label_list, "Grundfos")
+        self._init_spacy()
+
+    def _init_spacy(self):
+        """
+        Loads the custom spaCy pipeline, adds special cases for the tokenizer, and adds patterns for the
+        rule-based matching of pumps.
+        """
+        pumps = self.__extract_pumps_from_patterns()
+
+        # Add special rules to tokenizer for each pump name
+        for pump in pumps:
+            self.nlp.tokenizer.add_special_case(pump, [{ORTH: pump}])
+
+        # Load rule-based matching and its patterns specified in the .env
+        self.nlp.add_pipe("entity_ruler").from_disk(Ev.instance.GF_PATTERN_PATH)
+
+    def __extract_pumps_from_patterns(self) -> List[str]:
+        """
+        Extracts all pump names from the file containing a list of Grundfos pumps.
+        :return: List of pump names
+        """
+        raise NotImplementedError
+        # TODO: Read pump names from patterns.jsonl here
 
     def __process_article_text(self, article_text: str) -> List[(str, str)]:
         """
