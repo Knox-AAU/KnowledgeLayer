@@ -9,4 +9,6 @@ class TripleExtractorEnum(str, enum.Enum):
     PUBLICATION = "Publication"
     ARTICLE = "Article"
     AUTHOR = "Author"
+    PUMP = "Pump"
+    MANUAL = "Manual"
 

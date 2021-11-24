@@ -12,8 +12,6 @@ class EnvironmentVariables:
         The inner class with only one instance
         """
         def __init__(self):
-
-            # TODO: This is temporary, find an alternative
             self.QUEUE_PATH = "QUEUE_PATH"
             self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
