@@ -100,7 +100,7 @@ class NJTripleExtractor(TripleExtractor):
         if article.path is not None and article.path != "":
             self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
                                          RelationTypeConstants.KNOX_LINK, article.path)
-
+    
     def __extract_article_byline(self, article: Article):
         # If the byline exists add the author name to the RDF triples. Author name is required if byline exists.
         byline = article.byline

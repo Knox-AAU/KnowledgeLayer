@@ -29,7 +29,7 @@ def store_rdf_triples(rdfTriples):
         graph.add((sub, rel, obj))
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
-    # with open(path, 'wb') as f:
+    # with open('./output.ttl', 'wb') as f:
     #     f.write(serialized_graph)
     success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT), data=serialized_graph)
     if not success:
