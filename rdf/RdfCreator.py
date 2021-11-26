@@ -1,3 +1,5 @@
+import urllib.parse
+
 import requests
 from rdflib import Graph, Literal, BNode
 from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF as Rdf
@@ -6,6 +8,8 @@ from requests.exceptions import ConnectionError
 from rdflib.namespace import ClosedNamespace
 from rdflib import URIRef
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
+from utils import logging
+
 Ev()
 
 def store_rdf_triples(rdfTriples):
@@ -19,6 +23,8 @@ def store_rdf_triples(rdfTriples):
     
     """
 
+    logging.LogF.log("Start store_rdf_triples")
+
     # Get the "graph" in order to contain the rdfTriples
     # Switch the bad namespacemanager with the good one which do not create prefix'es
     graph: Graph = Graph()
@@ -27,15 +33,21 @@ def store_rdf_triples(rdfTriples):
 
     for sub, rel, obj in rdfTriples:
         graph.add((sub, rel, obj))
+        logging.LogF.log(f'sub: {sub}, rel: {rel}, obj: {obj}')
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
+
+    # path = "./graph.ttl"
     # with open(path, 'wb') as f:
     #     f.write(serialized_graph)
+
     success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT), data=serialized_graph)
     if not success:
         print(f'Unable to send file to database', 'error')
         raise ConnectionError('Unable to post to the database')
     print(f'Successfully sent publication to server', 'info')
+
+    logging.LogF.log("End store_rdf_triples")
 
 
 def generate_blank_node():
@@ -86,7 +98,7 @@ def generate_uri_reference(namespace, sub_uri_list=[], ref=""):
         reference_str += sub_uri + "/"
 
     reference_str += ref
-    return URIRef(reference_str)
+    return URIRef(urllib.parse.quote(reference_str))
 
 
 def generate_relation(relationTypeConstant):

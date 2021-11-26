@@ -8,6 +8,7 @@ import spacy
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from utils import logging
 from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
@@ -19,6 +20,7 @@ class TripleExtractor:
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
         self.nlp = spacy.load(spacy_model)
+        logging.LogF.log(f"Loaded {spacy_model} model!")
         self.namespace = namespace
         self.triples = []
         self.named_individual = []
@@ -121,6 +123,8 @@ class TripleExtractor:
         Appends each named individual to the triples list.
         """
 
+        logging.LogF.log("Start _append_named_individual")
+
         # prop1 = The specific location/person/organisation or so on
         # prop2 = The type of Knox:Class prop1 is a member of.
         for prop1, prop2 in self.named_individual:
@@ -135,6 +139,8 @@ class TripleExtractor:
                 generate_relation(RelationTypeConstants.RDF_TYPE),
                 generate_uri_reference(self.namespace, ref=prop2)
             ))
+
+        logging.LogF.log("End _append_named_individual")
 
     @abstractmethod
     def extract_content(self, document: Document):

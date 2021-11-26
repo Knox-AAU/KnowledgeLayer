@@ -10,7 +10,8 @@ class GFPreProcessor(PreProcessor):
     """
 
     def __init__(self, model):
-        self.nlp = spacy.load(model)
+        None
+        # self.nlp = spacy.load(model)
 
     def process(self, document):
         """

@@ -14,6 +14,7 @@ class EnvironmentVariables:
         def __init__(self):
             self.QUEUE_PATH = "QUEUE_PATH"
             self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
+            self.GF_SPACY_MODEL = "GF_SPACY_MODEL"
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
             self.ONTOLOGY_NAMESPACE = "ONTOLOGY_NAMESPACE"
