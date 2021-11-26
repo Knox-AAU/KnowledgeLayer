@@ -23,8 +23,6 @@ def store_rdf_triples(rdfTriples):
     
     """
 
-    logging.LogF.log("Start store_rdf_triples")
-
     # Get the "graph" in order to contain the rdfTriples
     # Switch the bad namespacemanager with the good one which do not create prefix'es
     graph: Graph = Graph()
@@ -36,18 +34,13 @@ def store_rdf_triples(rdfTriples):
         logging.LogF.log(f'sub: {sub}, rel: {rel}, obj: {obj}')
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
-
-    # path = "./graph.ttl"
-    # with open(path, 'wb') as f:
+    # with open('./output.ttl', 'wb') as f:
     #     f.write(serialized_graph)
-
     success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT), data=serialized_graph)
     if not success:
         print(f'Unable to send file to database', 'error')
         raise ConnectionError('Unable to post to the database')
     print(f'Successfully sent publication to server', 'info')
-
-    logging.LogF.log("End store_rdf_triples")
 
 
 def generate_blank_node():
