@@ -31,7 +31,7 @@ def store_rdf_triples(rdfTriples):
 
     for sub, rel, obj in rdfTriples:
         graph.add((sub, rel, obj))
-        logging.LogF.log(f'sub: {sub}, rel: {rel}, obj: {obj}')
+        logging.LogF.log(f'sub: {urllib.parse.unquote(sub)}, rel: {urllib.parse.unquote(rel)}, obj: {urllib.parse.unquote(obj)}')
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
     with open('./output.ttl', 'wb') as f:
