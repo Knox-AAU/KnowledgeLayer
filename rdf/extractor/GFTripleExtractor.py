@@ -19,7 +19,7 @@ Ev()
 class GFTripleExtractor(TripleExtractor):
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
         # TODO: Don't hardcode pump name, maybe?
-        self.pump_name = "MTD"
+        self.pump_name = "SQ/SQE"
 
         if tuple_label_list is None:
             labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
@@ -46,7 +46,8 @@ class GFTripleExtractor(TripleExtractor):
         # TODO: Add special cases for tokenizer here
 
         # Load rule-based matching and its patterns specified in the .env
-        self.nlp.add_pipe("entity_ruler").from_disk(Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH))
+        test = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
+        self.nlp.add_pipe("entity_ruler").from_disk(test)
 
     # def __extract_pumps_from_patterns(self) -> List[str]:
     #     """
@@ -74,7 +75,7 @@ class GFTripleExtractor(TripleExtractor):
 
         # Each entity in article added to the "Article mentions Entity" triples
         _object = generate_uri_reference(self.namespace, [object_label], object_ref)
-        _subject = generate_uri_reference(self.namespace, [TripleExtractorEnum.PUMP], self.pump_name)
+        _subject = generate_uri_reference(self.namespace, [TripleExtractorEnum.MANUAL], article.id)
         relation = generate_relation(RelationTypeConstants.KNOX_MENTIONS)
         self.triples.append(Triple(_subject, relation, _object))
         # Each entity given the name data property
@@ -134,12 +135,49 @@ class GFTripleExtractor(TripleExtractor):
         for line in body.split("\n"):
             processed_text = self.nlp(line)
 
-            for entity in processed_text.ents:
-                if entity.label_ not in self.ignore_label_list:
-                    name, label = entity.text, entity.label_
+            found_pump = False
 
-                    manual_entities.append((name, label))
-                    self._queue_named_individual(name.replace(" ", "_"), self._convert_spacy_label_to_namespace(label))
+            for entity in processed_text.ents:
+                if entity.label_ == "Pump":
+                    found_pump = (entity.text, entity.label_)
+
+            if found_pump != False:
+                self.__process_pump_line(found_pump, processed_text)
+            else:
+                manual_entities += self.__process_non_pump_line(processed_text)
+
+        return manual_entities
+
+    def __process_pump_line(self, pump_pair, processed_text):
+        pump_object_ref, pump_object_label = pump_pair
+        pump_object_ref = pump_object_ref.replace(" ", "_")
+        pump_object_label = self._convert_spacy_label_to_namespace(pump_object_label)
+        _pump_object = generate_uri_reference(self.namespace, [pump_object_label], pump_object_ref)
+        self.triples.append(
+            Triple(_pump_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pump_object_ref)))
+
+        for entity in processed_text.ents:
+            if entity.label_ != "Pump":
+                object_ref, object_label = entity.text, entity.label_
+                object_ref = object_ref.replace(" ", "_")
+                object_label = self._convert_spacy_label_to_namespace(object_label)
+
+                # Each entity in article added to the "Article mentions Entity" triples
+                _object = generate_uri_reference(self.namespace, [object_label], object_ref)
+                _subject = _pump_object
+                relation = generate_relation(RelationTypeConstants.KNOX_PUMP_RELATES)
+                self.triples.append(Triple(_subject, relation, _object))
+                # Each entity given the name data property
+                self.triples.append(
+                    Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(entity.text)))
+
+    def __process_non_pump_line(self, processed_text):
+        manual_entities = []
+        for entity in processed_text.ents:
+            if entity.label_ not in self.ignore_label_list:
+                name, label = entity.text, entity.label_
+                manual_entities.append((name, label))
+                self._queue_named_individual(name.replace(" ", "_"), self._convert_spacy_label_to_namespace(label))
 
         return manual_entities
 

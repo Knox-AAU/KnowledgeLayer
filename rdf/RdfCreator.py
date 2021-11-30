@@ -2,7 +2,7 @@ import urllib.parse
 
 import requests
 from rdflib import Graph, Literal, BNode
-from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF as Rdf
+from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF
 from environment.EnvironmentConstants import EnvironmentVariables as ev
 from requests.exceptions import ConnectionError
 from rdflib.namespace import ClosedNamespace
@@ -34,8 +34,8 @@ def store_rdf_triples(rdfTriples):
         logging.LogF.log(f'sub: {sub}, rel: {rel}, obj: {obj}')
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
-    # with open('./output.ttl', 'wb') as f:
-    #     f.write(serialized_graph)
+    with open('./output.ttl', 'wb') as f:
+        f.write(serialized_graph)
     success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT), data=serialized_graph)
     if not success:
         print(f'Unable to send file to database', 'error')
@@ -105,7 +105,7 @@ def generate_relation(relationTypeConstant):
     """
     relType, relValue = relationTypeConstant.split(":")
     if relType == "rdf":
-        return Rdf.term(relValue)
+        return RDF.term(relValue)
     elif relType == "rdfs":
         return RDFS.term(relValue)
     elif relType == "owl":
@@ -151,7 +151,7 @@ KNOX = ClosedNamespace(
     uri=URIRef(Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)),
     terms=[
         "isPublishedBy", "mentions", "isPublishedOn", "publishes", "Email", "DateMention", "Link",
-        "Name", "PublicationDay", "PublicationMonth", "PublicationYear", "ArticleTitle", "isWrittenBy"]
+        "Name", "PublicationDay", "PublicationMonth", "PublicationYear", "ArticleTitle", "isWrittenBy", "PumpRelates"]
 )
 
 class KnoxNameSpaceManager(NamespaceManager):
