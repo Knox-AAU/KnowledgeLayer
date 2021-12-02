@@ -29,7 +29,7 @@ class GFTripleExtractor(TripleExtractor):
         if ignore_label_list is None:
             ignore_label_list = ["MISC"]
 
-        super().__init__(spacy_model, tuple_label_list, ignore_label_list, "Grundfos")
+        super().__init__(spacy_model, tuple_label_list, ignore_label_list, "http://www.KnoxGrundfos.test/")
         self._init_spacy_pipeline()
 
     def _init_spacy_pipeline(self):

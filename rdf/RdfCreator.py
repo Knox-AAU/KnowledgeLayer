@@ -88,10 +88,10 @@ def generate_uri_reference(namespace, sub_uri_list=[], ref=""):
     reference_str = namespace
 
     for sub_uri in sub_uri_list:
-        reference_str += sub_uri + "/"
+        reference_str += urllib.parse.quote(sub_uri) + "/"
 
-    reference_str += ref
-    return URIRef(urllib.parse.quote(reference_str))
+    reference_str += urllib.parse.quote(ref.replace("/", "-"))
+    return URIRef(reference_str)
 
 
 def generate_relation(relationTypeConstant):
