@@ -17,7 +17,7 @@ class DocumentClassifier:
     def __init__(self):
         self.nj_preprocessor = NJPreProcessor()
         self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
-        # self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
+        self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
         self.gf_triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
 
     def classify(self, document_dict):
