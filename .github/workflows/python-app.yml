@@ -29,7 +29,7 @@ jobs:
         docker-compose exec -T web pytest &
         while kill -0 $! > /dev/null 2>&1; do
           free -m
-          sleep 30
+          sleep 1
         done
 #    - name: Install dependencies
 #      run: |
