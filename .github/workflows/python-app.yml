@@ -26,7 +26,11 @@ jobs:
         docker-compose up -d
     - name: Test
       run: |
-        docker-compose exec --privileged -T web pytest
+        docker-compose exec -T web pytest &
+        while kill -0 $! > /dev/null 2>&1; do
+          free -m
+          sleep 30
+        done
 #    - name: Install dependencies
 #      run: |
 #        python -m pip install --upgrade pip
