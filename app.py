@@ -1,11 +1,9 @@
-import json
 import threading
 import os
 import sched
 import time
-
-import requests
 import uvicorn
+
 from scheduler import scheduler
 from os.path import exists
 from doc_classification import DocumentClassifier, Document
@@ -19,7 +17,6 @@ from utils import logging
 
 Ev()
 
-
 # Makes a directory for the queue (Also done in the api). Only runs once.
 filePath = Ev.instance.get_value(Ev.instance.QUEUE_PATH)
 if not exists(filePath):
@@ -31,9 +28,9 @@ s = sched.scheduler(time.time, time.sleep)
 # Instantiante DocumentClassifier
 document_classifier = DocumentClassifier()
 
-def run_api():
-    uvicorn.run(ImportApi.app, host="0.0.0.0")
 
+def run_api() -> object:
+    uvicorn.run(ImportApi.app, host="0.0.0.0")
     """
     This function processes the stored articles and manuals from Grundfos and Nordjyske.
     This includes the extraction of data from the .json files, the lemmatization and wordcount,
@@ -43,7 +40,8 @@ def run_api():
     :return: No return
     """
 
-def processStoredPublications(content):
+
+def processStoredPublications(content) -> object:
         # Classify documents and call appropriate pre-processor
         document: Document = document_classifier.classify(content)
         total_number_of_articles = len(document.articles)
@@ -67,6 +65,8 @@ def processStoredPublications(content):
             raise error
         except Exception as error:
             raise error
+
+
 def pipeline():
     print("Beginning of Knowledge Layer!")
 
