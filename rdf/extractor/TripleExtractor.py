@@ -1,6 +1,5 @@
 from __future__ import annotations
 import datetime
-from abc import abstractmethod
 from typing import List, OrderedDict, Any, Tuple, NamedTuple
 
 import spacy
@@ -35,9 +34,15 @@ class TripleExtractor:
         """
         # Extract publication info and adds it to the RDF triples.
         self.extract_publication(document)
-        self.extract_content(document)
+
+        for article in document.articles:
+            # For each article, process the text and extract non-textual data in it.
+            self.__process_article(article)
+            self.__extract_article(article, document)
+
         # Adds named individuals to the triples list.
         self.__append_named_individual()
+
         # Function from rdf.RdfCreator, writes triples to file
         store_rdf_triples(self.triples)
 
@@ -135,10 +140,6 @@ class TripleExtractor:
                 generate_relation(RelationTypeConstants.RDF_TYPE),
                 generate_uri_reference(self.namespace, ref=prop2)
             ))
-
-    @abstractmethod
-    def extract_content(self, document: Document):
-        pass
 
 
 class Triple(NamedTuple):
