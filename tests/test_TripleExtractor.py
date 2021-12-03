@@ -5,7 +5,7 @@ from model import Document, Article, Byline
 import spacy
 from environment import EnvironmentVariables as Ev
 from typing import List
-from rdf.extractor.NJTripleExtractor import Triple
+from rdf.extractor import Triple
 
 Ev()
 
