@@ -1,7 +1,7 @@
 from __future__ import annotations
 import datetime
 from typing import List, OrderedDict, Any, Tuple, NamedTuple
-
+from .TripleExtractor import TripleExtractor
 import spacy
 
 from model import Document, Article
