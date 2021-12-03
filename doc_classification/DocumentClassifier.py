@@ -17,6 +17,7 @@ class DocumentClassifier:
     """
 
     def __init__(self):
+        pass
         # self.nj_preprocessor = NJPreProcessor()
         # self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
         # self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
