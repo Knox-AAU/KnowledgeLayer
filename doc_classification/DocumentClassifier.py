@@ -17,8 +17,8 @@ class DocumentClassifier:
     def __init__(self):
         self.nj_preprocessor = NJPreProcessor()
         self.gf_preprocessor = GFPreProcessor("en_core_web_sm")
-        self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
-        self.gf_triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
+        # self.nj_triple_extractor = NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL))
+        # self.gf_triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
 
     def classify(self, document_dict):
         """
@@ -51,11 +51,11 @@ class DocumentClassifier:
         logging.LogF.log(f"100% : Document Construction of {publisher}")
         if document_dict["generator"]["app"] == "GrundfosManuals_Handler":
             logging.LogF.log(f"0% : GFPreProcessing of {document.publisher}")
-            self.gf_triple_extractor.process_publication(document)
-            # processed_document = self.gf_preprocessor.process(document)
+            # self.gf_triple_extractor.process_publication(document)
+            processed_document = self.gf_preprocessor.process(document)
         elif document_dict["type"] == "Publication":
             logging.LogF.log(f"0% : NJPreProcessing of {document.publisher}")
-            self.nj_triple_extractor.process_publication(document)
+            # self.nj_triple_extractor.process_publication(document)
             processed_document = self.nj_preprocessor.process(document)
         else:
             raise Exception("Unable to classify document")
