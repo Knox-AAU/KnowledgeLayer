@@ -74,8 +74,8 @@ def pipeline():
     api_thread = threading.Thread(target=run_api)
     api_thread.start()
 
-    s.enter(5, 1, scheduler, (s, processStoredPublications))
-    s.run()
+    # s.enter(5, 1, scheduler, (s, processStoredPublications))
+    # s.run()
     print("End of Knowledge Layer!")
 
 if __name__ == "__main__":
