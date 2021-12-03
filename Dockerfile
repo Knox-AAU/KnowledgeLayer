@@ -31,7 +31,7 @@ RUN pip install --extra-index-url https://repos.knox.cs.aau.dk/ -r requirements.
 
 # Download the required spaCy large Danish and small English model
 RUN python3 -m spacy download da_core_news_lg
-# RUN python3 -m spacy download en_core_web_sm
+RUN python3 -m spacy download en_core_web_sm
 
 # Copy the source code to the work directory
 #COPY --chown=appuser:root . .
