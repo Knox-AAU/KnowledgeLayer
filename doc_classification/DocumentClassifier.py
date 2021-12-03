@@ -63,7 +63,7 @@ class DocumentClassifier:
         else:
             raise Exception("Unable to classify document")
 
-        return processed_document
+        return document
 
     @staticmethod
     def extract_doc_paths(doc):
