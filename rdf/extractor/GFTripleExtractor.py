@@ -21,15 +21,7 @@ class GFTripleExtractor(TripleExtractor):
         # TODO: Don't hardcode pump name, maybe?
         self.pump_name = "SQ/SQE"
 
-        if tuple_label_list is None:
-            labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
-                      ["NORP", "Norp"]] # TODO: write the grundfos labels
-            tuple_label_list = [{'spacy_label': v[0], 'namespace': v[1]} for v in labels]
-
-        if ignore_label_list is None:
-            ignore_label_list = ["MISC"]
-
-        super().__init__(spacy_model, tuple_label_list, ignore_label_list, "http://www.KnoxGrundfos.test/")
+        super().__init__(spacy_model, [], [], "http://www.KnoxGrundfos.test/")
         self._init_spacy_pipeline()
 
     def _init_spacy_pipeline(self):
