@@ -4,7 +4,7 @@ from typing import List
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from . import TripleExtractor, TripleExtractorEnum
+from .TripleExtractor import TripleExtractor, TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 
