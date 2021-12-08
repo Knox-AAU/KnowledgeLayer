@@ -1,4 +1,3 @@
-import spacy
 from utils import logging
 import re
 from pre_processing.PreProcessor import PreProcessor
@@ -10,10 +9,6 @@ class GFPreProcessor(PreProcessor):
     This pre-processing handles converting article bodies and titles to lowercase, removing special characters,
     and converting numbers to text.
     """
-
-    def __init__(self, model):
-        None
-        # self.nlp = spacy.load(model)
 
     def process(self, document):
         """
