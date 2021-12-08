@@ -2,9 +2,19 @@ from model.Word import Word
 
 
 class WordCounter:
+    """
+    The class responsible for counting word occurrences in an article, as well as keeping track of the total number
+    of words in the article.
+    """
 
     @staticmethod
     def count_words(text: str):
+        """
+        Counts the word occurrences of each word in the input text, as well as the total number of words.
+
+        :param text: The string to have words counted
+        :return: A tuple containing the total number of words, as well as a list of occurrences for each word
+        """
         word_counts = {}
 
         words = text.split()

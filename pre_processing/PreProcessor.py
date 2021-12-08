@@ -11,11 +11,14 @@ logger.setLevel(logging.NOTSET)
 
 class PreProcessor:
     """
-
+    The super class for all pre-processing classes.
+    Includes a process method to be overriden by the sub classes, as well as the implementation for POST'ing to the
+    lemmatization API.
     """
     def lemmatize(self, content: str, language: str) -> str:
         """
-        Post's to the lemmatizer API defined in the environment (Ev)
+        POSTs to the lemmatizer API defined in the environment (Ev)
+
         :param content: str - The content to be lemmatized
         :return: str - The lemmatized content
         """

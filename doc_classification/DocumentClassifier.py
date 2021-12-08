@@ -10,9 +10,9 @@ Ev()
 class DocumentClassifier:
     """
     A module that classifies JSON data depending on the "type" attribute from the schema, and calls the
-    appropriate pre-processing module.
+    appropriate pre-processing module (Currently, generator/app is used to identify Grundfos data).
 
-    Ex. Data with type "Schema_Manual" is classified as Grundfos data and is passed to the GFPreProcessor for
+    Ex. Data with type "Schema_Article" is classified as Nordjyske data and is passed to the NJPreProcessor for
     further pre-processing.
     """
 
@@ -24,10 +24,11 @@ class DocumentClassifier:
 
     def classify(self, document_dict):
         """
-        Classifies the JSON data according to its data source and calls the appropriate pre-processor.
+        Constructs the intermediary Document object, then classifies the JSON data according to its data source and
+        calls the appropriate word count pre-processor and triple extractor.
 
         :param document_dict: Dictionary containing document information
-        :return: Document object containing document title, body, publisher, and path
+        :return: Document object containing document title, processed body, publisher, and path
         """
 
         # Construct Document object from document_dict

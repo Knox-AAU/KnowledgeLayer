@@ -1,22 +1,21 @@
 from __future__ import annotations
-import datetime
 from abc import abstractmethod
-from typing import List, OrderedDict, Any, Tuple, NamedTuple
-
-import spacy
+from typing import List, Any, Tuple, NamedTuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
 from utils import logging
 from .TripleExtractorEnum import TripleExtractorEnum
-# TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 import spacy
 Ev()
 
 
 class TripleExtractor:
+    """
+
+    """
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
         self.nlp = spacy.load(spacy_model)
@@ -29,12 +28,11 @@ class TripleExtractor:
 
     def process_publication(self, document: Document) -> List[Triple]:
         """
-        Input:
-            publication: Publication - A Publication class which is the content of a newspaper
-            file_path : str - File path to the publication being processed
 
-        Writes entity triples to file
+        :param document:
+        :return:
         """
+
         # Extract publication info and adds it to the RDF triples.
         self.extract_publication(document)
         self.extract_content(document)
@@ -53,6 +51,11 @@ class TripleExtractor:
             self.named_individual.append([prop_1, prop_2])
 
     def extract_publication(self, document: Document) -> None:
+        """
+
+        :param document:
+        :return:
+        """
         if document.publication is not None:
             
             # Formatted name of a publisher and publication
@@ -75,10 +78,10 @@ class TripleExtractor:
 
     def _convert_spacy_label_to_namespace(self, string: str) -> str:
         """
-        Input:
-            string: str - A string matching a spacy label
-        Returns:
-            A string matching a class in the ontology.
+        DESCRIPTION
+
+        :param string: A string matching a spacy label
+        :return: A string matching a class in the ontology
         """
         for label in self.tuple_label_dict:
             # Assumes that tuple_label_list is a list of dicts with the format: {"spacy_label": xxx, "target_label": xxx}
@@ -89,6 +92,12 @@ class TripleExtractor:
             return string
 
     def _append_token(self, article: Article, pair: Tuple[str, str]):
+        """
+
+        :param article:
+        :param pair:
+        :return:
+        """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
@@ -104,6 +113,14 @@ class TripleExtractor:
             Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pair[0])))
 
     def _append_triples_literal(self, uri_types: List[str], uri_value: Any, relation_type: str, literal: str):
+        """
+
+        :param uri_types:
+        :param uri_value:
+        :param relation_type:
+        :param literal:
+        :return:
+        """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types, uri_value),
             generate_relation(relation_type),
@@ -112,6 +129,15 @@ class TripleExtractor:
 
     def _append_triples_uri(self, uri_types1: List[str], uri_value1: Any,
                             uri_types2: List[str], uri_value2: Any, relation_type: str):
+        """
+
+        :param uri_types1:
+        :param uri_value1:
+        :param uri_types2:
+        :param uri_value2:
+        :param relation_type:
+        :return:
+        """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types1, uri_value1),
             generate_relation(relation_type),
