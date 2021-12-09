@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 import requests
 from rdflib import Graph, Literal, BNode
 from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF as Rdf
@@ -6,9 +8,12 @@ from requests.exceptions import ConnectionError
 from rdflib.namespace import ClosedNamespace
 from rdflib import URIRef
 from environment.EnvironmentConstants import EnvironmentVariables as Ev
+from utils import logging
+
 Ev()
 
-def store_rdf_triples(rdfTriples):
+
+def store_rdf_triples(rdf_triples: List[Tuple], graph_name: str):
     """
     Input:
         rdfTriples: list of RDF triples with correct type - List containing triples on the form (Subject, RelationPredicate, Object).
@@ -25,17 +30,19 @@ def store_rdf_triples(rdfTriples):
     name_space_manager = KnoxNameSpaceManager(graph)
     graph.namespace_manager = name_space_manager
 
-    for sub, rel, obj in rdfTriples:
+    for sub, rel, obj in rdf_triples:
         graph.add((sub, rel, obj))
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
     # with open(path, 'wb') as f:
     #     f.write(serialized_graph)
-    success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT), data=serialized_graph)
+    payload = dict(graph=graph_name, turtle=serialized_graph)
+    success = requests.post(ev.instance.get_value(ev.instance.TRIPLE_DATA_ENDPOINT),
+                            data=payload, headers={}, files=[])
     if not success:
-        print(f'Unable to send file to database', 'error')
+        logging.LogF.log(f'ERROR: Unable to send file to database')
         raise ConnectionError('Unable to post to the database')
-    print(f'Successfully sent publication to server', 'info')
+    logging.LogF.log(f'Successfully sent publication to server')
 
 
 def generate_blank_node():
@@ -141,13 +148,13 @@ def __calculateFileExtention__(format):
     return switch.get(format, "")
 
 
-
 KNOX = ClosedNamespace(
     uri=URIRef(Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)),
     terms=[
         "isPublishedBy", "mentions", "isPublishedOn", "publishes", "Email", "DateMention", "Link",
         "Name", "PublicationDay", "PublicationMonth", "PublicationYear", "ArticleTitle", "isWrittenBy"]
 )
+
 
 class KnoxNameSpaceManager(NamespaceManager):
     """

@@ -1,11 +1,11 @@
 import unittest
 from unittest.mock import patch
-from rdf import TripleExtractor
+from rdf import NJTripleExtractor
 from model import Document, Article, Byline
 import spacy
 from environment import EnvironmentVariables as Ev
 from typing import List
-from rdf.extractor.TripleExtractor import Triple
+from rdf.extractor import Triple
 
 Ev()
 
@@ -38,7 +38,7 @@ class TripleExtractorTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         spacy_model = Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL)
         cls.spacy_model = spacy.load(spacy_model)
-        cls.triple_extractor = TripleExtractor(spacy_model)
+        cls.triple_extractor = NJTripleExtractor(spacy_model)
 
     @patch('requests.post')
     def test_process_publication__one_article__list_of_triples(self, mock_post):

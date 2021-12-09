@@ -1,0 +1,3615 @@
+
+<KnoxArticle/-1087749322276319147> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "afgang" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-1310507559879225719> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-1334996951139563845> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Sverigedemokrater vil vælte stats- og forsvarsminister" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Riksdagen>,
+        <KnoxLocation/Sverige>,
+        <KnoxLocation/Sveriges>,
+        <KnoxOrganisation/Alliansen>,
+        <KnoxOrganisation/Hultqvist>,
+        <KnoxOrganisation/L%C3%B6fven>,
+        <KnoxOrganisation/SD>,
+        <KnoxOrganisation/Sverigedemokraterna>,
+        <KnoxOrganisation/Sverigedemokraternas>,
+        <KnoxOrganisation/Transportstyrelsen>,
+        <KnoxPerson/Alliansen>,
+        <KnoxPerson/L%C3%B6fvens>,
+        <KnoxPerson/Mattias_Karlsson>,
+        <KnoxPerson/Peter_Hultqvist>,
+        <KnoxPerson/Stefan_L%C3%B6fven> .
+
+<KnoxArticle/-1405347062060203845> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "81-årig kvinde lænset for 21.000 kroner" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_07_aalborg_ons-s007-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Fars%C3%B8>,
+        <KnoxLocation/Fars%C3%B8_R%C3%A5dhuscenter>,
+        <KnoxLocation/S%C3%B8ndergade>,
+        <KnoxOrganisation/Nordjyllands_Politi>,
+        <KnoxOrganisation/Rema>,
+        <KnoxPerson/J%C3%B8rn_Kresten_Nielsen> .
+
+<KnoxArticle/-154407592918553090> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Danmark lurer på russisk militærøvelse" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_24_aalborg_ons-s024-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%98sters%C3%B8en>,
+        <KnoxLocation/Aurora>,
+        <KnoxLocation/Bornholm>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Europas>,
+        <KnoxLocation/Hviderusland>,
+        <KnoxLocation/Kaliningrad>,
+        <KnoxLocation/Northern_Coast>,
+        <KnoxLocation/R%C3%B8nne>,
+        <KnoxLocation/Rusland>,
+        <KnoxLocation/Sverige>,
+        <KnoxLocation/Vesten>,
+        <KnoxLocation/challengerfly>,
+        <KnoxOrganisation/Forsvaret>,
+        <KnoxOrganisation/Forsvarets>,
+        <KnoxOrganisation/Forsvarsakademiet>,
+        <KnoxPerson/Iver_Huidtfeldt>,
+        <KnoxPerson/J%C3%B8rgen_Staun>,
+        <KnoxPerson/Putins>,
+        <KnoxPerson/S%C3%B8ren_Andersen> .
+
+<KnoxArticle/-1559799970216520903> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Flygtningenævn uenige med FN" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_20_aalborg_ons-s020-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%85rhus_Universitet>,
+        <KnoxLocation/Aalborg_Universitet>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Europa>,
+        <KnoxLocation/Foggia>,
+        <KnoxLocation/Iran>,
+        <KnoxLocation/Italien>,
+        <KnoxLocation/Juridisk_Institut>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/Vendsyssel>,
+        <KnoxOrganisation/Danmark_NORDJYLLAND>,
+        <KnoxOrganisation/Dansk_Flygtningehj%C3%A6lp>,
+        <KnoxOrganisation/FN>,
+        <KnoxOrganisation/FNs>,
+        <KnoxOrganisation/FNs_komite>,
+        <KnoxOrganisation/FNs_komiteer>,
+        <KnoxOrganisation/FNs_menneskerettighedskomite->,
+        <KnoxOrganisation/Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Flygtningen%C3%A6vnets_koordinationsudvalg>,
+        <KnoxOrganisation/Folketinget>,
+        <KnoxOrganisation/Hos_Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Institut>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxOrganisation/Udenrigsministeriet>,
+        <KnoxOrganisation/Udl%C3%A6ndingestyrelsen>,
+        <KnoxPerson/B%C3%B8rnekomiteen>,
+        <KnoxPerson/Ita>,
+        <KnoxPerson/Jesper_Lindholm>,
+        <KnoxPerson/Menneskerettighedskomiteen>,
+        <KnoxPerson/Stig_Torp_Henriksen> .
+
+<KnoxArticle/-1635950855336449991> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Frustration over lugt ved skole breder sig" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_04_aalborg_ons-s004-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Br%C3%B8nderslev_Kommune>,
+        <KnoxLocation/Klokkerholm>,
+        <KnoxLocation/Klokkerholm_Skole>,
+        <KnoxOrganisation/Br%C3%B8nderslev_Kommune_Jes_Rose_Nielsen>,
+        <KnoxOrganisation/K>,
+        <KnoxPerson/Jes_Rose_Nielsen>,
+        <KnoxPerson/Karsten_Frederiksen>,
+        <KnoxPerson/gennemluftet> .
+
+<KnoxArticle/-2049765730875280332> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Jeg venter stadig på svar, hr. borgmester" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Kommune>,
+        <KnoxOrganisation/DI>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxPerson/Thomas_Kastrup-Larsen>,
+        <KnoxPerson/Thomas_Kastrup-Larsens> .
+
+<KnoxArticle/-214305456043633473> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Fik ødelagt baglygte og sidespejl" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_17_aalborg_ons-s017-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Asylgade>,
+        <KnoxLocation/Thisted>,
+        <KnoxLocation/Thisted_Kommune>,
+        <KnoxOrganisation/Thisted_Politi> .
+
+<KnoxArticle/-2279219167360830829> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Mangelfuld styring af aktiveringstilbud til asylansøgere" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_19_aalborg_ons-s019-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Jammerbugt>,
+        <KnoxLocation/Jammerbugt_Asylcenter>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/R%C3%A6hr>,
+        <KnoxLocation/Thisted_Kommune>,
+        <KnoxLocation/Vesthimmerland_Kommune>,
+        <KnoxOrganisation/Integrationsministeriet>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxOrganisation/Rigsrevisionen>,
+        <KnoxOrganisation/Udl%C3%A6ndinge->,
+        <KnoxOrganisation/Udl%C3%A6ndingestyrelsen>,
+        <KnoxPerson/Asylchef_Birgitte_Guldberg>,
+        <KnoxPerson/Birgitte_Guldberg>,
+        <KnoxPerson/Lars_Sloth>,
+        <KnoxPerson/Lene_Vejrum> .
+
+<KnoxArticle/-2301201410381128289> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Virksomheder er utilfredse med udbudsproces" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_14_aalborg_ons-s014-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Danmark>,
+        <KnoxLocation/Jammerbugt>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxOrganisation/Dansk_Industri>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxPerson/Mogens_Gade> .
+
+<KnoxArticle/-2408563250835556188> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Døgnet i glimt" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-2441273373933521115> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Militær skal stoppe plyndringer efter Irma" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Caribien>,
+        <KnoxLocation/Floridas>,
+        <KnoxLocation/Frankrig>,
+        <KnoxLocation/Holland>,
+        <KnoxLocation/Hotel_Flamboyant>,
+        <KnoxLocation/Miami>,
+        <KnoxLocation/New_York_Times>,
+        <KnoxLocation/Sankt_Martin>,
+        <KnoxLocation/Storbritannien>,
+        <KnoxOrganisation/de_Britiske_Jomfru%C3%B8er>,
+        <KnoxPerson/Jacques_Charbonnier>,
+        <KnoxPerson/Martin>,
+        <KnoxPerson/Yovanny_Roque> .
+
+<KnoxArticle/-2491668438829646727> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Er kvinderne sat på plads?" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_13_aalborg_ons-s013-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Kvindens_Plads>,
+        <KnoxOrganisation/Arbejderbev%C3%A6gelsen_Erhvervsr%C3%A5d>,
+        <KnoxOrganisation/Dansk_Magisterforening>,
+        <KnoxOrganisation/Erhvervskvinder>,
+        <KnoxOrganisation/LO>,
+        <KnoxOrganisation/Rotary> .
+
+<KnoxArticle/-2622640000418453945> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Stor manko på handicapområdet" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_09_aalborg_ons-s009-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg_Kommunes>,
+        <KnoxLocation/Birken>,
+        <KnoxPerson/Ulla_Ringgren>,
+        <KnoxPerson/Ulla_Ringgren_Nielsen> .
+
+<KnoxArticle/-2732959995387996296> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Bevarings- værdig eller ej?" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_28_aalborg_ons-s028-02-bagside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxPerson/M%C3%B8ller> .
+
+<KnoxArticle/-2745179321569224382> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Flygtningenævnet" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_21_aalborg_ons-s021-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Intergrationsministeriet>,
+        <KnoxOrganisation/Udl%C3%A6ndinge-> .
+
+<KnoxArticle/-2773009958455086408> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Blues på Vejgaard-café" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_10_aalborg_ons-s010-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Caf%C3%A9_Frederiksberg>,
+        <KnoxLocation/Chicago_Style>,
+        <KnoxLocation/Vejgaard> .
+
+<KnoxArticle/-2948028859285742241> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Flere penge til hjemmeplejen" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg_Kommune>,
+        <KnoxOrganisation/Dansk_Folkeparti>,
+        <KnoxOrganisation/De_Konservative>,
+        <KnoxOrganisation/NORDJYSKE> .
+
+<KnoxArticle/-314822526310429217> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "S: Fordele tosprogede elever" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_08_aalborg_ons-s008-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/K%C3%B8benhavn>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/Socialdemokratiet>,
+        <KnoxPerson/Lisbeth_Lauritsen> .
+
+<KnoxArticle/-3222041144642573115> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Penkowa mister doktorgrad" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/K%C3%98BENHAVN>,
+        <KnoxOrganisation/K%C3%B8benhavns_Universitet>,
+        <KnoxPerson/Jasper_Steen_Winkel>,
+        <KnoxPerson/Milena_Penkowa>,
+        <KnoxPerson/Penkowa> .
+
+<KnoxArticle/-3439434878865853386> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Minister fastholder løbsforbud" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/E45>,
+        <KnoxLocation/Limfjordstunnelen>,
+        <KnoxLocation/Storeb%C3%A6ltsbroen>,
+        <KnoxOrganisation/Aalborg_Halvmarathon>,
+        <KnoxOrganisation/Aalborg_Halvmaraton>,
+        <KnoxOrganisation/LA>,
+        <KnoxOrganisation/Limfjordtunnelen>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/Sund_%26_B%C3%A6lt>,
+        <KnoxOrganisation/Vejdirektoratets>,
+        <KnoxPerson/Ole_Birk_Olesen>,
+        <KnoxPerson/Storeb%C3%A6ltsl%C3%B8b>,
+        <KnoxPerson/Thomas_Kastrup-Larsen> .
+
+<KnoxArticle/-3617782913976004053> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Magtens pris stiger i Norge" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Norge>,
+        <KnoxLocation/Norges>,
+        <KnoxLocation/Stortinget>,
+        <KnoxOrganisation/Arbeiderpartiet>,
+        <KnoxOrganisation/Dagbladet>,
+        <KnoxOrganisation/Footprint>,
+        <KnoxOrganisation/Fremskrittspartiet>,
+        <KnoxOrganisation/H%C3%B8yre>,
+        <KnoxOrganisation/KrF>,
+        <KnoxOrganisation/Kristeligt_Folkeparti>,
+        <KnoxOrganisation/NTB>,
+        <KnoxOrganisation/Storting>,
+        <KnoxOrganisation/Venstre>,
+        <KnoxOrganisation/det_konservative_H%C3%B8yre>,
+        <KnoxPerson/Analytiker_Beate_Nossum>,
+        <KnoxPerson/Erna>,
+        <KnoxPerson/Erna_Solberg>,
+        <KnoxPerson/Jonas_Gahr_St%C3%B8re>,
+        <KnoxPerson/Nossum>,
+        <KnoxPerson/Siv>,
+        <KnoxPerson/Siv_Jensen>,
+        <KnoxPerson/Solberg>,
+        <KnoxPerson/Stein_Tore_Marthinsen>,
+        <KnoxPerson/Tord_Willumsen>,
+        <KnoxPerson/Trine_Skei_Grande> .
+
+<KnoxArticle/-3717821978337994620> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Skleroseløb og tilmelding" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Hune>,
+        <KnoxPerson/Marie_Schr%C3%B8der_Carlsen> .
+
+<KnoxArticle/-3807469414874079326> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Militær skal stoppe plyndringer efter Irma" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Caribien>,
+        <KnoxLocation/Floridas>,
+        <KnoxLocation/Frankrig>,
+        <KnoxLocation/Holland>,
+        <KnoxLocation/Hotel_Flamboyant>,
+        <KnoxLocation/Miami>,
+        <KnoxLocation/New_York_Times>,
+        <KnoxLocation/Sankt_Martin>,
+        <KnoxLocation/Storbritannien>,
+        <KnoxOrganisation/de_Britiske_Jomfru%C3%B8er>,
+        <KnoxPerson/Jacques_Charbonnier>,
+        <KnoxPerson/Martin>,
+        <KnoxPerson/Yovanny_Roque> .
+
+<KnoxArticle/-3857263868996303473> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Lokaldebat" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-4166954925626109866> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Hus fra bronzealderen dukket op ved Arden" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_04_aalborg_ons-s004-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Arden_by>,
+        <KnoxOrganisation/Nordjyllands_Historiske_Museum>,
+        <KnoxPerson/Lone_Andersen> .
+
+<KnoxArticle/-4206147064818459198> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Lektor: Sanktioner rammer Nordkoreas folk" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Nordkorea>,
+        <KnoxLocation/Nordkoreas>,
+        <KnoxOrganisation/FN%E2%80%99s_Sikkerhedsr%C3%A5d>,
+        <KnoxOrganisation/Forsvarsakademiet>,
+        <KnoxPerson/Liselotte_Odgaard> .
+
+<KnoxArticle/-4273194835414313737> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "FN: Forkert at udvise til Italien" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_01_aalborg_ons-s001-02-forside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Danmark>,
+        <KnoxLocation/Italien>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/asylland_NORDJYLLAND>,
+        <KnoxOrganisation/Aalborg_Universitet>,
+        <KnoxOrganisation/FN>,
+        <KnoxOrganisation/FN%E2%80%99s>,
+        <KnoxOrganisation/Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Juridisk_Institut>,
+        <KnoxPerson/Jesper_Lindholm> .
+
+<KnoxArticle/-4324121264705767793> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-4328235443118401738> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Sognegård i Sdr. Tranders - omsorg eller selvpromovering?" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Gug_Kirke>,
+        <KnoxLocation/Sdr._Tranders>,
+        <KnoxOrganisation/Aalborg_%C3%98stre_Provsti>,
+        <KnoxOrganisation/Gug_Kirke>,
+        <KnoxOrganisation/Gug_Kirkes>,
+        <KnoxOrganisation/TV_Avisen> .
+
+<KnoxArticle/-4552444312940422808> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_22_aalborg_ons-s022-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-4865294391207192917> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_07_aalborg_ons-s007-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxPerson/Eigild_Christensen> .
+
+<KnoxArticle/-5057375607480137279> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Flygtningenævn uenige med FN" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_21_aalborg_ons-s021-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%85rhus_Universitet>,
+        <KnoxLocation/Aalborg_Universitet>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Europa>,
+        <KnoxLocation/Foggia>,
+        <KnoxLocation/Iran>,
+        <KnoxLocation/Italien>,
+        <KnoxLocation/Juridisk_Institut>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/Vendsyssel>,
+        <KnoxOrganisation/Danmark_NORDJYLLAND>,
+        <KnoxOrganisation/Dansk_Flygtningehj%C3%A6lp>,
+        <KnoxOrganisation/FN>,
+        <KnoxOrganisation/FNs>,
+        <KnoxOrganisation/FNs_komite>,
+        <KnoxOrganisation/FNs_komiteer>,
+        <KnoxOrganisation/FNs_menneskerettighedskomite->,
+        <KnoxOrganisation/Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Flygtningen%C3%A6vnets_koordinationsudvalg>,
+        <KnoxOrganisation/Folketinget>,
+        <KnoxOrganisation/Hos_Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Institut>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxOrganisation/Udenrigsministeriet>,
+        <KnoxOrganisation/Udl%C3%A6ndingestyrelsen>,
+        <KnoxPerson/B%C3%B8rnekomiteen>,
+        <KnoxPerson/Ita>,
+        <KnoxPerson/Jesper_Lindholm>,
+        <KnoxPerson/Menneskerettighedskomiteen>,
+        <KnoxPerson/Stig_Torp_Henriksen> .
+
+<KnoxArticle/-5350967795798727423> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "S: Fordele tosprogede elever" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_09_aalborg_ons-s009-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/K%C3%B8benhavn>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/Socialdemokratiet>,
+        <KnoxPerson/Lisbeth_Lauritsen> .
+
+<KnoxArticle/-537223759265599685> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Politisk debat om midtbyens fremtid" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_13_aalborg_ons-s013-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/Gl._Torv>,
+        <KnoxLocation/Nytorv>,
+        <KnoxOrganisation/Aalborg_Midtbys_Samr%C3%A5d>,
+        <KnoxOrganisation/Alternativet>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/EL>,
+        <KnoxOrganisation/Fjordlisten>,
+        <KnoxOrganisation/Folkekirkens_Hus>,
+        <KnoxOrganisation/KD>,
+        <KnoxOrganisation/LA>,
+        <KnoxOrganisation/RV>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/SF>,
+        <KnoxOrganisation/Social_F%C3%A6lles_Liste>,
+        <KnoxPerson/Anette_Valentin>,
+        <KnoxPerson/Anne-Dorrit_Harris>,
+        <KnoxPerson/Anne-Dorte_Krog>,
+        <KnoxPerson/Daniel_Nyboe-Andersen>,
+        <KnoxPerson/Hans_Peter_Beck>,
+        <KnoxPerson/J%C3%B8rgen_Andersen>,
+        <KnoxPerson/J%C3%B8rgen_Pyndt>,
+        <KnoxPerson/Jens_Toft-Nielsen>,
+        <KnoxPerson/Kristoffer_Hjort_Storm>,
+        <KnoxPerson/Mads_Duedahl>,
+        <KnoxPerson/Milj%C3%B8ets>,
+        <KnoxPerson/Niels_J%C3%B8rgen_Lassen>,
+        <KnoxPerson/Per_Clausen>,
+        <KnoxPerson/Thomas_Kastrup-Larsen>,
+        <KnoxPerson/Thomas_Krarup> .
+
+<KnoxArticle/-5382850749878294771> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Det var godt" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-5461404389300480673> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "lokaldebat" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_13_aalborg_ons-s013-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-5871002773039536585> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "... og mindre godt" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-6339369610087510587> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Bjergprædiken og Jakobs Brev reciteres" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_09_aalborg_ons-s009-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxPerson/Jakobs>,
+        <KnoxPerson/Klaus_H%C3%B8jgaard_Laursen> .
+
+<KnoxArticle/-6577927464481001318> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_01_aalborg_ons-s001-02-forside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Leder2> .
+
+<KnoxArticle/-6833542792509467956> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Stor manko på handicapområdet" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_08_aalborg_ons-s008-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg_Kommunes>,
+        <KnoxLocation/Birken>,
+        <KnoxPerson/Ulla_Ringgren>,
+        <KnoxPerson/Ulla_Ringgren_Nielsen> .
+
+<KnoxArticle/-685071931980055504> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Hal lejet til fodbold, men brugt til fest" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_10_aalborg_ons-s010-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg_Moske>,
+        <KnoxLocation/Mellervangskolen_2.>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/FC_Dansom>,
+        <KnoxOrganisation/FC_Dansoms>,
+        <KnoxOrganisation/Fodboldklubben_FC_Dansom>,
+        <KnoxOrganisation/Kulturforening>,
+        <KnoxOrganisation/Ungdomsvejledning>,
+        <KnoxPerson/Abdinasir_Jama>,
+        <KnoxPerson/Kristoffer_Hjort_Storm>,
+        <KnoxPerson/Mads_Duedahl> .
+
+<KnoxArticle/-6881034340633766585> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Klar til Krebs-maraton" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_28_aalborg_ons-s028-02-bagside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Dronninglund>,
+        <KnoxLocation/Klarup>,
+        <KnoxLocation/Nordkraft>,
+        <KnoxLocation/Olymposvej_30>,
+        <KnoxLocation/Voergaardsvej_17>,
+        <KnoxOrganisation/cd>,
+        <KnoxPerson/Bente_Dam>,
+        <KnoxPerson/Poul_Krebs>,
+        <KnoxPerson/Tine_Bang> .
+
+<KnoxArticle/-7086765718954268126> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Der skal bruges 10 mio. kr. mindre" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aabybro>,
+        <KnoxLocation/Brovst>,
+        <KnoxLocation/Fjerritslev>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Jammerbugt_Kommunes>,
+        <KnoxLocation/Jetsmark_Stadion>,
+        <KnoxLocation/Pandrup>,
+        <KnoxLocation/SFO%E2%80%99>,
+        <KnoxOrganisation/Brovst_Speedwaycenter>,
+        <KnoxOrganisation/Jammerbugt_Kommune>,
+        <KnoxOrganisation/Jetsmark_Skole>,
+        <KnoxPerson/Mogens_Gade> .
+
+<KnoxArticle/-7176949996614961961> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_03_aalborg_ons-s003-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-7240777993681039027> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Budget med lille stramning" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_01_aalborg_ons-s001-02-forside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-7563603738459695402> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Tyrkiet køber russisk missilforsvar" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Kreml>,
+        <KnoxLocation/Rusland>,
+        <KnoxLocation/Tyrkiet>,
+        <KnoxLocation/Tyrkiets>,
+        <KnoxOrganisation/H%C3%BCrriyet>,
+        <KnoxPerson/Recep_Tayyip_Erdogan>,
+        <KnoxPerson/S-400>,
+        <KnoxPerson/Tass> .
+
+<KnoxArticle/-7849268711980837789> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Ingen udsigt til altaner på Tornhøjgård" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG_%C3%98ST>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_%C3%98st>,
+        <KnoxLocation/Enghavevej>,
+        <KnoxOrganisation/%C3%86ldre>,
+        <KnoxOrganisation/%C3%86ldre_og_Handicapforvaltningen>,
+        <KnoxOrganisation/Himmerland_Boligforening>,
+        <KnoxOrganisation/Indenrigsministeriet>,
+        <KnoxOrganisation/Tornh%C3%B8jg%C3%A5rd>,
+        <KnoxPerson/Bibs_Fritze_Svendsen>,
+        <KnoxPerson/Johanne>,
+        <KnoxPerson/Johannes>,
+        <KnoxPerson/Ole_Nielsen>,
+        <KnoxPerson/Thomas_Krarup> .
+
+<KnoxArticle/-790934143401564472> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Jørn har nu udsigt til pension" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_19_aalborg_ons-s019-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Hj%C3%B8rring_Kommunes>,
+        <KnoxLocation/Vr%C3%A5>,
+        <KnoxOrganisation/Danish_Crown>,
+        <KnoxOrganisation/Hj%C3%B8rring_Kommunes>,
+        <KnoxOrganisation/Jobcenter_Hj%C3%B8rring>,
+        <KnoxOrganisation/S>,
+        <KnoxPerson/Ivan_Leth>,
+        <KnoxPerson/J%C3%B8rn_Katballe>,
+        <KnoxPerson/J%C3%B8rn_Katballes> .
+
+<KnoxArticle/-7945119221821355000> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "44-årig kvinde fortsætter stalking" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_20_aalborg_ons-s020-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Hj%C3%B8rring>,
+        <KnoxPerson/Thomas_Klingenberg> .
+
+<KnoxArticle/-8011375718549264946> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_17_aalborg_ons-s017-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-8074834615425854651> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_23_aalborg_ons-s023-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-8232997981291108626> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Ingen udsigt til altaner på Tornhøjgård" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_10_aalborg_ons-s010-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG_%C3%98ST>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_%C3%98st>,
+        <KnoxLocation/Enghavevej>,
+        <KnoxOrganisation/%C3%86ldre>,
+        <KnoxOrganisation/%C3%86ldre_og_Handicapforvaltningen>,
+        <KnoxOrganisation/Himmerland_Boligforening>,
+        <KnoxOrganisation/Indenrigsministeriet>,
+        <KnoxOrganisation/Tornh%C3%B8jg%C3%A5rd>,
+        <KnoxPerson/Bibs_Fritze_Svendsen>,
+        <KnoxPerson/Johanne>,
+        <KnoxPerson/Johannes>,
+        <KnoxPerson/Ole_Nielsen>,
+        <KnoxPerson/Thomas_Krarup> .
+
+<KnoxArticle/-8574779861309471928> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Konfirmander til rollespil" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_14_aalborg_ons-s014-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/B%C3%B8rglum>,
+        <KnoxLocation/B%C3%B8rglum_Kloster>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Haverslev>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxOrganisation/Bejstrup_Inger_%C3%98eby_Pedersen>,
+        <KnoxPerson/Martin_Luther>,
+        <KnoxPerson/Wittenberg> .
+
+<KnoxArticle/-8792838054368456878> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Magtens pris stiger i Norge" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Norge>,
+        <KnoxLocation/Norges>,
+        <KnoxLocation/Stortinget>,
+        <KnoxOrganisation/Arbeiderpartiet>,
+        <KnoxOrganisation/Dagbladet>,
+        <KnoxOrganisation/Footprint>,
+        <KnoxOrganisation/Fremskrittspartiet>,
+        <KnoxOrganisation/H%C3%B8yre>,
+        <KnoxOrganisation/KrF>,
+        <KnoxOrganisation/Kristeligt_Folkeparti>,
+        <KnoxOrganisation/NTB>,
+        <KnoxOrganisation/Storting>,
+        <KnoxOrganisation/Venstre>,
+        <KnoxOrganisation/det_konservative_H%C3%B8yre>,
+        <KnoxPerson/Analytiker_Beate_Nossum>,
+        <KnoxPerson/Erna>,
+        <KnoxPerson/Erna_Solberg>,
+        <KnoxPerson/Jonas_Gahr_St%C3%B8re>,
+        <KnoxPerson/Nossum>,
+        <KnoxPerson/Siv>,
+        <KnoxPerson/Siv_Jensen>,
+        <KnoxPerson/Solberg>,
+        <KnoxPerson/Stein_Tore_Marthinsen>,
+        <KnoxPerson/Tord_Willumsen>,
+        <KnoxPerson/Trine_Skei_Grande> .
+
+<KnoxArticle/-8823290861315137798> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxOrganisation/Adresse_Langagervej_1> .
+
+<KnoxArticle/-8909168445962903660> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Hus fra bronzealderen" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_01_aalborg_ons-s001-02-forside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-9095781095209480092> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Mangelfuld styring af aktiveringstilbud til asylansøgere" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_18_aalborg_ons-s018-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Jammerbugt>,
+        <KnoxLocation/Jammerbugt_Asylcenter>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/R%C3%A6hr>,
+        <KnoxLocation/Thisted_Kommune>,
+        <KnoxLocation/Vesthimmerland_Kommune>,
+        <KnoxOrganisation/Integrationsministeriet>,
+        <KnoxOrganisation/NORDJYSKE>,
+        <KnoxOrganisation/Rigsrevisionen>,
+        <KnoxOrganisation/Udl%C3%A6ndinge->,
+        <KnoxOrganisation/Udl%C3%A6ndingestyrelsen>,
+        <KnoxPerson/Asylchef_Birgitte_Guldberg>,
+        <KnoxPerson/Birgitte_Guldberg>,
+        <KnoxPerson/Lars_Sloth>,
+        <KnoxPerson/Lene_Vejrum> .
+
+<KnoxArticle/-9144774599619609622> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Politisk debat om midtbyens fremtid" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/Gl._Torv>,
+        <KnoxLocation/Nytorv>,
+        <KnoxOrganisation/Aalborg_Midtbys_Samr%C3%A5d>,
+        <KnoxOrganisation/Alternativet>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/EL>,
+        <KnoxOrganisation/Fjordlisten>,
+        <KnoxOrganisation/Folkekirkens_Hus>,
+        <KnoxOrganisation/KD>,
+        <KnoxOrganisation/LA>,
+        <KnoxOrganisation/RV>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/SF>,
+        <KnoxOrganisation/Social_F%C3%A6lles_Liste>,
+        <KnoxPerson/Anette_Valentin>,
+        <KnoxPerson/Anne-Dorrit_Harris>,
+        <KnoxPerson/Anne-Dorte_Krog>,
+        <KnoxPerson/Daniel_Nyboe-Andersen>,
+        <KnoxPerson/Hans_Peter_Beck>,
+        <KnoxPerson/J%C3%B8rgen_Andersen>,
+        <KnoxPerson/J%C3%B8rgen_Pyndt>,
+        <KnoxPerson/Jens_Toft-Nielsen>,
+        <KnoxPerson/Kristoffer_Hjort_Storm>,
+        <KnoxPerson/Mads_Duedahl>,
+        <KnoxPerson/Milj%C3%B8ets>,
+        <KnoxPerson/Niels_J%C3%B8rgen_Lassen>,
+        <KnoxPerson/Per_Clausen>,
+        <KnoxPerson/Thomas_Kastrup-Larsen>,
+        <KnoxPerson/Thomas_Krarup> .
+
+<KnoxArticle/-9167485578810169538> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Pandrup Industriby skal udvikles" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Bellevue>,
+        <KnoxLocation/Domus_Vision>,
+        <KnoxLocation/Hjulmagervej_19>,
+        <KnoxLocation/Nutidshuset>,
+        <KnoxLocation/Pandrup_Industriby>,
+        <KnoxLocation/V%C3%A6kst_Jammerbugt>,
+        <KnoxOrganisation/Cobham>,
+        <KnoxOrganisation/Pandrup_Business_Park>,
+        <KnoxOrganisation/Pandrup_Industriby> .
+
+<KnoxArticle/-9167666672912627840> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Med vinden lige i trynen" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_16_aalborg_ons-s016-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Doverodde>,
+        <KnoxLocation/Feggesund>,
+        <KnoxLocation/Frederikssund>,
+        <KnoxLocation/Fur>,
+        <KnoxLocation/Hals>,
+        <KnoxLocation/L%C3%B8gst%C3%B8r>,
+        <KnoxLocation/Limfjord>,
+        <KnoxLocation/Limfjorden>,
+        <KnoxLocation/Nederlandene>,
+        <KnoxLocation/Nordens>,
+        <KnoxLocation/Norge>,
+        <KnoxLocation/Nyk%C3%B8bing_Mors>,
+        <KnoxLocation/Roskilde>,
+        <KnoxLocation/Skive>,
+        <KnoxLocation/Struer>,
+        <KnoxLocation/Svin%C3%B8r>,
+        <KnoxLocation/Thisted>,
+        <KnoxLocation/Thisted_Bryghus>,
+        <KnoxLocation/Thisted_Havn>,
+        <KnoxLocation/Thybor%C3%B8n>,
+        <KnoxLocation/Vestervig>,
+        <KnoxLocation/medskipper>,
+        <KnoxOrganisation/Noatun>,
+        <KnoxOrganisation/Nyk%C3%B8bing_Mors>,
+        <KnoxOrganisation/Thisted_Havn>,
+        <KnoxPerson/Elsa>,
+        <KnoxPerson/Hugo_Jepsen>,
+        <KnoxPerson/Inge-Marie>,
+        <KnoxPerson/Inge-Marie_Jepsen>,
+        <KnoxPerson/Leif_Pedersen>,
+        <KnoxPerson/Niels_Sohn>,
+        <KnoxPerson/Noatun>,
+        <KnoxPerson/Ruth>,
+        <KnoxPerson/Thyra> .
+
+<KnoxArticle/-9194693682844237146> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Fly og skibe skal holde øje med russere" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%98sters%C3%B8en>,
+        <KnoxLocation/Hviderusland>,
+        <KnoxLocation/Kaliningrad>,
+        <KnoxLocation/R%C3%B8nne>,
+        <KnoxLocation/Rusland>,
+        <KnoxLocation/Ruslands>,
+        <KnoxOrganisation/Forsvaret>,
+        <KnoxOrganisation/Forsvaret->,
+        <KnoxPerson/Iver_Huitfeldt>,
+        <KnoxPerson/Zapad> .
+
+<KnoxArticle/-9200553062311561960> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/-933764309392189653> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Sygehusansatte slipper for krav" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_19_aalborg_ons-s019-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Enhedslisten>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/SF>,
+        <KnoxOrganisation/Venstre>,
+        <KnoxOrganisation/Venstres>,
+        <KnoxPerson/Lene_Linnemann>,
+        <KnoxPerson/Lone_Sondrup>,
+        <KnoxPerson/Per_Larsen>,
+        <KnoxPerson/Ulla_Astman> .
+
+<KnoxArticle/-947900852471461476> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Håndtaske med dame" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Christiansborg>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Det_Nationalhistoriske_Museum>,
+        <KnoxLocation/Frederiksborg_Slot>,
+        <KnoxLocation/Hiller%C3%B8d>,
+        <KnoxLocation/Storsind%E2%80%99>,
+        <KnoxOrganisation/Jelved>,
+        <KnoxOrganisation/Kulturministeriet>,
+        <KnoxOrganisation/Ryes>,
+        <KnoxOrganisation/Thorvaldsens_Museum>,
+        <KnoxPerson/%E2%80%99Retssind>,
+        <KnoxPerson/Lovsind>,
+        <KnoxPerson/Mads_Rye>,
+        <KnoxPerson/Marianne_Jelveds> .
+
+<KnoxArticle/-987026583706627024> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Vejret" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/111765497059700001> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Frankrig og Holland om Irma" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Frankrigs>,
+        <KnoxLocation/Hollands>,
+        <KnoxLocation/Sankt_Barts>,
+        <KnoxOrganisation/AP>,
+        <KnoxPerson/Emmanuel_Macron>,
+        <KnoxPerson/Martin>,
+        <KnoxPerson/Willem-Alexander> .
+
+<KnoxArticle/1136319956302407615> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Rotte lukker Aalborg Street-food" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_07_aalborg_ons-s007-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg_Street-food>,
+        <KnoxOrganisation/Rentokil>,
+        <KnoxPerson/Isabel_Enevoldsen> .
+
+<KnoxArticle/1476109774171085141> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Minister fastholder løbsforbud" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_13_aalborg_ons-s013-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/E45>,
+        <KnoxLocation/Limfjordstunnelen>,
+        <KnoxLocation/Storeb%C3%A6ltsbroen>,
+        <KnoxOrganisation/Aalborg_Halvmarathon>,
+        <KnoxOrganisation/Aalborg_Halvmaraton>,
+        <KnoxOrganisation/LA>,
+        <KnoxOrganisation/Limfjordtunnelen>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/Sund_%26_B%C3%A6lt>,
+        <KnoxOrganisation/Vejdirektoratets>,
+        <KnoxPerson/Ole_Birk_Olesen>,
+        <KnoxPerson/Storeb%C3%A6ltsl%C3%B8b>,
+        <KnoxPerson/Thomas_Kastrup-Larsen> .
+
+<KnoxArticle/2077565151511800436> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_24_aalborg_ons-s024-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxOrganisation/Adresse_Langagervej_1>,
+        <KnoxOrganisation/Forsvarets>,
+        <KnoxPerson/S%C3%B8ren_Andersen> .
+
+<KnoxArticle/2096604912096804068> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_28_aalborg_ons-s028-02-bagside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Karthago>,
+        <KnoxOrganisation/HAGBARd>,
+        <KnoxPerson/Cyprianus> .
+
+<KnoxArticle/2109481637739810173> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_13_aalborg_ons-s013-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Universitet>,
+        <KnoxLocation/Fyensgade_Centret>,
+        <KnoxLocation/Gr%C3%B8nlands_Torv>,
+        <KnoxLocation/Kongensgade_16>,
+        <KnoxLocation/Kongerslev>,
+        <KnoxLocation/Kunsten>,
+        <KnoxLocation/Kunsten_Baby>,
+        <KnoxLocation/Lykkesh%C3%B8j_Aktivitetscenter>,
+        <KnoxLocation/Nytorv>,
+        <KnoxLocation/aalborg_kommune>,
+        <KnoxOrganisation/Aalborg_Midtbys_Samr%C3%A5d>,
+        <KnoxOrganisation/Hans_Egedes_Kirke>,
+        <KnoxOrganisation/S%C3%B8nder_Tranders_sogn>,
+        <KnoxPerson/A.K._Jydens_Brydecenter>,
+        <KnoxPerson/Kong_Christians_All%C3%A9>,
+        <KnoxPerson/Trio_Gente>,
+        <KnoxPerson/j%C3%B8rgen_andersen>,
+        <KnoxPerson/v-_Jens_Brun> .
+
+<KnoxArticle/2171764329798785139> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Konservative har kandidaterne klar" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_14_aalborg_ons-s014-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aabybro>,
+        <KnoxLocation/Biersted>,
+        <KnoxLocation/Brovst>,
+        <KnoxLocation/Gj%C3%B8l>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Tranum>,
+        <KnoxOrganisation/Det_Konservative_Folkeparti>,
+        <KnoxOrganisation/Venstre>,
+        <KnoxPerson/Bent_Linn%C3%A9>,
+        <KnoxPerson/Berit_Engholm>,
+        <KnoxPerson/Dorte_Buus>,
+        <KnoxPerson/J%C3%B8rgen_Ravn_Christensen>,
+        <KnoxPerson/Kasper_Buus>,
+        <KnoxPerson/S%C3%B8ren_Brink>,
+        <KnoxPerson/Sophia_Rokkedahl>,
+        <KnoxPerson/Ulrik_Schade> .
+
+<KnoxArticle/2560891971242634393> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Asylansøgere og aktivering" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_19_aalborg_ons-s019-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Thisted_Kommune>,
+        <KnoxOrganisation/Integrationsministeriet>,
+        <KnoxOrganisation/Jammerbugt_Asylcenter>,
+        <KnoxOrganisation/Udl%C3%A6ndinge-> .
+
+<KnoxArticle/2832187180752244108> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Bæverskader i retten" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Holstebro>,
+        <KnoxLocation/Klosterheden_Plantage>,
+        <KnoxLocation/Lemvig>,
+        <KnoxLocation/Vestjylland>,
+        <KnoxOrganisation/Andersen-Fruedahl>,
+        <KnoxOrganisation/Tv_Midtvest> .
+
+<KnoxArticle/3006863185357162262> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Kommunalvalget gør borgerne hjemløse" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Jammerbugt_Kommune> .
+
+<KnoxArticle/3186502220462091511> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Rigmænd vil bygge bilmekka til en milliard" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_06_aalborg_ons-s006-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Kommune>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/Berlin>,
+        <KnoxLocation/By->,
+        <KnoxLocation/Gug>,
+        <KnoxLocation/KMD-huset>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/Stuttgart>,
+        <KnoxOrganisation/BIG>,
+        <KnoxOrganisation/Neas_Energy>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/bilremise>,
+        <KnoxPerson/Bjarke_Ingels_Group>,
+        <KnoxPerson/David_Zahle>,
+        <KnoxPerson/Eigild_B._Christensen>,
+        <KnoxPerson/Eigild_Christensen>,
+        <KnoxPerson/J%C3%B8rgen_B%C3%B8nsdorff>,
+        <KnoxPerson/Jacob_Bang>,
+        <KnoxPerson/Jacob_Christensen>,
+        <KnoxPerson/Jan_Nygaard>,
+        <KnoxPerson/Mads_Peter_Veiby>,
+        <KnoxPerson/Mads_Peter_Veibys>,
+        <KnoxPerson/Mark_Nielsen>,
+        <KnoxPerson/Thomas_Kastrup-Larsen> .
+
+<KnoxArticle/3222052243476330873> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_21_aalborg_ons-s021-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Juridisk_Institut>,
+        <KnoxOrganisation/FNs>,
+        <KnoxPerson/Jesper_Lindholm> .
+
+<KnoxArticle/3244929656108780036> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Det vil Nye Borgerlige" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Danmark>,
+        <KnoxLocation/Jammerbugtens>,
+        <KnoxLocation/Tyskland>,
+        <KnoxPerson/Christian_Hem> .
+
+<KnoxArticle/327511770132159635> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "-Det er ikke bare en altan" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Kommunes>,
+        <KnoxOrganisation/Danske_Handicaporganisationer>,
+        <KnoxOrganisation/Sp%C3%B8rgfolk>,
+        <KnoxPerson/Bibs_Fritze_Svendsens>,
+        <KnoxPerson/Ulla_Ringgren_Nielsen> .
+
+<KnoxArticle/329184095550964322> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "George Michaels hjertebarn" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_28_aalborg_ons-s028-02-bagside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Christiania>,
+        <KnoxLocation/Green_Days_album>,
+        <KnoxLocation/K%C3%B8benhavn>,
+        <KnoxLocation/USA>,
+        <KnoxOrganisation/Boulevard_of_Broken_Dreams>,
+        <KnoxOrganisation/DR>,
+        <KnoxOrganisation/Den_Gr%C3%A5_Hal>,
+        <KnoxPerson/Chic>,
+        <KnoxPerson/Dorthe>,
+        <KnoxPerson/George_Michael>,
+        <KnoxPerson/George_Michaels>,
+        <KnoxPerson/Lady_Gaga>,
+        <KnoxPerson/Michael_learns>,
+        <KnoxPerson/Nile_Rodgers>,
+        <KnoxPerson/Tor>,
+        <KnoxPerson/Tor_Bagger> .
+
+<KnoxArticle/3460643626633911015> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Danmark lurer på russisk militærøvelse" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%98sters%C3%B8en>,
+        <KnoxLocation/Aurora>,
+        <KnoxLocation/Bornholm>,
+        <KnoxLocation/Danmark>,
+        <KnoxLocation/Europas>,
+        <KnoxLocation/Hviderusland>,
+        <KnoxLocation/Kaliningrad>,
+        <KnoxLocation/Northern_Coast>,
+        <KnoxLocation/R%C3%B8nne>,
+        <KnoxLocation/Rusland>,
+        <KnoxLocation/Sverige>,
+        <KnoxLocation/Vesten>,
+        <KnoxLocation/challengerfly>,
+        <KnoxOrganisation/Forsvaret>,
+        <KnoxOrganisation/Forsvarets>,
+        <KnoxOrganisation/Forsvarsakademiet>,
+        <KnoxPerson/Iver_Huidtfeldt>,
+        <KnoxPerson/J%C3%B8rgen_Staun>,
+        <KnoxPerson/Putins>,
+        <KnoxPerson/S%C3%B8ren_Andersen> .
+
+<KnoxArticle/3661798109935622646> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Byggeri for en mia." ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_01_aalborg_ons-s001-02-forside--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborgs> .
+
+<KnoxArticle/3813580486031696914> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_10_aalborg_ons-s010-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxOrganisation/Adresse_Langagervej> .
+
+<KnoxArticle/383037147698355483> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/3501_Fax>,
+        <KnoxLocation/9100_Aalborg>,
+        <KnoxLocation/Aalborg_%C3%98st>,
+        <KnoxLocation/Adresse_Langagervej>,
+        <KnoxLocation/Gratis_Klik>,
+        <KnoxLocation/Postbox_8000>,
+        <KnoxLocation/www.guloggratis.dk>,
+        <KnoxOrganisation/Annoncer>,
+        <KnoxOrganisation/Annoncesalg_Telefon>,
+        <KnoxOrganisation/Kultursiden>,
+        <KnoxOrganisation/Selvbetjening_Avisbestilling>,
+        <KnoxOrganisation/Tune_Kristensen>,
+        <KnoxPerson/9935_3515>,
+        <KnoxPerson/Lars_L%C3%B8kke>,
+        <KnoxPerson/Rita> .
+
+<KnoxArticle/3836840924873957569> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Billetsalg til vinter-OL svigter i Sydkorea" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Pyeongchang> .
+
+<KnoxArticle/4004451392288273546> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_08_aalborg_ons-s008-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxOrganisation/Adresse_Langagervej> .
+
+<KnoxArticle/4082583363103352429> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_04_aalborg_ons-s004-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Br%C3%B8nderslev_Kommune>,
+        <KnoxOrganisation/K>,
+        <KnoxOrganisation/Nordjyllands_Historiske_Museum>,
+        <KnoxPerson/Karsten_Frederiksen>,
+        <KnoxPerson/Lone_Andersen> .
+
+<KnoxArticle/4213332349379281929> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_18_aalborg_ons-s018-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Jammerbugt_Kommune>,
+        <KnoxPerson/Birgitte_Guldberg> .
+
+<KnoxArticle/4679487253367553251> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_06_aalborg_ons-s006-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxPerson/Mads_Peter_Veiby> .
+
+<KnoxArticle/5036504257407119890> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/5097986878863899002> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_09_aalborg_ons-s009-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/S>,
+        <KnoxPerson/Lisbeth_Lauritsen> .
+
+<KnoxArticle/5213952670577088803> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Jutta Engbjerg i kirkecentret" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Engbjerg>,
+        <KnoxLocation/Hirtshals>,
+        <KnoxLocation/L%C3%B8vvangens_Kirkecenter>,
+        <KnoxLocation/Lindholm_Sogns>,
+        <KnoxPerson/Jutta_Engbjerg> .
+
+<KnoxArticle/5356655202830493963> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "200 Air Berlin-piloter er syge" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/BERLIN>,
+        <KnoxLocation/Berlin>,
+        <KnoxOrganisation/Air_Berlin> .
+
+<KnoxArticle/5381775457782683587> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_19_aalborg_ons-s019-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Udl%C3%A6ndingestyrelsen>,
+        <KnoxPerson/Lene_Vejrum> .
+
+<KnoxArticle/5535547491227780664> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_20_aalborg_ons-s020-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/FN>,
+        <KnoxOrganisation/FNs_komiteer>,
+        <KnoxOrganisation/Flygtningen%C3%A6vnet>,
+        <KnoxOrganisation/Flygtningen%C3%A6vnets_koordinationsudvalg>,
+        <KnoxPerson/Stig_Torp_Henriksen> .
+
+<KnoxArticle/5956380229669824366> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Jørn har nu udsigt til pension" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_18_aalborg_ons-s018-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Hj%C3%B8rring_Kommunes>,
+        <KnoxLocation/Vr%C3%A5>,
+        <KnoxOrganisation/Danish_Crown>,
+        <KnoxOrganisation/Hj%C3%B8rring_Kommunes>,
+        <KnoxOrganisation/Jobcenter_Hj%C3%B8rring>,
+        <KnoxOrganisation/S>,
+        <KnoxPerson/Ivan_Leth>,
+        <KnoxPerson/J%C3%B8rn_Katballe>,
+        <KnoxPerson/J%C3%B8rn_Katballes> .
+
+<KnoxArticle/5985393438555875211> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_14_aalborg_ons-s014-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/%C3%98land_Medborgerhus>,
+        <KnoxLocation/Aabybro_Centret>,
+        <KnoxLocation/Aabybro_Plejehjem>,
+        <KnoxLocation/Brovst_Aktivitetscenter>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxOrganisation/%C3%98land_Show_Band>,
+        <KnoxOrganisation/N%C3%B8rhalne_Forsamlingshus> .
+
+<KnoxArticle/6182252562070023367> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Der skal bruges 10 mio. kr. mindre" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_14_aalborg_ons-s014-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aabybro>,
+        <KnoxLocation/Brovst>,
+        <KnoxLocation/Fjerritslev>,
+        <KnoxLocation/Jammerbugt_Kommune>,
+        <KnoxLocation/Jammerbugt_Kommunes>,
+        <KnoxLocation/Jetsmark_Stadion>,
+        <KnoxLocation/Pandrup>,
+        <KnoxLocation/SFO%E2%80%99>,
+        <KnoxOrganisation/Brovst_Speedwaycenter>,
+        <KnoxOrganisation/Jammerbugt_Kommune>,
+        <KnoxOrganisation/Jetsmark_Skole>,
+        <KnoxPerson/Mogens_Gade> .
+
+<KnoxArticle/6224110783768245366> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Rettelse" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/6278812901936455728> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Demonstranter og politi i sammenstød" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_27_aalborg_ons-s027-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Frankrig>,
+        <KnoxLocation/Marseille>,
+        <KnoxLocation/Paris>,
+        <KnoxOrganisation/-ritzau>,
+        <KnoxOrganisation/CGT>,
+        <KnoxOrganisation/Macron>,
+        <KnoxPerson/Emmanuel_Macrons>,
+        <KnoxPerson/Jean-Luc_M%C3%A9lenchon> .
+
+<KnoxArticle/6501555310433692362> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Bandeleder skal blive bag tremmer" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_25_aalborg_ons-s025-02-indland--1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/K%C3%98BENHAVN>,
+        <KnoxOrganisation/K%C3%B8benhavns_Byret>,
+        <KnoxOrganisation/LTF>,
+        <KnoxOrganisation/Loyal_To_Familia>,
+        <KnoxPerson/Khan>,
+        <KnoxPerson/Lene_Sadolin-Holst>,
+        <KnoxPerson/Shuaib_Khan> .
+
+<KnoxArticle/6599761986666632744> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_05_aalborg_ons-s005-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/66604204277892151> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Krav om livstid for højreekstremist" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Den_Nationalsocialistiske_Undergrund>,
+        <KnoxOrganisation/NSU>,
+        <KnoxPerson/Beate_Zsch%C3%A4pe>,
+        <KnoxPerson/Uwe_B%C3%B6hnhardt>,
+        <KnoxPerson/Uwe_Mundlos> .
+
+<KnoxArticle/6760655190559758053> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Lokaldebat" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_15_aalborg_ons-s015-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/6930775422185829950> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Rigmænd vil bygge bilmekka til en milliard" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_07_aalborg_ons-s007-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Kommune>,
+        <KnoxLocation/Aalborgs>,
+        <KnoxLocation/Berlin>,
+        <KnoxLocation/By->,
+        <KnoxLocation/Gug>,
+        <KnoxLocation/KMD-huset>,
+        <KnoxLocation/Nordjylland>,
+        <KnoxLocation/Stuttgart>,
+        <KnoxOrganisation/BIG>,
+        <KnoxOrganisation/Neas_Energy>,
+        <KnoxOrganisation/S>,
+        <KnoxOrganisation/bilremise>,
+        <KnoxPerson/Bjarke_Ingels_Group>,
+        <KnoxPerson/David_Zahle>,
+        <KnoxPerson/Eigild_B._Christensen>,
+        <KnoxPerson/Eigild_Christensen>,
+        <KnoxPerson/J%C3%B8rgen_B%C3%B8nsdorff>,
+        <KnoxPerson/Jacob_Bang>,
+        <KnoxPerson/Jacob_Christensen>,
+        <KnoxPerson/Jan_Nygaard>,
+        <KnoxPerson/Mads_Peter_Veiby>,
+        <KnoxPerson/Mads_Peter_Veibys>,
+        <KnoxPerson/Mark_Nielsen>,
+        <KnoxPerson/Thomas_Kastrup-Larsen> .
+
+<KnoxArticle/7474602464299693736> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Fængslet for at dyrke hamp" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_02_aalborg_ons-s002-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Fr%C3%B8strup>,
+        <KnoxLocation/Holstebro>,
+        <KnoxOrganisation/Stup>,
+        <KnoxPerson/Jesper_Klyve> .
+
+<KnoxArticle/777488072077181885> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "28-årig model rådgiver Trump" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_26_aalborg_ons-s026-02-udland---1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Trump-familien>,
+        <KnoxOrganisation/Det_Hvide_Hus>,
+        <KnoxPerson/Donald_Trump>,
+        <KnoxPerson/Donald_Trumps>,
+        <KnoxPerson/Hicks>,
+        <KnoxPerson/Hope_Hicks>,
+        <KnoxPerson/Ivanka>,
+        <KnoxPerson/Sarah_Huckabee_Sanders> .
+
+<KnoxArticle/8194827959885301920> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "lokaldebat" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> .
+
+<KnoxArticle/8203504074622076550> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_16_aalborg_ons-s016-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Thisted>,
+        <KnoxOrganisation/Adresse_Langagervej>,
+        <KnoxOrganisation/Noatun>,
+        <KnoxPerson/Leif_Pedersen> .
+
+<KnoxArticle/8286720537434652389> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxOrganisation/Adresse_Langagervej>,
+        <KnoxOrganisation/S>,
+        <KnoxPerson/thomas_kastrup_larsen> .
+
+<KnoxArticle/8299990981623207446> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Pas på: Microsoft-svindlere fik adgang til netbank" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_20_aalborg_ons-s020-02-nordjyll-1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxOrganisation/Microsoft>,
+        <KnoxOrganisation/Nordjyllands_Politi>,
+        <KnoxPerson/J%C3%B8rn_Kresten_Nielsen> .
+
+<KnoxArticle/8712497188724676834> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Tusind tak for hjælpen" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_12_aalborg_ons-s012-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Aalborg>,
+        <KnoxLocation/Aalborg_Kommunes>,
+        <KnoxLocation/Aalborg_sygehus>,
+        <KnoxLocation/Danmarksgade>,
+        <KnoxOrganisation/Falck>,
+        <KnoxOrganisation/Netto> .
+
+<KnoxArticle/8737962341826374974> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Kummefryser eller skilsmisse" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_17_aalborg_ons-s017-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/Thy_Lejr>,
+        <KnoxOrganisation/Himmerlands_Teater>,
+        <KnoxPerson/Lise_Reinaus>,
+        <KnoxPerson/Margrethe_Manley>,
+        <KnoxPerson/Nick_Pedersen>,
+        <KnoxPerson/Niels_S%C3%B8ren_Hansen>,
+        <KnoxPerson/Susanne_Sangill> .
+
+<KnoxArticle/916432777126916232> a <KnoxArticle>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxArticleTitle> "Hal lejet til fodbold, men brugt til fest" ;
+    <KnoxLink> "/srv/data/newsarchive/2017-09-13/00_11_aalborg_ons-s011-02-lokal----1309_201709130000.pdf" ;
+    <KnoxisPublishedBy> <KnoxPublisher/Nordjyske_Medier> ;
+    <Knoxmentions> <KnoxLocation/AALBORG>,
+        <KnoxLocation/Aalborg_Moske>,
+        <KnoxLocation/Mellervangskolen_2.>,
+        <KnoxOrganisation/DF>,
+        <KnoxOrganisation/FC_Dansom>,
+        <KnoxOrganisation/FC_Dansoms>,
+        <KnoxOrganisation/Fodboldklubben_FC_Dansom>,
+        <KnoxOrganisation/Kulturforening>,
+        <KnoxOrganisation/Ungdomsvejledning>,
+        <KnoxPerson/Abdinasir_Jama>,
+        <KnoxPerson/Kristoffer_Hjort_Storm>,
+        <KnoxPerson/Mads_Duedahl> .
+
+<KnoxLocation/%C3%98land_Medborgerhus> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Øland Medborgerhus" .
+
+<KnoxLocation/3501_Fax> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "3501 Fax" .
+
+<KnoxLocation/9100_Aalborg> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "9100 Aalborg" .
+
+<KnoxLocation/Aabybro_Centret> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aabybro Centret" .
+
+<KnoxLocation/Aabybro_Plejehjem> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aabybro Plejehjem" .
+
+<KnoxLocation/Aalborg_Street-food> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Street-food" .
+
+<KnoxLocation/Aalborg_sygehus> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg sygehus" .
+
+<KnoxLocation/Adresse_Langagervej> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Adresse Langagervej" .
+
+<KnoxLocation/Arden_by> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Arden by" .
+
+<KnoxLocation/Asylgade> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Asylgade" .
+
+<KnoxLocation/B%C3%B8rglum> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Børglum" .
+
+<KnoxLocation/B%C3%B8rglum_Kloster> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Børglum Kloster" .
+
+<KnoxLocation/BERLIN> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "BERLIN" .
+
+<KnoxLocation/Bellevue> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bellevue" .
+
+<KnoxLocation/Biersted> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Biersted" .
+
+<KnoxLocation/Brovst_Aktivitetscenter> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Brovst Aktivitetscenter" .
+
+<KnoxLocation/Caf%C3%A9_Frederiksberg> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Café Frederiksberg" .
+
+<KnoxLocation/Chicago_Style> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Chicago Style" .
+
+<KnoxLocation/Christiania> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Christiania" .
+
+<KnoxLocation/Christiansborg> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Christiansborg" .
+
+<KnoxLocation/Danmarksgade> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Danmarksgade" .
+
+<KnoxLocation/Det_Nationalhistoriske_Museum> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Det Nationalhistoriske Museum" .
+
+<KnoxLocation/Domus_Vision> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Domus Vision" .
+
+<KnoxLocation/Doverodde> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Doverodde" .
+
+<KnoxLocation/Dronninglund> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dronninglund" .
+
+<KnoxLocation/Engbjerg> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Engbjerg" .
+
+<KnoxLocation/Fars%C3%B8> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Farsø" .
+
+<KnoxLocation/Fars%C3%B8_R%C3%A5dhuscenter> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Farsø Rådhuscenter" .
+
+<KnoxLocation/Feggesund> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Feggesund" .
+
+<KnoxLocation/Fr%C3%B8strup> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Frøstrup" .
+
+<KnoxLocation/Frankrigs> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Frankrigs" .
+
+<KnoxLocation/Frederiksborg_Slot> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Frederiksborg Slot" .
+
+<KnoxLocation/Frederikssund> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Frederikssund" .
+
+<KnoxLocation/Fur> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fur" .
+
+<KnoxLocation/Fyensgade_Centret> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fyensgade Centret" .
+
+<KnoxLocation/Gj%C3%B8l> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gjøl" .
+
+<KnoxLocation/Gr%C3%B8nlands_Torv> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Grønlands Torv" .
+
+<KnoxLocation/Gratis_Klik> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gratis Klik" .
+
+<KnoxLocation/Green_Days_album> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Green Days album" .
+
+<KnoxLocation/Gug_Kirke> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gug Kirke" .
+
+<KnoxLocation/Hals> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hals" .
+
+<KnoxLocation/Haverslev> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Haverslev" .
+
+<KnoxLocation/Hiller%C3%B8d> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hillerød" .
+
+<KnoxLocation/Hirtshals> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hirtshals" .
+
+<KnoxLocation/Hj%C3%B8rring> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hjørring" .
+
+<KnoxLocation/Hjulmagervej_19> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hjulmagervej 19" .
+
+<KnoxLocation/Hollands> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hollands" .
+
+<KnoxLocation/Hune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hune" .
+
+<KnoxLocation/Jammerbugtens> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugtens" .
+
+<KnoxLocation/Karthago> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Karthago" .
+
+<KnoxLocation/Klarup> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Klarup" .
+
+<KnoxLocation/Klokkerholm> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Klokkerholm" .
+
+<KnoxLocation/Klokkerholm_Skole> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Klokkerholm Skole" .
+
+<KnoxLocation/Klosterheden_Plantage> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Klosterheden Plantage" .
+
+<KnoxLocation/Kongensgade_16> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kongensgade 16" .
+
+<KnoxLocation/Kongerslev> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kongerslev" .
+
+<KnoxLocation/Kreml> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kreml" .
+
+<KnoxLocation/Kunsten> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kunsten" .
+
+<KnoxLocation/Kunsten_Baby> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kunsten Baby" .
+
+<KnoxLocation/Kvindens_Plads> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kvindens Plads" .
+
+<KnoxLocation/L%C3%B8gst%C3%B8r> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Løgstør" .
+
+<KnoxLocation/L%C3%B8vvangens_Kirkecenter> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Løvvangens Kirkecenter" .
+
+<KnoxLocation/Lemvig> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lemvig" .
+
+<KnoxLocation/Limfjord> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Limfjord" .
+
+<KnoxLocation/Limfjorden> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Limfjorden" .
+
+<KnoxLocation/Lindholm_Sogns> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lindholm Sogns" .
+
+<KnoxLocation/Lykkesh%C3%B8j_Aktivitetscenter> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lykkeshøj Aktivitetscenter" .
+
+<KnoxLocation/Marseille> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Marseille" .
+
+<KnoxLocation/Nederlandene> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nederlandene" .
+
+<KnoxLocation/Nordens> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordens" .
+
+<KnoxLocation/Nordkorea> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordkorea" .
+
+<KnoxLocation/Nordkoreas> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordkoreas" .
+
+<KnoxLocation/Nordkraft> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordkraft" .
+
+<KnoxLocation/Nutidshuset> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nutidshuset" .
+
+<KnoxLocation/Nyk%C3%B8bing_Mors> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nykøbing Mors" .
+
+<KnoxLocation/Olymposvej_30> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Olymposvej 30" .
+
+<KnoxLocation/Pandrup_Industriby> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Pandrup Industriby" .
+
+<KnoxLocation/Paris> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Paris" .
+
+<KnoxLocation/Postbox_8000> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Postbox 8000" .
+
+<KnoxLocation/Pyeongchang> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Pyeongchang" .
+
+<KnoxLocation/Riksdagen> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Riksdagen" .
+
+<KnoxLocation/Roskilde> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Roskilde" .
+
+<KnoxLocation/Ruslands> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ruslands" .
+
+<KnoxLocation/S%C3%B8ndergade> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Søndergade" .
+
+<KnoxLocation/Sankt_Barts> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sankt Barts" .
+
+<KnoxLocation/Sdr._Tranders> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sdr. Tranders" .
+
+<KnoxLocation/Skive> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Skive" .
+
+<KnoxLocation/Storsind%E2%80%99> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Storsind’" .
+
+<KnoxLocation/Struer> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Struer" .
+
+<KnoxLocation/Sveriges> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sveriges" .
+
+<KnoxLocation/Svin%C3%B8r> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Svinør" .
+
+<KnoxLocation/Thisted_Bryghus> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted Bryghus" .
+
+<KnoxLocation/Thisted_Havn> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted Havn" .
+
+<KnoxLocation/Thy_Lejr> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thy Lejr" .
+
+<KnoxLocation/Thybor%C3%B8n> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thyborøn" .
+
+<KnoxLocation/Tranum> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tranum" .
+
+<KnoxLocation/Trump-familien> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Trump-familien" .
+
+<KnoxLocation/Tyrkiet> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tyrkiet" .
+
+<KnoxLocation/Tyrkiets> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tyrkiets" .
+
+<KnoxLocation/Tyskland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tyskland" .
+
+<KnoxLocation/USA> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "USA" .
+
+<KnoxLocation/V%C3%A6kst_Jammerbugt> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vækst Jammerbugt" .
+
+<KnoxLocation/Vejgaard> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vejgaard" .
+
+<KnoxLocation/Vestervig> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vestervig" .
+
+<KnoxLocation/Vestjylland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vestjylland" .
+
+<KnoxLocation/Voergaardsvej_17> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Voergaardsvej 17" .
+
+<KnoxLocation/aalborg_kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "aalborg kommune" .
+
+<KnoxLocation/asylland_NORDJYLLAND> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "asylland NORDJYLLAND" .
+
+<KnoxLocation/medskipper> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "medskipper" .
+
+<KnoxLocation/www.guloggratis.dk> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "www.guloggratis.dk" .
+
+<KnoxOrganisation/%C3%98land_Show_Band> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Øland Show Band" .
+
+<KnoxOrganisation/-ritzau> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "/ritzau" .
+
+<KnoxOrganisation/AP> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "AP" .
+
+<KnoxOrganisation/Aalborg_%C3%98stre_Provsti> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Østre Provsti" .
+
+<KnoxOrganisation/Aalborg_Universitet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Universitet" .
+
+<KnoxOrganisation/Air_Berlin> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Air Berlin" .
+
+<KnoxOrganisation/Alliansen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Alliansen" .
+
+<KnoxOrganisation/Andersen-Fruedahl> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Andersen-Fruedahl" .
+
+<KnoxOrganisation/Annoncer> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Annoncer" .
+
+<KnoxOrganisation/Annoncesalg_Telefon> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Annoncesalg Telefon" .
+
+<KnoxOrganisation/Arbejderbev%C3%A6gelsen_Erhvervsr%C3%A5d> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Arbejderbevægelsen Erhvervsråd" .
+
+<KnoxOrganisation/Bejstrup_Inger_%C3%98eby_Pedersen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bejstrup Inger Øeby Pedersen" .
+
+<KnoxOrganisation/Boulevard_of_Broken_Dreams> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Boulevard of Broken Dreams" .
+
+<KnoxOrganisation/Br%C3%B8nderslev_Kommune_Jes_Rose_Nielsen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Brønderslev Kommune Jes Rose Nielsen" .
+
+<KnoxOrganisation/CGT> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "CGT" .
+
+<KnoxOrganisation/Cobham> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Cobham" .
+
+<KnoxOrganisation/DI> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "DI" .
+
+<KnoxOrganisation/DR> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "DR" .
+
+<KnoxOrganisation/Dansk_Folkeparti> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dansk Folkeparti" .
+
+<KnoxOrganisation/Dansk_Industri> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dansk Industri" .
+
+<KnoxOrganisation/Dansk_Magisterforening> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dansk Magisterforening" .
+
+<KnoxOrganisation/Danske_Handicaporganisationer> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Danske Handicaporganisationer" .
+
+<KnoxOrganisation/De_Konservative> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "De Konservative" .
+
+<KnoxOrganisation/Den_Gr%C3%A5_Hal> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Den Grå Hal" .
+
+<KnoxOrganisation/Den_Nationalsocialistiske_Undergrund> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Den Nationalsocialistiske Undergrund" .
+
+<KnoxOrganisation/Det_Hvide_Hus> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Det Hvide Hus" .
+
+<KnoxOrganisation/Det_Konservative_Folkeparti> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Det Konservative Folkeparti" .
+
+<KnoxOrganisation/Enhedslisten> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Enhedslisten" .
+
+<KnoxOrganisation/Erhvervskvinder> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Erhvervskvinder" .
+
+<KnoxOrganisation/FN%E2%80%99s> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FN’s" .
+
+<KnoxOrganisation/FN%E2%80%99s_Sikkerhedsr%C3%A5d> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FN’s Sikkerhedsråd" .
+
+<KnoxOrganisation/Falck> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Falck" .
+
+<KnoxOrganisation/Forsvaret-> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Forsvaret/" .
+
+<KnoxOrganisation/Gug_Kirke> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gug Kirke" .
+
+<KnoxOrganisation/Gug_Kirkes> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gug Kirkes" .
+
+<KnoxOrganisation/H%C3%BCrriyet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hürriyet" .
+
+<KnoxOrganisation/HAGBARd> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "HAGBARd" .
+
+<KnoxOrganisation/Hans_Egedes_Kirke> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hans Egedes Kirke" .
+
+<KnoxOrganisation/Himmerlands_Teater> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Himmerlands Teater" .
+
+<KnoxOrganisation/Hultqvist> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hultqvist" .
+
+<KnoxOrganisation/Intergrationsministeriet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Intergrationsministeriet" .
+
+<KnoxOrganisation/Jammerbugt_Asylcenter> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt Asylcenter" .
+
+<KnoxOrganisation/Jelved> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jelved" .
+
+<KnoxOrganisation/Juridisk_Institut> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Juridisk Institut" .
+
+<KnoxOrganisation/K%C3%B8benhavns_Byret> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Københavns Byret" .
+
+<KnoxOrganisation/K%C3%B8benhavns_Universitet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Københavns Universitet" .
+
+<KnoxOrganisation/Kulturministeriet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kulturministeriet" .
+
+<KnoxOrganisation/Kultursiden> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kultursiden" .
+
+<KnoxOrganisation/L%C3%B6fven> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Löfven" .
+
+<KnoxOrganisation/LO> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "LO" .
+
+<KnoxOrganisation/LTF> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "LTF" .
+
+<KnoxOrganisation/Leder2> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Leder2" .
+
+<KnoxOrganisation/Loyal_To_Familia> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Loyal To Familia" .
+
+<KnoxOrganisation/Macron> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Macron" .
+
+<KnoxOrganisation/Microsoft> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Microsoft" .
+
+<KnoxOrganisation/N%C3%B8rhalne_Forsamlingshus> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nørhalne Forsamlingshus" .
+
+<KnoxOrganisation/NSU> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "NSU" .
+
+<KnoxOrganisation/Netto> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Netto" .
+
+<KnoxOrganisation/Nyk%C3%B8bing_Mors> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nykøbing Mors" .
+
+<KnoxOrganisation/Pandrup_Business_Park> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Pandrup Business Park" .
+
+<KnoxOrganisation/Pandrup_Industriby> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Pandrup Industriby" .
+
+<KnoxOrganisation/Rema> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rema" .
+
+<KnoxOrganisation/Rentokil> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rentokil" .
+
+<KnoxOrganisation/Rotary> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rotary" .
+
+<KnoxOrganisation/Ryes> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ryes" .
+
+<KnoxOrganisation/S%C3%B8nder_Tranders_sogn> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sønder Tranders sogn" .
+
+<KnoxOrganisation/SD> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "SD" .
+
+<KnoxOrganisation/Selvbetjening_Avisbestilling> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Selvbetjening Avisbestilling" .
+
+<KnoxOrganisation/Sp%C3%B8rgfolk> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Spørgfolk" .
+
+<KnoxOrganisation/Stup> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stup" .
+
+<KnoxOrganisation/Sverigedemokraterna> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sverigedemokraterna" .
+
+<KnoxOrganisation/Sverigedemokraternas> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sverigedemokraternas" .
+
+<KnoxOrganisation/TV_Avisen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "TV Avisen" .
+
+<KnoxOrganisation/Thisted_Havn> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted Havn" .
+
+<KnoxOrganisation/Thisted_Politi> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted Politi" .
+
+<KnoxOrganisation/Thorvaldsens_Museum> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thorvaldsens Museum" .
+
+<KnoxOrganisation/Transportstyrelsen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Transportstyrelsen" .
+
+<KnoxOrganisation/Tune_Kristensen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tune Kristensen" .
+
+<KnoxOrganisation/Tv_Midtvest> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tv Midtvest" .
+
+<KnoxOrganisation/Venstres> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Venstres" .
+
+<KnoxOrganisation/cd> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "cd" .
+
+<KnoxPerson/%E2%80%99Retssind> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "’Retssind" .
+
+<KnoxPerson/9935_3515> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "9935 3515" .
+
+<KnoxPerson/A.K._Jydens_Brydecenter> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "A.K. Jydens Brydecenter" .
+
+<KnoxPerson/Alliansen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Alliansen" .
+
+<KnoxPerson/Beate_Zsch%C3%A4pe> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Beate Zschäpe" .
+
+<KnoxPerson/Bent_Linn%C3%A9> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bent Linné" .
+
+<KnoxPerson/Bente_Dam> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bente Dam" .
+
+<KnoxPerson/Berit_Engholm> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Berit Engholm" .
+
+<KnoxPerson/Bibs_Fritze_Svendsens> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bibs Fritze Svendsens" .
+
+<KnoxPerson/Chic> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Chic" .
+
+<KnoxPerson/Christian_Hem> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Christian Hem" .
+
+<KnoxPerson/Cyprianus> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Cyprianus" .
+
+<KnoxPerson/Donald_Trump> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Donald Trump" .
+
+<KnoxPerson/Donald_Trumps> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Donald Trumps" .
+
+<KnoxPerson/Dorte_Buus> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dorte Buus" .
+
+<KnoxPerson/Dorthe> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dorthe" .
+
+<KnoxPerson/Elsa> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Elsa" .
+
+<KnoxPerson/Emmanuel_Macron> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Emmanuel Macron" .
+
+<KnoxPerson/Emmanuel_Macrons> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Emmanuel Macrons" .
+
+<KnoxPerson/George_Michael> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "George Michael" .
+
+<KnoxPerson/George_Michaels> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "George Michaels" .
+
+<KnoxPerson/Hicks> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hicks" .
+
+<KnoxPerson/Hope_Hicks> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hope Hicks" .
+
+<KnoxPerson/Hugo_Jepsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hugo Jepsen" .
+
+<KnoxPerson/Inge-Marie> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Inge-Marie" .
+
+<KnoxPerson/Inge-Marie_Jepsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Inge-Marie Jepsen" .
+
+<KnoxPerson/Isabel_Enevoldsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Isabel Enevoldsen" .
+
+<KnoxPerson/Ivanka> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ivanka" .
+
+<KnoxPerson/Iver_Huitfeldt> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Iver Huitfeldt" .
+
+<KnoxPerson/J%C3%B8rgen_Ravn_Christensen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørgen Ravn Christensen" .
+
+<KnoxPerson/Jakobs> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jakobs" .
+
+<KnoxPerson/Jasper_Steen_Winkel> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jasper Steen Winkel" .
+
+<KnoxPerson/Jean-Luc_M%C3%A9lenchon> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jean-Luc Mélenchon" .
+
+<KnoxPerson/Jes_Rose_Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jes Rose Nielsen" .
+
+<KnoxPerson/Jesper_Klyve> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jesper Klyve" .
+
+<KnoxPerson/Jutta_Engbjerg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jutta Engbjerg" .
+
+<KnoxPerson/Kasper_Buus> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kasper Buus" .
+
+<KnoxPerson/Khan> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Khan" .
+
+<KnoxPerson/Klaus_H%C3%B8jgaard_Laursen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Klaus Højgaard Laursen" .
+
+<KnoxPerson/Kong_Christians_All%C3%A9> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kong Christians Allé" .
+
+<KnoxPerson/L%C3%B6fvens> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Löfvens" .
+
+<KnoxPerson/Lady_Gaga> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lady Gaga" .
+
+<KnoxPerson/Lars_L%C3%B8kke> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lars Løkke" .
+
+<KnoxPerson/Lene_Linnemann> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lene Linnemann" .
+
+<KnoxPerson/Lene_Sadolin-Holst> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lene Sadolin-Holst" .
+
+<KnoxPerson/Lise_Reinaus> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lise Reinaus" .
+
+<KnoxPerson/Liselotte_Odgaard> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Liselotte Odgaard" .
+
+<KnoxPerson/Lone_Sondrup> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lone Sondrup" .
+
+<KnoxPerson/Lovsind> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lovsind" .
+
+<KnoxPerson/M%C3%B8ller> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Møller" .
+
+<KnoxPerson/Mads_Rye> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mads Rye" .
+
+<KnoxPerson/Margrethe_Manley> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Margrethe Manley" .
+
+<KnoxPerson/Marianne_Jelveds> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Marianne Jelveds" .
+
+<KnoxPerson/Marie_Schr%C3%B8der_Carlsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Marie Schrøder Carlsen" .
+
+<KnoxPerson/Martin_Luther> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Martin Luther" .
+
+<KnoxPerson/Mattias_Karlsson> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mattias Karlsson" .
+
+<KnoxPerson/Michael_learns> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Michael learns" .
+
+<KnoxPerson/Milena_Penkowa> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Milena Penkowa" .
+
+<KnoxPerson/Nick_Pedersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nick Pedersen" .
+
+<KnoxPerson/Niels_S%C3%B8ren_Hansen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Niels Søren Hansen" .
+
+<KnoxPerson/Niels_Sohn> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Niels Sohn" .
+
+<KnoxPerson/Nile_Rodgers> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nile Rodgers" .
+
+<KnoxPerson/Noatun> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Noatun" .
+
+<KnoxPerson/Penkowa> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Penkowa" .
+
+<KnoxPerson/Per_Larsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Per Larsen" .
+
+<KnoxPerson/Peter_Hultqvist> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Peter Hultqvist" .
+
+<KnoxPerson/Poul_Krebs> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Poul Krebs" .
+
+<KnoxPerson/Recep_Tayyip_Erdogan> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Recep Tayyip Erdogan" .
+
+<KnoxPerson/Rita> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rita" .
+
+<KnoxPerson/Ruth> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ruth" .
+
+<KnoxPerson/S%C3%B8ren_Brink> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Søren Brink" .
+
+<KnoxPerson/S-400> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "S-400" .
+
+<KnoxPerson/Sarah_Huckabee_Sanders> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sarah Huckabee Sanders" .
+
+<KnoxPerson/Shuaib_Khan> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Shuaib Khan" .
+
+<KnoxPerson/Sophia_Rokkedahl> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sophia Rokkedahl" .
+
+<KnoxPerson/Stefan_L%C3%B6fven> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stefan Löfven" .
+
+<KnoxPerson/Susanne_Sangill> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Susanne Sangill" .
+
+<KnoxPerson/Tass> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tass" .
+
+<KnoxPerson/Thomas_Kastrup-Larsens> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thomas Kastrup-Larsens" .
+
+<KnoxPerson/Thomas_Klingenberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thomas Klingenberg" .
+
+<KnoxPerson/Thyra> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thyra" .
+
+<KnoxPerson/Tine_Bang> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tine Bang" .
+
+<KnoxPerson/Tor> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tor" .
+
+<KnoxPerson/Tor_Bagger> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tor Bagger" .
+
+<KnoxPerson/Trio_Gente> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Trio Gente" .
+
+<KnoxPerson/Ulla_Astman> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ulla Astman" .
+
+<KnoxPerson/Ulrik_Schade> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ulrik Schade" .
+
+<KnoxPerson/Uwe_B%C3%B6hnhardt> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Uwe Böhnhardt" .
+
+<KnoxPerson/Uwe_Mundlos> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Uwe Mundlos" .
+
+<KnoxPerson/Willem-Alexander> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Willem-Alexander" .
+
+<KnoxPerson/Wittenberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Wittenberg" .
+
+<KnoxPerson/Zapad> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Zapad" .
+
+<KnoxPerson/gennemluftet> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "gennemluftet" .
+
+<KnoxPerson/j%C3%B8rgen_andersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "jørgen andersen" .
+
+<KnoxPerson/thomas_kastrup_larsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "thomas kastrup larsen" .
+
+<KnoxPerson/v-_Jens_Brun> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "v/ Jens Brun" .
+
+<KnoxLocation/%C3%85rhus_Universitet> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Århus Universitet" .
+
+<KnoxLocation/AALBORG_%C3%98ST> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "AALBORG ØST" .
+
+<KnoxLocation/Aalborg_Moske> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Moske" .
+
+<KnoxLocation/Aurora> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aurora" .
+
+<KnoxLocation/Birken> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Birken" .
+
+<KnoxLocation/Bornholm> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bornholm" .
+
+<KnoxLocation/Br%C3%B8nderslev_Kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Brønderslev Kommune" .
+
+<KnoxLocation/By-> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "By-" .
+
+<KnoxLocation/Caribien> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Caribien" .
+
+<KnoxLocation/E45> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "E45" .
+
+<KnoxLocation/Enghavevej> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Enghavevej" .
+
+<KnoxLocation/Europa> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Europa" .
+
+<KnoxLocation/Europas> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Europas" .
+
+<KnoxLocation/Fjerritslev> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fjerritslev" .
+
+<KnoxLocation/Floridas> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Floridas" .
+
+<KnoxLocation/Foggia> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Foggia" .
+
+<KnoxLocation/Gl._Torv> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gl. Torv" .
+
+<KnoxLocation/Gug> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Gug" .
+
+<KnoxLocation/Hj%C3%B8rring_Kommunes> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hjørring Kommunes" .
+
+<KnoxLocation/Holland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Holland" .
+
+<KnoxLocation/Holstebro> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Holstebro" .
+
+<KnoxLocation/Hotel_Flamboyant> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hotel Flamboyant" .
+
+<KnoxLocation/Iran> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Iran" .
+
+<KnoxLocation/Jammerbugt_Asylcenter> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt Asylcenter" .
+
+<KnoxLocation/Jammerbugt_Kommunes> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt Kommunes" .
+
+<KnoxLocation/Jetsmark_Stadion> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jetsmark Stadion" .
+
+<KnoxLocation/K%C3%98BENHAVN> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "KØBENHAVN" .
+
+<KnoxLocation/KMD-huset> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "KMD-huset" .
+
+<KnoxLocation/Limfjordstunnelen> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Limfjordstunnelen" .
+
+<KnoxLocation/Mellervangskolen_2.> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mellervangskolen 2." .
+
+<KnoxLocation/Miami> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Miami" .
+
+<KnoxLocation/New_York_Times> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "New York Times" .
+
+<KnoxLocation/Norges> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Norges" .
+
+<KnoxLocation/Northern_Coast> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Northern Coast" .
+
+<KnoxLocation/Pandrup> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Pandrup" .
+
+<KnoxLocation/R%C3%A6hr> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ræhr" .
+
+<KnoxLocation/SFO%E2%80%99> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "SFO’" .
+
+<KnoxLocation/Sankt_Martin> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sankt Martin" .
+
+<KnoxLocation/Storbritannien> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Storbritannien" .
+
+<KnoxLocation/Storeb%C3%A6ltsbroen> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Storebæltsbroen" .
+
+<KnoxLocation/Stortinget> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stortinget" .
+
+<KnoxLocation/Stuttgart> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stuttgart" .
+
+<KnoxLocation/Vendsyssel> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vendsyssel" .
+
+<KnoxLocation/Vesten> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vesten" .
+
+<KnoxLocation/Vesthimmerland_Kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vesthimmerland Kommune" .
+
+<KnoxLocation/Vr%C3%A5> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vrå" .
+
+<KnoxLocation/challengerfly> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "challengerfly" .
+
+<KnoxOrganisation/%C3%86ldre> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ældre" .
+
+<KnoxOrganisation/%C3%86ldre_og_Handicapforvaltningen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ældre og Handicapforvaltningen" .
+
+<KnoxOrganisation/Aalborg_Halvmarathon> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Halvmarathon" .
+
+<KnoxOrganisation/Aalborg_Halvmaraton> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Halvmaraton" .
+
+<KnoxOrganisation/Adresse_Langagervej_1> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Adresse Langagervej 1" .
+
+<KnoxOrganisation/Alternativet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Alternativet" .
+
+<KnoxOrganisation/Arbeiderpartiet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Arbeiderpartiet" .
+
+<KnoxOrganisation/BIG> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "BIG" .
+
+<KnoxOrganisation/Brovst_Speedwaycenter> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Brovst Speedwaycenter" .
+
+<KnoxOrganisation/Dagbladet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dagbladet" .
+
+<KnoxOrganisation/Danish_Crown> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Danish Crown" .
+
+<KnoxOrganisation/Danmark_NORDJYLLAND> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Danmark NORDJYLLAND" .
+
+<KnoxOrganisation/Dansk_Flygtningehj%C3%A6lp> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Dansk Flygtningehjælp" .
+
+<KnoxOrganisation/EL> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "EL" .
+
+<KnoxOrganisation/FC_Dansom> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FC Dansom" .
+
+<KnoxOrganisation/FC_Dansoms> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FC Dansoms" .
+
+<KnoxOrganisation/FNs_komite> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FNs komite" .
+
+<KnoxOrganisation/FNs_menneskerettighedskomite-> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FNs menneskerettighedskomite-" .
+
+<KnoxOrganisation/Fjordlisten> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fjordlisten" .
+
+<KnoxOrganisation/Fodboldklubben_FC_Dansom> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fodboldklubben FC Dansom" .
+
+<KnoxOrganisation/Folkekirkens_Hus> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Folkekirkens Hus" .
+
+<KnoxOrganisation/Folketinget> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Folketinget" .
+
+<KnoxOrganisation/Footprint> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Footprint" .
+
+<KnoxOrganisation/Fremskrittspartiet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Fremskrittspartiet" .
+
+<KnoxOrganisation/H%C3%B8yre> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Høyre" .
+
+<KnoxOrganisation/Himmerland_Boligforening> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Himmerland Boligforening" .
+
+<KnoxOrganisation/Hj%C3%B8rring_Kommunes> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hjørring Kommunes" .
+
+<KnoxOrganisation/Hos_Flygtningen%C3%A6vnet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hos Flygtningenævnet" .
+
+<KnoxOrganisation/Indenrigsministeriet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Indenrigsministeriet" .
+
+<KnoxOrganisation/Institut> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Institut" .
+
+<KnoxOrganisation/Jetsmark_Skole> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jetsmark Skole" .
+
+<KnoxOrganisation/Jobcenter_Hj%C3%B8rring> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jobcenter Hjørring" .
+
+<KnoxOrganisation/K> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "K" .
+
+<KnoxOrganisation/KD> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "KD" .
+
+<KnoxOrganisation/KrF> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "KrF" .
+
+<KnoxOrganisation/Kristeligt_Folkeparti> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kristeligt Folkeparti" .
+
+<KnoxOrganisation/Kulturforening> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kulturforening" .
+
+<KnoxOrganisation/Limfjordtunnelen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Limfjordtunnelen" .
+
+<KnoxOrganisation/NTB> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "NTB" .
+
+<KnoxOrganisation/Neas_Energy> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Neas Energy" .
+
+<KnoxOrganisation/Noatun> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Noatun" .
+
+<KnoxOrganisation/Nordjyllands_Historiske_Museum> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordjyllands Historiske Museum" .
+
+<KnoxOrganisation/Nordjyllands_Politi> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordjyllands Politi" .
+
+<KnoxOrganisation/RV> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "RV" .
+
+<KnoxOrganisation/Rigsrevisionen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rigsrevisionen" .
+
+<KnoxOrganisation/Social_F%C3%A6lles_Liste> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Social Fælles Liste" .
+
+<KnoxOrganisation/Socialdemokratiet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Socialdemokratiet" .
+
+<KnoxOrganisation/Storting> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Storting" .
+
+<KnoxOrganisation/Sund_%26_B%C3%A6lt> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sund & Bælt" .
+
+<KnoxOrganisation/Tornh%C3%B8jg%C3%A5rd> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tornhøjgård" .
+
+<KnoxOrganisation/Udenrigsministeriet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Udenrigsministeriet" .
+
+<KnoxOrganisation/Ungdomsvejledning> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ungdomsvejledning" .
+
+<KnoxOrganisation/Vejdirektoratets> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Vejdirektoratets" .
+
+<KnoxOrganisation/bilremise> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "bilremise" .
+
+<KnoxOrganisation/de_Britiske_Jomfru%C3%B8er> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "de Britiske Jomfruøer" .
+
+<KnoxOrganisation/det_konservative_H%C3%B8yre> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "det konservative Høyre" .
+
+<KnoxPerson/Abdinasir_Jama> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Abdinasir Jama" .
+
+<KnoxPerson/Analytiker_Beate_Nossum> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Analytiker Beate Nossum" .
+
+<KnoxPerson/Anette_Valentin> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Anette Valentin" .
+
+<KnoxPerson/Anne-Dorrit_Harris> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Anne-Dorrit Harris" .
+
+<KnoxPerson/Anne-Dorte_Krog> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Anne-Dorte Krog" .
+
+<KnoxPerson/Asylchef_Birgitte_Guldberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Asylchef Birgitte Guldberg" .
+
+<KnoxPerson/B%C3%B8rnekomiteen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Børnekomiteen" .
+
+<KnoxPerson/Bibs_Fritze_Svendsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bibs Fritze Svendsen" .
+
+<KnoxPerson/Bjarke_Ingels_Group> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Bjarke Ingels Group" .
+
+<KnoxPerson/Daniel_Nyboe-Andersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Daniel Nyboe-Andersen" .
+
+<KnoxPerson/David_Zahle> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "David Zahle" .
+
+<KnoxPerson/Eigild_B._Christensen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Eigild B. Christensen" .
+
+<KnoxPerson/Erna> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Erna" .
+
+<KnoxPerson/Erna_Solberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Erna Solberg" .
+
+<KnoxPerson/Hans_Peter_Beck> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hans Peter Beck" .
+
+<KnoxPerson/Ita> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ita" .
+
+<KnoxPerson/Ivan_Leth> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ivan Leth" .
+
+<KnoxPerson/Iver_Huidtfeldt> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Iver Huidtfeldt" .
+
+<KnoxPerson/J%C3%B8rgen_Andersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørgen Andersen" .
+
+<KnoxPerson/J%C3%B8rgen_B%C3%B8nsdorff> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørgen Bønsdorff" .
+
+<KnoxPerson/J%C3%B8rgen_Pyndt> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørgen Pyndt" .
+
+<KnoxPerson/J%C3%B8rgen_Staun> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørgen Staun" .
+
+<KnoxPerson/J%C3%B8rn_Katballe> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørn Katballe" .
+
+<KnoxPerson/J%C3%B8rn_Katballes> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørn Katballes" .
+
+<KnoxPerson/J%C3%B8rn_Kresten_Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jørn Kresten Nielsen" .
+
+<KnoxPerson/Jacob_Bang> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jacob Bang" .
+
+<KnoxPerson/Jacob_Christensen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jacob Christensen" .
+
+<KnoxPerson/Jacques_Charbonnier> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jacques Charbonnier" .
+
+<KnoxPerson/Jan_Nygaard> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jan Nygaard" .
+
+<KnoxPerson/Jens_Toft-Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jens Toft-Nielsen" .
+
+<KnoxPerson/Johanne> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Johanne" .
+
+<KnoxPerson/Johannes> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Johannes" .
+
+<KnoxPerson/Jonas_Gahr_St%C3%B8re> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jonas Gahr Støre" .
+
+<KnoxPerson/Karsten_Frederiksen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Karsten Frederiksen" .
+
+<KnoxPerson/Lars_Sloth> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lars Sloth" .
+
+<KnoxPerson/Leif_Pedersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Leif Pedersen" .
+
+<KnoxPerson/Lone_Andersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lone Andersen" .
+
+<KnoxPerson/Mads_Peter_Veibys> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mads Peter Veibys" .
+
+<KnoxPerson/Mark_Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mark Nielsen" .
+
+<KnoxPerson/Menneskerettighedskomiteen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Menneskerettighedskomiteen" .
+
+<KnoxPerson/Milj%C3%B8ets> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Miljøets" .
+
+<KnoxPerson/Niels_J%C3%B8rgen_Lassen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Niels Jørgen Lassen" .
+
+<KnoxPerson/Nossum> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nossum" .
+
+<KnoxPerson/Ole_Birk_Olesen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ole Birk Olesen" .
+
+<KnoxPerson/Ole_Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ole Nielsen" .
+
+<KnoxPerson/Per_Clausen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Per Clausen" .
+
+<KnoxPerson/Putins> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Putins" .
+
+<KnoxPerson/Siv> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Siv" .
+
+<KnoxPerson/Siv_Jensen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Siv Jensen" .
+
+<KnoxPerson/Solberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Solberg" .
+
+<KnoxPerson/Stein_Tore_Marthinsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stein Tore Marthinsen" .
+
+<KnoxPerson/Storeb%C3%A6ltsl%C3%B8b> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Storebæltsløb" .
+
+<KnoxPerson/Tord_Willumsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Tord Willumsen" .
+
+<KnoxPerson/Trine_Skei_Grande> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Trine Skei Grande" .
+
+<KnoxPerson/Ulla_Ringgren> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ulla Ringgren" .
+
+<KnoxPerson/Yovanny_Roque> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Yovanny Roque" .
+
+<KnoxLocation/%C3%98sters%C3%B8en> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Østersøen" .
+
+<KnoxLocation/Aabybro> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aabybro" .
+
+<KnoxLocation/Aalborg_%C3%98st> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Øst" .
+
+<KnoxLocation/Aalborg_Universitet> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Universitet" .
+
+<KnoxLocation/Berlin> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Berlin" .
+
+<KnoxLocation/Brovst> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Brovst" .
+
+<KnoxLocation/Frankrig> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Frankrig" .
+
+<KnoxLocation/Hviderusland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Hviderusland" .
+
+<KnoxLocation/Italien> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Italien" .
+
+<KnoxLocation/Jammerbugt> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt" .
+
+<KnoxLocation/Juridisk_Institut> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Juridisk Institut" .
+
+<KnoxLocation/K%C3%B8benhavn> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "København" .
+
+<KnoxLocation/Kaliningrad> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kaliningrad" .
+
+<KnoxLocation/Norge> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Norge" .
+
+<KnoxLocation/Nytorv> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nytorv" .
+
+<KnoxLocation/R%C3%B8nne> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rønne" .
+
+<KnoxLocation/Sverige> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Sverige" .
+
+<KnoxLocation/Thisted> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted" .
+
+<KnoxOrganisation/Aalborg_Midtbys_Samr%C3%A5d> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Midtbys Samråd" .
+
+<KnoxOrganisation/FNs> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FNs" .
+
+<KnoxOrganisation/FNs_komiteer> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FNs komiteer" .
+
+<KnoxOrganisation/Flygtningen%C3%A6vnets_koordinationsudvalg> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Flygtningenævnets koordinationsudvalg" .
+
+<KnoxOrganisation/Forsvaret> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Forsvaret" .
+
+<KnoxOrganisation/Forsvarets> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Forsvarets" .
+
+<KnoxOrganisation/Forsvarsakademiet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Forsvarsakademiet" .
+
+<KnoxOrganisation/Integrationsministeriet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Integrationsministeriet" .
+
+<KnoxOrganisation/Jammerbugt_Kommune> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt Kommune" .
+
+<KnoxOrganisation/SF> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "SF" .
+
+<KnoxPerson/Birgitte_Guldberg> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Birgitte Guldberg" .
+
+<KnoxPerson/Eigild_Christensen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Eigild Christensen" .
+
+<KnoxPerson/Lene_Vejrum> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lene Vejrum" .
+
+<KnoxPerson/Lisbeth_Lauritsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Lisbeth Lauritsen" .
+
+<KnoxPerson/Mads_Peter_Veiby> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mads Peter Veiby" .
+
+<KnoxPerson/Martin> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Martin" .
+
+<KnoxPerson/Mogens_Gade> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mogens Gade" .
+
+<KnoxPerson/S%C3%B8ren_Andersen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Søren Andersen" .
+
+<KnoxPerson/Stig_Torp_Henriksen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Stig Torp Henriksen" .
+
+<KnoxPerson/Ulla_Ringgren_Nielsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Ulla Ringgren Nielsen" .
+
+<KnoxLocation/Aalborg_Kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Kommune" .
+
+<KnoxLocation/Aalborg_Kommunes> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg Kommunes" .
+
+<KnoxLocation/Rusland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Rusland" .
+
+<KnoxLocation/Thisted_Kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thisted Kommune" .
+
+<KnoxOrganisation/Adresse_Langagervej> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Adresse Langagervej" .
+
+<KnoxOrganisation/FN> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "FN" .
+
+<KnoxOrganisation/LA> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "LA" .
+
+<KnoxOrganisation/Udl%C3%A6ndinge-> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Udlændinge-" .
+
+<KnoxOrganisation/Venstre> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Venstre" .
+
+<KnoxPerson/Jesper_Lindholm> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jesper Lindholm" .
+
+<KnoxPerson/Kristoffer_Hjort_Storm> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Kristoffer Hjort Storm" .
+
+<KnoxPerson/Mads_Duedahl> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Mads Duedahl" .
+
+<KnoxPerson/Thomas_Krarup> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thomas Krarup" .
+
+<KnoxOrganisation/Flygtningen%C3%A6vnet> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Flygtningenævnet" .
+
+<KnoxOrganisation/Udl%C3%A6ndingestyrelsen> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Udlændingestyrelsen" .
+
+<KnoxOrganisation/DF> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "DF" .
+
+<KnoxLocation/Aalborgs> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborgs" .
+
+<KnoxOrganisation/NORDJYSKE> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "NORDJYSKE" .
+
+<KnoxPerson/Thomas_Kastrup-Larsen> a <KnoxPerson>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Thomas Kastrup-Larsen" .
+
+<KnoxLocation/Nordjylland> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Nordjylland" .
+
+<KnoxLocation/Danmark> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Danmark" .
+
+<KnoxLocation/Jammerbugt_Kommune> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Jammerbugt Kommune" .
+
+<KnoxLocation/AALBORG> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "AALBORG" .
+
+<KnoxOrganisation/S> a <KnoxOrganisation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "S" .
+
+<KnoxLocation/Aalborg> a <KnoxLocation>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    <KnoxName> "Aalborg" .
+
+<KnoxPublisher/Nordjyske_Medier> a <KnoxPublisher>,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> .
+

@@ -10,5 +10,7 @@ services:
             - NJ_SPACY_MODEL=da_core_news_lg
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - WORD_COUNT_DATA_ENDPOINT=http://192.38.49.147:5000/wordcount
+            - TRIPLE_DATA_ENDPOINT=http://192.38.49.147:5000/query
+            - ONTOLOGY_NAMESPACE=Knox
         restart: always
 
