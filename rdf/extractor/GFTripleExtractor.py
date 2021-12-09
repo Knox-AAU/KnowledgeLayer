@@ -17,8 +17,12 @@ Ev()
 
 
 class GFTripleExtractor(TripleExtractor):
+    """
+
+    """
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
-        # TODO: Don't hardcode pump name, maybe?
+        # TODO: The pump name SHOULD NOT be hard-coded. It is only like this since we don't receive the pump name
+        #  from the previous layer
         self.pump_name = "SQ/SQE"
 
         super().__init__(spacy_model, [], [], "http://www.KnoxGrundfos.test/")
@@ -26,16 +30,13 @@ class GFTripleExtractor(TripleExtractor):
 
     def _init_spacy_pipeline(self):
         """
-        Loads the custom spaCy pipeline, adds special cases for the tokenizer, and adds patterns for the
-        rule-based matching of pumps.
+        Loads the custom spaCy pipeline, and adds patterns for the rule-based matching of pumps.
         """
         # pumps = self.__extract_pumps_from_patterns()
 
         # Add special rules to tokenizer for each pump name
         # for pump in pumps:
         #     self.nlp.tokenizer.add_special_case(pump, [{ORTH: pump}])
-
-        # TODO: Add special cases for tokenizer here
 
         # Load rule-based matching and its patterns specified in the .env
         test = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
@@ -60,6 +61,12 @@ class GFTripleExtractor(TripleExtractor):
 
     # TODO: find out if it should have common implementation in TripleExtractor
     def _append_token(self, article: Article, pair: Tuple[str, str]):
+        """
+
+        :param article:
+        :param pair:
+        :return:
+        """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
@@ -75,6 +82,11 @@ class GFTripleExtractor(TripleExtractor):
             Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pair[0])))
 
     def extract_content(self, document: Document):
+        """
+
+        :param document:
+        :return:
+        """
         # TODO: Call to spaCy should be here, so Doc object is available
         for article in document.articles:
             # For each article, process the text and extract non-textual data in it.
@@ -83,6 +95,13 @@ class GFTripleExtractor(TripleExtractor):
             self.__extract_manual_path(article)
 
     def __pre_process_manual(self, body):
+        """
+        Cleans the body of the manual, attempting to discard nonsensical information, as well as replacing occurrences
+        of "the pump", etc. with the actual name of the pump.
+
+        :param body: The text to be pre-processed
+        :return: The cleaned text
+        """
         processed_body = body
         processed_body = processed_body.replace("\n", " ")
         processed_body = processed_body.replace("- ", "")
@@ -116,6 +135,11 @@ class GFTripleExtractor(TripleExtractor):
         return clean_processed_body
 
     def __process_manual(self, manual: Article):
+        """
+
+        :param manual:
+        :return:
+        """
         labeled_entities = self.__process_manual_text(manual.body)
 
         # TODO: maybe some check whether it is related to pump or is just mentioned in the manual
@@ -123,6 +147,11 @@ class GFTripleExtractor(TripleExtractor):
             self._append_token(manual, label_pair)
 
     def __process_manual_text(self, body) -> List[(str, str)]:
+        """
+
+        :param body:
+        :return:
+        """
         manual_entities = []
         for line in body.split("\n"):
             processed_text = self.nlp(line)
@@ -141,6 +170,12 @@ class GFTripleExtractor(TripleExtractor):
         return manual_entities
 
     def __process_pump_line(self, pump_pair, processed_text):
+        """
+
+        :param pump_pair:
+        :param processed_text:
+        :return:
+        """
         pump_object_ref, pump_object_label = pump_pair
         pump_object_ref = pump_object_ref.replace(" ", "_")
         pump_object_label = self._convert_spacy_label_to_namespace(pump_object_label)
@@ -164,6 +199,11 @@ class GFTripleExtractor(TripleExtractor):
                     Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(entity.text)))
 
     def __process_non_pump_line(self, processed_text):
+        """
+
+        :param processed_text:
+        :return:
+        """
         manual_entities = []
         for entity in processed_text.ents:
             if entity.label_ not in self.ignore_label_list:
@@ -174,6 +214,11 @@ class GFTripleExtractor(TripleExtractor):
         return manual_entities
 
     def __extract_manual_path(self, article: Article):
+        """
+
+        :param article:
+        :return:
+        """
         if article.path is not None and article.path != "":
             self._append_triples_literal([TripleExtractorEnum.MANUAL], article.id,
                                          RelationTypeConstants.KNOX_LINK, article.path)
