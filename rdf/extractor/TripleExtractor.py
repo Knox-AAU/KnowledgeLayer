@@ -18,6 +18,7 @@ Ev()
 class TripleExtractor:
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
+        self.graph_name = None
         self.nlp = spacy.load(spacy_model)
         self.namespace = namespace
         self.triples = []
@@ -38,8 +39,8 @@ class TripleExtractor:
         self.extract_content(document)
         # Adds named individuals to the triples list.
         self._append_named_individual()
-        # Function from rdf.RdfCreator, writes triples to file
-        store_rdf_triples(self.triples)
+        # Store RDF Triple
+        store_rdf_triples(self.triples, self.graph_name)
 
         return self.triples
 

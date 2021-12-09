@@ -18,10 +18,12 @@ class NJTripleExtractor(TripleExtractor):
         if ignore_label_list is None:
             ignore_label_list = ["MISC"]
         namespace = Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)
-
+        # Initialise superclass
         super().__init__(spacy_model, tuple_label_dict, ignore_label_list, namespace)
-
+        self.graph_name = "NJ"
+        # Set Threashold year
         self.preprocess_year_threshold = 1948
+        # Get convertion tuple
         if tuple_label_dict is None:
             labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
                       ["NORP", "Norp"]]
