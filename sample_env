@@ -1,2 +1,7 @@
-WORD_COUNT_DATA_ENDPOINT="http://127.0.0.1:8080/wordCountData"
-QUEUE_DIRECTORY="./queue/"
+QUEUE_PATH=./queue/
+NJ_SPACY_MODEL=da_core_news_lg
+GF_SPACY_MODEL=./models/gf_spacy_model
+LEMMATIZER_ENDPOINT=http://0.0.0.0/lemmatizer/
+WORD_COUNT_DATA_ENDPOINT=0.0.0.0:0000/wordcount
+ONTOLOGY_NAMESPACE=knox
+GF_PATTERN_PATH=./resources/patterns.jsonl

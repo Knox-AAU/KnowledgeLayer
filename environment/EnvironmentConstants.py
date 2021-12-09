@@ -12,12 +12,14 @@ class EnvironmentVariables:
         The inner class with only one instance
         """
         def __init__(self):
-
-            # TODO: This is temporary, find an alternative
             self.QUEUE_PATH = "QUEUE_PATH"
             self.NJ_SPACY_MODEL = "NJ_SPACY_MODEL"
+            self.GF_SPACY_MODEL = "GF_SPACY_MODEL"
             self.LEMMATIZER_ENDPOINT = "LEMMATIZER_ENDPOINT"
             self.WORD_COUNT_DATA_ENDPOINT = "WORD_COUNT_DATA_ENDPOINT"
+            self.ONTOLOGY_NAMESPACE = "ONTOLOGY_NAMESPACE"
+            self.TRIPLE_DATA_ENDPOINT = "TRIPLE_DATA_ENDPOINT"
+            self.GF_PATTERN_PATH = "GF_PATTERN_PATH"
             load_dotenv()
 
         def get_value(self, key: str, default = None):

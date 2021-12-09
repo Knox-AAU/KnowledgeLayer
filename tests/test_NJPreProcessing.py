@@ -2,15 +2,11 @@ from typing import List
 import pytest
 from unittest.mock import patch
 import unittest
-from requests import Request
 import requests.exceptions
-import spacy.lang.da
 
 import exceptions
 from model.Document import Document, Article
 from pre_processing import NJPreProcessor
-from knox_source_data_io.models.publication import Publication, Paragraph
-from knox_source_data_io.models.wrapper import Wrapper, Generator
 
 xfail = pytest.mark.xfail
 
