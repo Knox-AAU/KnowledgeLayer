@@ -6,11 +6,15 @@ import spacy
 from spacy import displacy
 from fastapi.middleware.cors import CORSMiddleware
 
+from utils import load_model
+from environment import EnvironmentVariables as Ev
+Ev()
+
 app = FastAPI()
 file_writer = FileWriter()
 
 publisher_to_model = {
-    'NJ': spacy.load('da_core_news_lg'),
+    'NJ': load_model(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL)),
     'GF': spacy.load('en_core_web_sm')
 }
 #

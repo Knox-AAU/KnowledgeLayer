@@ -6,6 +6,7 @@ import spacy
 from environment import EnvironmentVariables as Ev
 from typing import List
 from rdf.extractor import Triple
+from utils import load_model
 
 Ev()
 
@@ -37,7 +38,7 @@ class TripleExtractorTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         spacy_model = Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL)
-        cls.spacy_model = spacy.load(spacy_model)
+        cls.spacy_model = load_model(spacy_model)
         cls.triple_extractor = NJTripleExtractor(spacy_model)
 
     @patch('requests.post')
