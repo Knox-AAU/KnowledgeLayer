@@ -8,6 +8,7 @@ import spacy
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
@@ -19,7 +20,7 @@ class TripleExtractor:
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
         self.graph_name = None
-        self.nlp = spacy.load(spacy_model)
+        self.nlp = load_model(spacy_model)
         self.namespace = namespace
         self.triples = []
         self.named_individual = []
