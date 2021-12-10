@@ -43,6 +43,31 @@ def store_rdf_triples(rdfTriples):
     print(f'Successfully sent publication to server', 'info')
 
 
+def return_rdf_triples(rdfTriples):
+    """
+    Input:
+        rdfTriples: list of RDF triples with correct type - List containing triples on the form (Subject, RelationPredicate, Object).
+        output_file_name: str - The Name of the outputted file
+
+    Takes in a list of RDF triples and parse them into a ready RDF format.
+    The format and output folder of the files are dependent of the configation of the .env file
+
+    """
+
+    # Get the "graph" in order to contain the rdfTriples
+    # Switch the bad namespacemanager with the good one which do not create prefix'es
+    graph: Graph = Graph()
+    name_space_manager = KnoxNameSpaceManager(graph)
+    graph.namespace_manager = name_space_manager
+
+    for sub, rel, obj in rdfTriples:
+        graph.add((sub, rel, obj))
+        logging.LogF.log(
+            f'sub: {urllib.parse.unquote(sub)}, rel: {urllib.parse.unquote(rel)}, obj: {urllib.parse.unquote(obj)}')
+
+    return graph.serialize(format='turtle').decode("utf-8").replace("<", "&lt;").replace(">", "&gt;")
+
+
 def generate_blank_node():
     """
     Returns:

@@ -4,7 +4,7 @@ from typing import List, Any, Tuple, NamedTuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples, return_rdf_triples
 from utils import logging
 from .TripleExtractorEnum import TripleExtractorEnum
 from environment import EnvironmentVariables as Ev
@@ -42,6 +42,21 @@ class TripleExtractor:
         store_rdf_triples(self.triples)
 
         return self.triples
+
+    def return_ttl(self, document: Document) -> str:
+        """
+
+        :param document:
+        :return:
+        """
+
+        # Extract publication info and adds it to the RDF triples.
+        self.extract_publication(document)
+        self.extract_content(document)
+        # Adds named individuals to the triples list.
+        self._append_named_individual()
+        # Function from rdf.RdfCreator, writes triples to file
+        return str(return_rdf_triples(self.triples))
 
     def _queue_named_individual(self, prop_1, prop_2) -> None:
         """

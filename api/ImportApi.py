@@ -1,4 +1,7 @@
+import io
+
 from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import StreamingResponse
 from knox_source_data_io.io_handler import IOHandler
 from file_io.FileWriter import FileWriter
 import os
@@ -6,12 +9,23 @@ import spacy
 from spacy import displacy
 from fastapi.middleware.cors import CORSMiddleware
 
+from model import Document, Article
+from rdf import NJTripleExtractor, GFTripleExtractor
+from environment import EnvironmentVariables as Ev
+Ev()
+
+
 app = FastAPI()
 file_writer = FileWriter()
 
 publisher_to_model = {
     'NJ': spacy.load('da_core_news_lg'),
-    'GF': spacy.load('en_core_web_sm')
+    'GF': spacy.load(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
+}
+
+publisher_to_triple_extractor = {
+    'NJ': NJTripleExtractor(Ev.instance.get_value(Ev.instance.NJ_SPACY_MODEL)),
+    'GF': GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
 }
 #
 # origin = { "http://localhost:3000" }
@@ -49,3 +63,19 @@ async def visualise(request: Request):
         return html
     except Exception as e:
         raise HTTPException(status_code=500, detail="Failed to visualise: " + str(e))
+
+
+@app.post("/generateKG/", status_code=200)
+async def genKG(request: Request):
+    try:
+        json = await request.json()
+        publisher, text = json['publisher'], json['text']
+        # triple_extractor = publisher_to_triple_extractor[publisher]
+        triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
+        document = Document(publisher)
+        article = Article("SampleTitle", text, "SamplePath", article_id="SampleID")
+        document.articles.append(article)
+        ttl_file = triple_extractor.return_ttl(document)
+        return str(ttl_file)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed generate graph: " + str(e))
