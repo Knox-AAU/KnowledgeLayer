@@ -43,6 +43,14 @@ class TripleExtractor:
 
         return self.triples
 
+    def clear_stored_triples(self):
+        """
+
+        :param document:
+        :return:
+        """
+        self.triples = []
+
     def return_ttl(self, document: Document) -> str:
         """
 

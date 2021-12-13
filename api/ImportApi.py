@@ -70,8 +70,9 @@ async def genKG(request: Request):
     try:
         json = await request.json()
         publisher, text = json['publisher'], json['text']
-        # triple_extractor = publisher_to_triple_extractor[publisher]
-        triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
+        triple_extractor = publisher_to_triple_extractor[publisher]
+        triple_extractor.clear_stored_triples()
+        # triple_extractor = GFTripleExtractor(Ev.instance.get_value(Ev.instance.GF_SPACY_MODEL))
         document = Document(publisher)
         article = Article("SampleTitle", text, "SamplePath", article_id="SampleID")
         document.articles.append(article)
