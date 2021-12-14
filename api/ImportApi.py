@@ -1,13 +1,9 @@
-import io
-
 from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import StreamingResponse
 from knox_source_data_io.io_handler import IOHandler
 from file_io.FileWriter import FileWriter
 import os
 import spacy
 from spacy import displacy
-from fastapi.middleware.cors import CORSMiddleware
 
 from model import Document, Article
 from rdf import NJTripleExtractor, GFTripleExtractor

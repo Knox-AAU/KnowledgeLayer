@@ -1,18 +1,12 @@
-from __future__ import annotations
-import datetime
 import re
 from typing import List, Tuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from utils import logging
-from .TripleExtractorEnum import TripleExtractorEnum
-from .TripleExtractor import TripleExtractor, Triple
+from .TripleExtractor import TripleExtractor, Triple, TripleExtractorEnum
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
-import spacy
-from spacy.attrs import ORTH
 Ev()
 
 

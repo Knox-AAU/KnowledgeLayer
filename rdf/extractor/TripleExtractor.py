@@ -9,7 +9,6 @@ from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
-import spacy
 Ev()
 
 
