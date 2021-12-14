@@ -40,7 +40,7 @@ class TripleExtractor:
         # Adds named individuals to the triples list.
         self._append_named_individual()
         # Function from rdf.RdfCreator, writes triples to file
-        store_rdf_triples(self.triples)
+        store_rdf_triples(self.triples, self.graph_name)
 
         return self.triples
 

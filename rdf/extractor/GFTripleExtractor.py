@@ -140,7 +140,7 @@ class GFTripleExtractor(TripleExtractor):
         for label_pair in labeled_entities:
             self._append_token(manual, label_pair)
 
-    def __process_manual_text(self, body) -> List[(str, str)]:
+    def __process_manual_text(self, body) -> List[Tuple[str, str]]:
         """
 
         :param body:
