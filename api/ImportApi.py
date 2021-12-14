@@ -15,6 +15,10 @@ from environment import EnvironmentVariables as Ev
 Ev()
 
 
+from utils import load_model
+from environment import EnvironmentVariables as Ev
+Ev()
+
 app = FastAPI()
 file_writer = FileWriter()
 

@@ -4,9 +4,10 @@ from typing import List, Any, Tuple, NamedTuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples, return_rdf_triples
-from utils import logging
+from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
+# TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 import spacy
 Ev()
@@ -18,8 +19,8 @@ class TripleExtractor:
     """
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
-        self.nlp = spacy.load(spacy_model)
-        logging.LogF.log(f"Loaded {spacy_model} model!")
+        self.graph_name = None
+        self.nlp = load_model(spacy_model)
         self.namespace = namespace
         self.triples = []
         self.named_individual = []
@@ -28,16 +29,17 @@ class TripleExtractor:
 
     def process_publication(self, document: Document) -> List[Triple]:
         """
+        Input:
+            publication: Publication - A Publication class which is the content of a newspaper
+            file_path : str - File path to the publication being processed
 
-        :param document:
-        :return:
+        Writes entity triples to file
         """
-
         # Extract publication info and adds it to the RDF triples.
         self.extract_publication(document)
         self.extract_content(document)
         # Adds named individuals to the triples list.
-        self._append_named_individual()
+        self.__append_named_individual()
         # Function from rdf.RdfCreator, writes triples to file
         store_rdf_triples(self.triples)
 
@@ -86,25 +88,25 @@ class TripleExtractor:
             publisher_formatted = document.publisher.replace(" ", "_")
 
             # Adds publication as a named individual
-            self._queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
+            self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
             # Add publication name as data property
-            self._append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                         RelationTypeConstants.KNOX_NAME, document.publication)
+            self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
+                                          RelationTypeConstants.KNOX_NAME, document.publication)
 
             # Add publisher name as data property
-            self._append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                         RelationTypeConstants.KNOX_NAME, publisher_formatted)
+            self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+                                          RelationTypeConstants.KNOX_NAME, publisher_formatted)
             # Add the "Publisher publishes Publication" relation
-            self._append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                     [TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                     RelationTypeConstants.KNOX_PUBLISHES)
+            self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+                                      [TripleExtractorEnum.PUBLICATION], publication_formatted,
+                                      RelationTypeConstants.KNOX_PUBLISHES)
 
-    def _convert_spacy_label_to_namespace(self, string: str) -> str:
+    def __convert_spacy_label_to_namespace(self, string: str) -> str:
         """
-        DESCRIPTION
-
-        :param string: A string matching a spacy label
-        :return: A string matching a class in the ontology
+        Input:
+            string: str - A string matching a spacy label
+        Returns:
+            A string matching a class in the ontology.
         """
         for label in self.tuple_label_dict:
             # Assumes that tuple_label_list is a list of dicts with the format: {"spacy_label": xxx, "target_label": xxx}
@@ -124,7 +126,7 @@ class TripleExtractor:
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
-        object_label = self._convert_spacy_label_to_namespace(object_label)
+        object_label = self.__convert_spacy_label_to_namespace(object_label)
 
         # Each entity in article added to the "Article mentions Entity" triples
         _object = generate_uri_reference(self.namespace, [object_label], object_ref)
@@ -167,12 +169,10 @@ class TripleExtractor:
             generate_uri_reference(self.namespace, uri_types2, uri_value2),
         ))
 
-    def _append_named_individual(self) -> None:
+    def __append_named_individual(self) -> None:
         """
         Appends each named individual to the triples list.
         """
-
-        logging.LogF.log("Start _append_named_individual")
 
         # prop1 = The specific location/person/organisation or so on
         # prop2 = The type of Knox:Class prop1 is a member of.
@@ -188,8 +188,6 @@ class TripleExtractor:
                 generate_relation(RelationTypeConstants.RDF_TYPE),
                 generate_uri_reference(self.namespace, ref=prop2)
             ))
-
-        logging.LogF.log("End _append_named_individual")
 
     @abstractmethod
     def extract_content(self, document: Document):

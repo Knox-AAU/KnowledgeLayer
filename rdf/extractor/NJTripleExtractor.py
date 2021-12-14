@@ -4,8 +4,7 @@ from typing import List
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from .TripleExtractor import TripleExtractor
-from .TripleExtractorEnum import TripleExtractorEnum
+from .TripleExtractor import TripleExtractor, TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 
@@ -19,10 +18,12 @@ class NJTripleExtractor(TripleExtractor):
         if ignore_label_list is None:
             ignore_label_list = ["MISC"]
         namespace = Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)
-
+        # Initialise superclass
         super().__init__(spacy_model, tuple_label_dict, ignore_label_list, namespace)
-
+        self.graph_name = "NJ"
+        # Set Threashold year
         self.preprocess_year_threshold = 1948
+        # Get convertion tuple
         if tuple_label_dict is None:
             labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
                       ["NORP", "Norp"]]
@@ -37,7 +38,7 @@ class NJTripleExtractor(TripleExtractor):
             self.__extract_article(article, document)
 
 
-    def _process_article_text(self, article_text: str) -> List[(str, str)]:
+    def __process_article_text(self, article_text: str) -> List[(str, str)]:
         """
         Input:
             article_text: str - The entire content of an article
@@ -75,7 +76,7 @@ class NJTripleExtractor(TripleExtractor):
         ##content = ' '.join(para.value for para in article.paragraphs).replace('”', '"')
 
         # Does nlp on the text
-        article_entities = self._process_article_text(article.body)
+        article_entities = self.__process_article_text(article.body)
 
         for pair in article_entities:
             self._append_token(article, pair)
@@ -100,7 +101,7 @@ class NJTripleExtractor(TripleExtractor):
         if article.path is not None and article.path != "":
             self._append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
                                          RelationTypeConstants.KNOX_LINK, article.path)
-    
+
     def __extract_article_byline(self, article: Article):
         # If the byline exists add the author name to the RDF triples. Author name is required if byline exists.
         byline = article.byline

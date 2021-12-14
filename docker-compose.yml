@@ -9,11 +9,10 @@ services:
             - .:/home/appuser/app
         environment:
             - QUEUE_PATH=./queue/
-            - NJ_SPACY_MODEL=da_core_news_lg
+            - NJ_SPACY_MODEL=models/nj_model
             - GF_SPACY_MODEL=./models/gf_spacy_model
-            - GF_PATTERN_PATH=./resources/patterns.jsonl
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - WORD_COUNT_DATA_ENDPOINT=http://localhost:5000/wordcount
-            - TRIPLE_DATA_ENDPOINT=http://localhost:5000/knowledge_graph
+            - TRIPLE_DATA_ENDPOINT=http://localhost:5000/query
             - ONTOLOGY_NAMESPACE=Knox
             
