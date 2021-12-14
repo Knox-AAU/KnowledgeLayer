@@ -4,7 +4,7 @@ from typing import List, Any, Tuple, NamedTuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples, return_rdf_triples
 from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
@@ -39,7 +39,7 @@ class TripleExtractor:
         self.extract_publication(document)
         self.extract_content(document)
         # Adds named individuals to the triples list.
-        self.__append_named_individual()
+        self._append_named_individual()
         # Function from rdf.RdfCreator, writes triples to file
         store_rdf_triples(self.triples)
 
@@ -88,20 +88,20 @@ class TripleExtractor:
             publisher_formatted = document.publisher.replace(" ", "_")
 
             # Adds publication as a named individual
-            self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
+            self._queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
             # Add publication name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
+            self._append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
                                           RelationTypeConstants.KNOX_NAME, document.publication)
 
             # Add publisher name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+            self._append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
                                           RelationTypeConstants.KNOX_NAME, publisher_formatted)
             # Add the "Publisher publishes Publication" relation
-            self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
+            self._append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
                                       [TripleExtractorEnum.PUBLICATION], publication_formatted,
                                       RelationTypeConstants.KNOX_PUBLISHES)
 
-    def __convert_spacy_label_to_namespace(self, string: str) -> str:
+    def _convert_spacy_label_to_namespace(self, string: str) -> str:
         """
         Input:
             string: str - A string matching a spacy label
@@ -126,7 +126,7 @@ class TripleExtractor:
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
-        object_label = self.__convert_spacy_label_to_namespace(object_label)
+        object_label = self._convert_spacy_label_to_namespace(object_label)
 
         # Each entity in article added to the "Article mentions Entity" triples
         _object = generate_uri_reference(self.namespace, [object_label], object_ref)
@@ -169,7 +169,7 @@ class TripleExtractor:
             generate_uri_reference(self.namespace, uri_types2, uri_value2),
         ))
 
-    def __append_named_individual(self) -> None:
+    def _append_named_individual(self) -> None:
         """
         Appends each named individual to the triples list.
         """

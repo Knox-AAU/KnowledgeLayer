@@ -15,7 +15,7 @@ from environment import EnvironmentVariables as Ev
 Ev()
 
 
-from utils import load_model
+from utils import load_model, logging
 from environment import EnvironmentVariables as Ev
 Ev()
 
@@ -83,4 +83,5 @@ async def genKG(request: Request):
         ttl_file = triple_extractor.return_ttl(document)
         return str(ttl_file)
     except Exception as e:
+        logging.LogF.log(str(e))
         raise HTTPException(status_code=500, detail="Failed generate graph: " + str(e))
