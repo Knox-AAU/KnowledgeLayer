@@ -1,8 +1,10 @@
+import urllib.parse
+
 from typing import List, Tuple
 
 import requests
 from rdflib import Graph, Literal, BNode
-from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF as Rdf
+from rdflib.namespace import NamespaceManager, RDFS, OWL, XSD, RDF
 from environment.EnvironmentConstants import EnvironmentVariables as ev
 from requests.exceptions import ConnectionError
 from rdflib.namespace import ClosedNamespace
@@ -32,6 +34,7 @@ def store_rdf_triples(rdf_triples: List[Tuple], graph_name: str):
 
     for sub, rel, obj in rdf_triples:
         graph.add((sub, rel, obj))
+        logging.LogF.log(f'sub: {urllib.parse.unquote(sub)}, rel: {urllib.parse.unquote(rel)}, obj: {urllib.parse.unquote(obj)}')
 
     serialized_graph = graph.serialize(format='turtle', encoding="utf-8")
     # with open(path, 'wb') as f:
@@ -43,6 +46,31 @@ def store_rdf_triples(rdf_triples: List[Tuple], graph_name: str):
         logging.LogF.log(f'ERROR: Unable to send file to database')
         raise ConnectionError('Unable to post to the database')
     logging.LogF.log(f'Successfully sent publication to server')
+
+
+def return_rdf_triples(rdfTriples):
+    """
+    Input:
+        rdfTriples: list of RDF triples with correct type - List containing triples on the form (Subject, RelationPredicate, Object).
+        output_file_name: str - The Name of the outputted file
+
+    Takes in a list of RDF triples and parse them into a ready RDF format.
+    The format and output folder of the files are dependent of the configation of the .env file
+
+    """
+
+    # Get the "graph" in order to contain the rdfTriples
+    # Switch the bad namespacemanager with the good one which do not create prefix'es
+    graph: Graph = Graph()
+    name_space_manager = KnoxNameSpaceManager(graph)
+    graph.namespace_manager = name_space_manager
+
+    for sub, rel, obj in rdfTriples:
+        graph.add((sub, rel, obj))
+        logging.LogF.log(
+            f'sub: {urllib.parse.unquote(sub)}, rel: {urllib.parse.unquote(rel)}, obj: {urllib.parse.unquote(obj)}')
+
+    return graph.serialize(format='turtle').decode("utf-8").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def generate_blank_node():
@@ -90,9 +118,9 @@ def generate_uri_reference(namespace, sub_uri_list=[], ref=""):
     reference_str = namespace
 
     for sub_uri in sub_uri_list:
-        reference_str += sub_uri + "/"
+        reference_str += urllib.parse.quote(sub_uri) + "/"
 
-    reference_str += ref
+    reference_str += urllib.parse.quote(ref.replace("/", "-"))
     return URIRef(reference_str)
 
 
@@ -107,7 +135,7 @@ def generate_relation(relationTypeConstant):
     """
     relType, relValue = relationTypeConstant.split(":")
     if relType == "rdf":
-        return Rdf.term(relValue)
+        return RDF.term(relValue)
     elif relType == "rdfs":
         return RDFS.term(relValue)
     elif relType == "owl":
@@ -148,11 +176,12 @@ def __calculateFileExtention__(format):
     return switch.get(format, "")
 
 
+
 KNOX = ClosedNamespace(
     uri=URIRef(Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)),
     terms=[
         "isPublishedBy", "mentions", "isPublishedOn", "publishes", "Email", "DateMention", "Link",
-        "Name", "PublicationDay", "PublicationMonth", "PublicationYear", "ArticleTitle", "isWrittenBy"]
+        "Name", "PublicationDay", "PublicationMonth", "PublicationYear", "ArticleTitle", "isWrittenBy", "PumpRelates"]
 )
 
 

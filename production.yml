@@ -7,10 +7,13 @@ services:
             - "5050:8000"
         environment:
             - QUEUE_PATH=./queue/
+            - GF_SPACY_MODEL=./models/gf_spacy_model
             - NJ_SPACY_MODEL=models/nj_model
             - LEMMATIZER_ENDPOINT=http://130.225.57.27/lemmatizer/
             - WORD_COUNT_DATA_ENDPOINT=http://192.38.49.147:5000/wordcount
             - TRIPLE_DATA_ENDPOINT=http://192.38.49.147:5000/query
-            - ONTOLOGY_NAMESPACE=Knox
+            - ONTOLOGY_NAMESPACE=http://www.Knox.test/
+            - GF_PATTERN_PATH=./resources/patterns.jsonl
         restart: always
+
 

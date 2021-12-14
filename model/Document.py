@@ -16,7 +16,7 @@ class Byline:
 @dataclass
 class Article:
     """
-
+    Subpart of the Document object, encapsulating a single article.
     """
 
     def __init__(self, title: str, body: str, path: str, byline: Byline = None, article_id: str = None):
@@ -46,7 +46,7 @@ class Article:
 @dataclass
 class Document:
     """
-
+    Intermediary format for documents received from the Preprocessing Layer.
     """
 
     def __init__(self, publisher: str, publication: str = None, articles=None, date: str = None):

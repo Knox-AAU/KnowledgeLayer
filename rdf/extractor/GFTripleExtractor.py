@@ -1,269 +1,218 @@
-from __future__ import annotations
-import datetime
-from typing import List, OrderedDict, Any, Tuple, NamedTuple
-
-import spacy
+import re
+from typing import List, Tuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
-from .TripleExtractorEnum import TripleExtractorEnum
+from .TripleExtractor import TripleExtractor, Triple, TripleExtractorEnum
+from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
-import spacy
 Ev()
 
 
 class GFTripleExtractor(TripleExtractor):
-    # nlp: OrderedDict = None
+    """
+
+    """
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
-        # PreProcessor.nlp = self.nlp
-        self.nlp = spacy.load(spacy_model)
-        self.namespace = Ev.instance.get_value(Ev.instance.ONTOLOGY_NAMESPACE)
-        self.triples = []
-        self.named_individual = []
-        if tuple_label_list is None:
-            # TODO: Give our labels
-            labels = [["PER", "Person"], ["ORG", "Organisation"], ["LOC", "Location"], ["DATE", "Date"],
-                      ["NORP", "Norp"]]
-            self.tuple_label_list = [{'spacy_label': v[0], 'namespace': v[1]} for v in labels]
-        else:
-            self.tuple_label_list = tuple_label_list
+        # TODO: The pump name SHOULD NOT be hard-coded. It is only like this since we don't receive the pump name
+        #  from the previous layer
+        self.pump_name = "SQ/SQE"
 
-        # TODO: Find out if we need this
-        if ignore_label_list is None:
-            self.ignore_label_list = ["MISC"]
-        else:
-            self.ignore_label_list = ignore_label_list
+        super().__init__(spacy_model, [], [], "http://www.KnoxGrundfos.test/")
+        self._init_spacy_pipeline()
 
-    def process_publication(self, document: Document) -> List[Triple]:
+    def _init_spacy_pipeline(self):
         """
-        Input:
-            publication: Publication - A Publication class which is the content of a newspaper
-            file_path : str - File path to the publication being processed
-
-        Writes entity triples to file
+        Loads the custom spaCy pipeline, and adds patterns for the rule-based matching of pumps.
         """
-        # Extract publication info and adds it to the RDF triples.
-        self.extract_publication(document)
+        # pumps = self.__extract_pumps_from_patterns()
 
-        for article in document.articles:
-            # For each article, process the text and extract non-textual data in it.
-            self.__process_article(article)
-            self.__extract_article(article, document)
+        # Add special rules to tokenizer for each pump name
+        # for pump in pumps:
+        #     self.nlp.tokenizer.add_special_case(pump, [{ORTH: pump}])
 
-        # Adds named individuals to the triples list.
-        self.__append_named_individual()
+        # Load rule-based matching and its patterns specified in the .env
+        test = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
+        self.nlp.add_pipe("entity_ruler").from_disk(test)
 
-        # Function from rdf.RdfCreator, writes triples to file
-        store_rdf_triples(self.triples)
+    # def __extract_pumps_from_patterns(self) -> List[str]:
+    #     """
+    #     Extracts all pump names from the file containing a list of Grundfos pumps.
+    #     :return: List of pump names
+    #     """
+    #     pump_names = []
+    #
+    #     pump_file_path = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
+    #
+    #     pump_pattern = re.compile(r'"pattern": "(.*)"')
+    #
+    #     with open(pump_file_path, "r") as pump_file:
+    #         for line in pump_file:
+    #             pump_names.append(pump_pattern.search(line).group(1))
+    #
+    #     return pump_names
 
-        return self.triples
-
-    def __queue_named_individual(self, prop_1, prop_2) -> None:
-        """
-        Adds the named individuals to the named_individual list if it's not already in it.
-        """
-        if [prop_1, prop_2] not in self.named_individual:
-            self.named_individual.append([prop_1, prop_2])
-
-    def extract_publication(self, document: Document) -> None:
-        if document.publication is not None:
-            
-            # Formatted name of a publisher and publication
-            publication_formatted = document.publication.replace(" ", "_")
-            publisher_formatted = document.publisher.replace(" ", "_")
-
-            # Adds publication as a named individual
-            self.__queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
-            # Add publication name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                          RelationTypeConstants.KNOX_NAME, document.publication)
-
-            # Add publisher name as data property
-            self.__append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                          RelationTypeConstants.KNOX_NAME, publisher_formatted)
-            # Add the "Publisher publishes Publication" relation
-            self.__append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                      [TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                      RelationTypeConstants.KNOX_PUBLISHES)
-
-    def __convert_spacy_label_to_namespace(self, string: str) -> str:
-        """
-        Input:
-            string: str - A string matching a spacy label
-        Returns:
-            A string matching a class in the ontology.
-        """
-        for label in self.tuple_label_list:
-            # Assumes that tuple_label_list is a list of dicts with the format: {"spacy_label": xxx, "target_label": xxx}
-            if string == str(label['spacy_label']):
-                # return the chosen name for the spaCy label
-                return str(label['namespace'])
-        else:
-            return string
-
-    def __process_article_text(self, article_text: str) -> List[(str, str)]:
-        """
-        Input:
-            article_text: str - The entire content of an article
-        Returns:
-            A list of "string" and label pairs. Eg: [("Jens Jensen", Person), ...]
-
-        Runs the article text through the spacy pipeline
-        """
-        # Perform NLP on the article text, with the purpose of doing a NER
-        document = self.nlp(article_text)
-
-        # Create article entity from the document entities
-        article_entities = []
-
-        for entities in document.ents:
-            name = entities.text
-            # label_ is correct for acquiring the spaCy string version of the entity
-            label = entities.label_
-
-            # ignore ignored labels, expects ignore_label_list to be a list of strings
-            if label not in self.ignore_label_list:
-                # Add entity to list, create it as named individual.
-                article_entities.append((name, label))
-                self.__queue_named_individual(name.replace(" ", "_"), self.__convert_spacy_label_to_namespace(label))
-        return article_entities
-
-    def __process_article(self, article: Article) -> None:
-        """
-        Input:
-            article: Article - An Article object from the loader package
-        Returns: None
+    # TODO: find out if it should have common implementation in TripleExtractor
+    def _append_token(self, article: Article, pair: Tuple[str, str]):
         """
 
-        # Article text is split into multiple paragraph objects in the Json, this is joined into one string.
-        ##content = ' '.join(para.value for para in article.paragraphs).replace('”', '"')
-
-        # Does nlp on the text
-        article_entities = self.__process_article_text(article.body)
-
-        for pair in article_entities:
-            self.__append_token(article, pair)
-
-    def __append_token(self, article: Article, pair: Tuple[str, str]):
+        :param article:
+        :param pair:
+        :return:
+        """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
-        object_label = self.__convert_spacy_label_to_namespace(object_label)
+        object_label = self._convert_spacy_label_to_namespace(object_label)
 
         # Each entity in article added to the "Article mentions Entity" triples
         _object = generate_uri_reference(self.namespace, [object_label], object_ref)
-        _subject = generate_uri_reference(self.namespace, [TripleExtractorEnum.ARTICLE], article.id)
+        _subject = generate_uri_reference(self.namespace, [TripleExtractorEnum.MANUAL], article.id)
         relation = generate_relation(RelationTypeConstants.KNOX_MENTIONS)
         self.triples.append(Triple(_subject, relation, _object))
         # Each entity given the name data property
         self.triples.append(
             Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pair[0])))
 
-    def __extract_article(self, article: Article, document: Document) -> None:
+    def extract_content(self, document: Document):
         """
-        Input:
-            article: Article - An instance of the article from input file
-            publication: Publication - The publication object holding information about a publication
 
-        Creates triple based on data received through the input file
+        :param document:
+        :return:
         """
-        # article_id = str(article.id)
-        self.__extract_article_meta(article, document)
-        self.__extract_article_byline(article)
-        self.__extract_article_path(article)
+        # TODO: Call to spaCy should be here, so Doc object is available
+        for article in document.articles:
+            # For each article, process the text and extract non-textual data in it.
+            article.body = self.__pre_process_manual(article.body)
+            self.__process_manual(article)
+            self.__extract_manual_path(article)
 
-    def __extract_article_path(self, article: Article):
-        # For each file that an article is extracted from, add it to the article as a data property
-        # if len(article.extracted_from) > 0:
-        #     for ocr_file in article.extracted_from:
+    def __pre_process_manual(self, body):
+        """
+        Cleans the body of the manual, attempting to discard nonsensical information, as well as replacing occurrences
+        of "the pump", etc. with the actual name of the pump.
+
+        :param body: The text to be pre-processed
+        :return: The cleaned text
+        """
+        processed_body = body
+        processed_body = processed_body.replace("\n", " ")
+        processed_body = processed_body.replace("- ", "")
+        processed_body = processed_body.replace(". ", ".\n")
+        processed_body = re.sub(r'([mM]in\.|[Ee]\.g\.|[mM]ax\.|[fF]ig(s)?\.) *\n', r'\1 ', processed_body)
+        processed_body = processed_body.replace(" .", ".")
+        processed_body = re.sub(r' +', ' ', processed_body)
+        processed_body = re.sub(r'\d (\d |\d)+', '', processed_body)
+        processed_body = processed_body.replace("\n ", "\n")
+        processed_body = processed_body.replace("The pump ", self.pump_name + " ")
+        processed_body = processed_body.replace(" the pump ", " " + self.pump_name + " ")
+        processed_body = processed_body.replace(" the pump.", " " + self.pump_name + ".")
+        processed_body = processed_body.replace("This pump ", self.pump_name + " ")
+        processed_body = processed_body.replace(" this pump ", " " + self.pump_name + " ")
+        processed_body = processed_body.replace(" this pump.", " " + self.pump_name + ".")
+        processed_body = processed_body.replace("The pumps ", self.pump_name + " ")
+        processed_body = processed_body.replace(" the pumps ", " " + self.pump_name + " ")
+        processed_body = processed_body.replace(" the pumps.", " " + self.pump_name + ".")
+        processed_body = processed_body.replace("These pumps ", self.pump_name + " ")
+        processed_body = processed_body.replace(" these pumps ", " " + self.pump_name + " ")
+        processed_body = processed_body.replace(" these pumps.", " " + self.pump_name + ".")
+
+        # Remove short (5 chars or less), and presumably, redundant lines
+        clean_processed_body = ""
+        for line in processed_body.split("\n"):
+            if len(line) >= 5:
+                clean_processed_body += line + "\n"
+            else:
+                clean_processed_body += "\n"
+
+        return clean_processed_body
+
+    def __process_manual(self, manual: Article):
+        """
+
+        :param manual:
+        :return:
+        """
+        labeled_entities = self.__process_manual_text(manual.body)
+
+        # TODO: maybe some check whether it is related to pump or is just mentioned in the manual
+        for label_pair in labeled_entities:
+            self._append_token(manual, label_pair)
+
+    def __process_manual_text(self, body) -> List[Tuple[str, str]]:
+        """
+
+        :param body:
+        :return:
+        """
+        manual_entities = []
+        for line in body.split("\n"):
+            processed_text = self.nlp(line)
+
+            found_pump = False
+
+            for entity in processed_text.ents:
+                if entity.label_ == "Pump":
+                    found_pump = (entity.text, entity.label_)
+
+            if found_pump != False:
+                self.__process_pump_line(found_pump, processed_text)
+            else:
+                manual_entities += self.__process_non_pump_line(processed_text)
+
+        return manual_entities
+
+    def __process_pump_line(self, pump_pair, processed_text):
+        """
+
+        :param pump_pair:
+        :param processed_text:
+        :return:
+        """
+        pump_object_ref, pump_object_label = pump_pair
+        pump_object_ref = pump_object_ref.replace(" ", "_")
+        pump_object_label = self._convert_spacy_label_to_namespace(pump_object_label)
+        _pump_object = generate_uri_reference(self.namespace, [pump_object_label], pump_object_ref)
+        self.triples.append(
+            Triple(_pump_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pump_object_ref)))
+
+        for entity in processed_text.ents:
+            if entity.label_ != "Pump":
+                object_ref, object_label = entity.text, entity.label_
+                object_ref = object_ref.replace(" ", "_")
+                object_label = self._convert_spacy_label_to_namespace(object_label)
+
+                # Each entity in article added to the "Article mentions Entity" triples
+                _object = generate_uri_reference(self.namespace, [object_label], object_ref)
+                _subject = _pump_object
+                relation = generate_relation(RelationTypeConstants.KNOX_PUMP_RELATES)
+                self.triples.append(Triple(_subject, relation, _object))
+                # Each entity given the name data property
+                self.triples.append(
+                    Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(entity.text)))
+
+    def __process_non_pump_line(self, processed_text):
+        """
+
+        :param processed_text:
+        :return:
+        """
+        manual_entities = []
+        for entity in processed_text.ents:
+            if entity.label_ not in self.ignore_label_list:
+                name, label = entity.text, entity.label_
+                manual_entities.append((name, label))
+                self._queue_named_individual(name.replace(" ", "_"), self._convert_spacy_label_to_namespace(label))
+
+        return manual_entities
+
+    def __extract_manual_path(self, article: Article):
+        """
+
+        :param article:
+        :return:
+        """
         if article.path is not None and article.path != "":
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_LINK, article.path)
-
-    def __extract_article_byline(self, article: Article):
-        # If the byline exists add the author name to the RDF triples. Author name is required if byline exists.
-        byline = article.byline
-        if byline is not None:
-            # article.byline.name stores the author of the article's name, hence author_name
-            author_name = byline.name.replace(" ", "_")
-
-            self.__append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
-                                          RelationTypeConstants.KNOX_NAME, byline.name)
-            # Creates the author as a named individual
-            self.__queue_named_individual(author_name, TripleExtractorEnum.AUTHOR)
-            # Adds the Article isWrittenBy Author relation to the triples list
-            self.__append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.AUTHOR],
-                                      author_name, RelationTypeConstants.KNOX_IS_WRITTEN_BY)
-            # Since email is not required in the byline, if it exists: add the authors email as a data property to the author.
-            if byline.email is not None:
-                self.__append_triples_literal([TripleExtractorEnum.AUTHOR], author_name,
-                                              RelationTypeConstants.KNOX_EMAIL, byline.email)
-
-    def __extract_article_meta(self, article: Article, document: Document):
-
-        # Creates the article as a named individual
-        self.__queue_named_individual(article.id, TripleExtractorEnum.ARTICLE)
-
-        # Adds the Article knox:Article_Title Title data to the turtle output
-        self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                      RelationTypeConstants.KNOX_ARTICLE_TITLE, article.title)
-
-        publisher = document.publisher.replace(" ", "_")
-        # Creates the publisher as a named individual
-        self.__queue_named_individual(publisher, TripleExtractorEnum.PUBLISHER)
-        # Adds the Article isPublishedBy Publication relation to the turtle output
-        self.__append_triples_uri([TripleExtractorEnum.ARTICLE], article.id, [TripleExtractorEnum.PUBLISHER],
-                                  publisher, RelationTypeConstants.KNOX_IS_PUBLISHED_BY)
-
-        # Adds the publication date to the article, if it exists.
-        if document.date is not None:
-            date = datetime.date.fromisoformat(document.date)
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_DAY, str(date.day))
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_MONTH, str(date.month))
-            self.__append_triples_literal([TripleExtractorEnum.ARTICLE], article.id,
-                                          RelationTypeConstants.KNOX_PUBLICATION_YEAR, str(date.year))
-
-    def __append_triples_literal(self, uri_types: List[str], uri_value: Any, relation_type: str, literal: str):
-        self.triples.append(Triple(
-            generate_uri_reference(self.namespace, uri_types, uri_value),
-            generate_relation(relation_type),
-            generate_literal(literal)
-        ))
-
-    def __append_triples_uri(self, uri_types1: List[str], uri_value1: Any,
-                             uri_types2: List[str], uri_value2: Any, relation_type: str):
-        self.triples.append(Triple(
-            generate_uri_reference(self.namespace, uri_types1, uri_value1),
-            generate_relation(relation_type),
-            generate_uri_reference(self.namespace, uri_types2, uri_value2),
-        ))
-
-    def __append_named_individual(self) -> None:
-        """
-        Appends each named individual to the triples list.
-        """
-
-        # prop1 = The specific location/person/organisation or so on
-        # prop2 = The type of Knox:Class prop1 is a member of.
-        for prop1, prop2 in self.named_individual:
-            self.triples.append(Triple(
-                generate_uri_reference(self.namespace, [prop2], prop1),
-                generate_relation(RelationTypeConstants.RDF_TYPE),
-                generate_relation(RelationTypeConstants.OWL_NAMED_INDIVIDUAL)
-            ))
-
-            self.triples.append(Triple(
-                generate_uri_reference(self.namespace, [prop2], prop1),
-                generate_relation(RelationTypeConstants.RDF_TYPE),
-                generate_uri_reference(self.namespace, ref=prop2)
-            ))
-
-
-class Triple(NamedTuple):
-    subject: str
-    relation: str
-    object: str
+            self._append_triples_literal([TripleExtractorEnum.MANUAL], article.id,
+                                         RelationTypeConstants.KNOX_LINK, article.path)

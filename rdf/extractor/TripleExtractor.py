@@ -1,22 +1,21 @@
 from __future__ import annotations
-import datetime
 from abc import abstractmethod
-from typing import List, OrderedDict, Any, Tuple, NamedTuple
-
-import spacy
+from typing import List, Any, Tuple, NamedTuple
 
 from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
-from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples
+from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples, return_rdf_triples
 from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
 # TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
-import spacy
 Ev()
 
 
 class TripleExtractor:
+    """
+
+    """
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
         # PreProcessor.nlp = self.nlp
         self.graph_name = None
@@ -40,10 +39,33 @@ class TripleExtractor:
         self.extract_content(document)
         # Adds named individuals to the triples list.
         self._append_named_individual()
-        # Store RDF Triple
+        # Function from rdf.RdfCreator, writes triples to file
         store_rdf_triples(self.triples, self.graph_name)
 
         return self.triples
+
+    def clear_stored_triples(self):
+        """
+
+        :param document:
+        :return:
+        """
+        self.triples = []
+
+    def return_ttl(self, document: Document) -> str:
+        """
+
+        :param document:
+        :return:
+        """
+
+        # Extract publication info and adds it to the RDF triples.
+        self.extract_publication(document)
+        self.extract_content(document)
+        # Adds named individuals to the triples list.
+        self._append_named_individual()
+        # Function from rdf.RdfCreator, writes triples to file
+        return str(return_rdf_triples(self.triples))
 
     def _queue_named_individual(self, prop_1, prop_2) -> None:
         """
@@ -53,6 +75,11 @@ class TripleExtractor:
             self.named_individual.append([prop_1, prop_2])
 
     def extract_publication(self, document: Document) -> None:
+        """
+
+        :param document:
+        :return:
+        """
         if document.publication is not None:
             
             # Formatted name of a publisher and publication
@@ -63,15 +90,15 @@ class TripleExtractor:
             self._queue_named_individual(publication_formatted, TripleExtractorEnum.PUBLICATION)
             # Add publication name as data property
             self._append_triples_literal([TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                         RelationTypeConstants.KNOX_NAME, document.publication)
+                                          RelationTypeConstants.KNOX_NAME, document.publication)
 
             # Add publisher name as data property
             self._append_triples_literal([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                         RelationTypeConstants.KNOX_NAME, publisher_formatted)
+                                          RelationTypeConstants.KNOX_NAME, publisher_formatted)
             # Add the "Publisher publishes Publication" relation
             self._append_triples_uri([TripleExtractorEnum.PUBLISHER], publisher_formatted,
-                                     [TripleExtractorEnum.PUBLICATION], publication_formatted,
-                                     RelationTypeConstants.KNOX_PUBLISHES)
+                                      [TripleExtractorEnum.PUBLICATION], publication_formatted,
+                                      RelationTypeConstants.KNOX_PUBLISHES)
 
     def _convert_spacy_label_to_namespace(self, string: str) -> str:
         """
@@ -89,6 +116,12 @@ class TripleExtractor:
             return string
 
     def _append_token(self, article: Article, pair: Tuple[str, str]):
+        """
+
+        :param article:
+        :param pair:
+        :return:
+        """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
         object_ref = object_ref.replace(" ", "_")
@@ -104,6 +137,14 @@ class TripleExtractor:
             Triple(_object, generate_relation(RelationTypeConstants.KNOX_NAME), generate_literal(pair[0])))
 
     def _append_triples_literal(self, uri_types: List[str], uri_value: Any, relation_type: str, literal: str):
+        """
+
+        :param uri_types:
+        :param uri_value:
+        :param relation_type:
+        :param literal:
+        :return:
+        """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types, uri_value),
             generate_relation(relation_type),
@@ -112,6 +153,15 @@ class TripleExtractor:
 
     def _append_triples_uri(self, uri_types1: List[str], uri_value1: Any,
                             uri_types2: List[str], uri_value2: Any, relation_type: str):
+        """
+
+        :param uri_types1:
+        :param uri_value1:
+        :param uri_types2:
+        :param uri_value2:
+        :param relation_type:
+        :return:
+        """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types1, uri_value1),
             generate_relation(relation_type),
