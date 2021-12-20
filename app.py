@@ -12,11 +12,11 @@ from doc_classification import DocumentClassifier, Document
 from api import ImportApi
 from data_access.data_transfer_objects.DocumentWordCountDto import DocumentWordCountDto
 from environment import EnvironmentVariables as Ev
-# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
 from word_count.WordCounter import WordCounter
 from data_access import WordCountDao
 from utils import logging
 
+# Instantiate EnvironmentVariables class for future use. Environment constants cannot be accessed without this
 Ev()
 
 

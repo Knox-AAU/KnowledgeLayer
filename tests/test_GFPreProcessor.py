@@ -14,9 +14,6 @@ class GFPreProcessorTest(unittest.TestCase):
     def setUpClass(cls):
         cls.preproc = GFPreProcessor()
 
-    def create_article(self, title: str, body: str) -> Article:
-        return Article(title, body, "/testpath.extension")
-
     def setup_data(self, articleBodies: List[str]) -> Document:
         makeArticle = lambda title, body: Article(title, body, "/testpath.extension")
         document = Document("Test Publisher")
@@ -121,7 +118,7 @@ class GFPreProcessorTest(unittest.TestCase):
         actual = self.preproc.__process_text__(data, data.articles[0].body)
 
         # Assert
-        self.assertEqual(expected, actual)
+        assert expected == actual
 
     @patch('pre_processing.PreProcessor.lemmatize')
     def test__process(self, mock_post):

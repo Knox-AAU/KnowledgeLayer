@@ -40,7 +40,6 @@ COPY . .
 # Expose the containers internal port
 EXPOSE 8000
 
-# CMD ["python", "app.py"]
-
-CMD [ "pytest", "tests/test_DocumentClassifier.py" ]
+CMD ["python", "app.py"]
+# CMD [ "pytest", "tests/" ]
 

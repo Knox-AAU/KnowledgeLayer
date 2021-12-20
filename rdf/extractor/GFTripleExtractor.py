@@ -64,11 +64,11 @@ class GFTripleExtractor(TripleExtractor):
         """
         for article in document.articles:
             # For each article, process the text and extract non-textual data in it.
-            article.body = self.__pre_process_manual(article.body)
+            article.body = self._pre_process_manual(article.body)
             self.__process_manual(article)
             self.__extract_manual_path(article)
 
-    def __pre_process_manual(self, body):
+    def _pre_process_manual(self, body):
         """
         Cleans the body of the manual, attempting to discard nonsensical information, as well as replacing occurrences
         of "the pump", etc. with the actual name of the pump.
