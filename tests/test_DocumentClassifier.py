@@ -1,8 +1,6 @@
-from typing import List
 import pytest
 from unittest.mock import patch
 import unittest
-from model.Document import Document, Article
 from doc_classification import DocumentClassifier
 from tests.json_test_data import *
 

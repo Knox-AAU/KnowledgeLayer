@@ -81,7 +81,6 @@ class GFPreProcessor(PreProcessor):
         cleaned_text = re.sub("[^a-zA-Z0-9 ]", '', text)
         return cleaned_text
 
-    # TODO: Consider researching string builders for this
     def numbers_to_text(self, text):
         """
         Converts occurrences of numbers into a textual format.
@@ -118,7 +117,3 @@ class GFPreProcessor(PreProcessor):
                 just_seen_digit = False
 
         return result.strip()
-
-#    def insert_pump_name(self, data, pump_name):
-#        data = data.replace("the_pump", pump_name)
-#        return data

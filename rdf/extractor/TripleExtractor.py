@@ -7,16 +7,22 @@ from rdf.RdfConstants import RelationTypeConstants
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal, store_rdf_triples, return_rdf_triples
 from utils import load_model
 from .TripleExtractorEnum import TripleExtractorEnum
-# TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 Ev()
 
-
 class TripleExtractor:
     """
-
+    The superclass that all triple extractors should inherit from. Specifies common functionality for all triple
+    extractors.
     """
     def __init__(self, spacy_model, tuple_label_dict, ignore_label_list, namespace) -> None:
+        """
+
+        :param spacy_model: The name/path of the spaCy model to be used
+        :param tuple_label_dict: ???
+        :param ignore_label_list: ???
+        :param namespace: The URI to be used
+        """
         # PreProcessor.nlp = self.nlp
         self.graph_name = None
         self.nlp = load_model(spacy_model)
@@ -28,11 +34,9 @@ class TripleExtractor:
 
     def process_publication(self, document: Document) -> List[Triple]:
         """
-        Input:
-            publication: Publication - A Publication class which is the content of a newspaper
-            file_path : str - File path to the publication being processed
+        Initiates all processing and triple extraction of the document.
 
-        Writes entity triples to file
+        :param document: The document object to be processed
         """
         # Extract publication info and adds it to the RDF triples.
         self.extract_publication(document)
@@ -46,17 +50,16 @@ class TripleExtractor:
 
     def clear_stored_triples(self):
         """
-
-        :param document:
-        :return:
+        Clears all triples in the triple list.
         """
         self.triples = []
 
     def return_ttl(self, document: Document) -> str:
         """
+        Extracts triples from the input document and returns a stringified version of these.
 
-        :param document:
-        :return:
+        :param document: The document to extract triples from
+        :return: A string representation of the triples extracted
         """
 
         # Extract publication info and adds it to the RDF triples.
@@ -70,6 +73,9 @@ class TripleExtractor:
     def _queue_named_individual(self, prop_1, prop_2) -> None:
         """
         Adds the named individuals to the named_individual list if it's not already in it.
+
+        :param prop_1: Name
+        :param prop_2: Label
         """
         if [prop_1, prop_2] not in self.named_individual:
             self.named_individual.append([prop_1, prop_2])
@@ -102,10 +108,9 @@ class TripleExtractor:
 
     def _convert_spacy_label_to_namespace(self, string: str) -> str:
         """
-        Input:
-            string: str - A string matching a spacy label
-        Returns:
-            A string matching a class in the ontology.
+
+        :param string: A string matching a spacy label
+        :return: A string matching a class in the ontology.
         """
         for label in self.tuple_label_dict:
             # Assumes that tuple_label_list is a list of dicts with the format: {"spacy_label": xxx, "target_label": xxx}
@@ -120,7 +125,6 @@ class TripleExtractor:
 
         :param article:
         :param pair:
-        :return:
         """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
@@ -143,7 +147,6 @@ class TripleExtractor:
         :param uri_value:
         :param relation_type:
         :param literal:
-        :return:
         """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types, uri_value),
@@ -160,7 +163,6 @@ class TripleExtractor:
         :param uri_types2:
         :param uri_value2:
         :param relation_type:
-        :return:
         """
         self.triples.append(Triple(
             generate_uri_reference(self.namespace, uri_types1, uri_value1),

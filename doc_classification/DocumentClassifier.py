@@ -65,14 +65,3 @@ class DocumentClassifier:
             raise Exception("Unable to classify document")
 
         return processed_document
-
-    @staticmethod
-    def extract_doc_paths(doc):
-        paths = []
-
-        for article in doc["content"]["articles"]:
-            if "extracted_from" in article:
-                for path in article["extracted_from"]:
-                    paths.append(path)
-
-        return paths

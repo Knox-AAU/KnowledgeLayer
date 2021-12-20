@@ -20,6 +20,14 @@ class Article:
     """
 
     def __init__(self, title: str, body: str, path: str, byline: Byline = None, article_id: str = None):
+        """
+
+        :param title: Title of the article (headline)
+        :param body: All paragraphs of the article concatenated
+        :param path: The filepath to the original file
+        :param byline: The author of the article (Nordjyske)
+        :param article_id: An ID assigned to the article
+        """
         self.title = title
         self.body = body
         self.path = path
@@ -50,6 +58,13 @@ class Document:
     """
 
     def __init__(self, publisher: str, publication: str = None, articles=None, date: str = None):
+        """
+
+        :param publisher: The publisher of the publication
+        :param publication: Name of the publication (Nordjyske)
+        :param articles: A list of article objects
+        :param date: Release date of the document
+        """
         if articles is None:
             articles = []
         self.publisher = publisher

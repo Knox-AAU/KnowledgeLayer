@@ -50,13 +50,10 @@ def store_rdf_triples(rdf_triples: List[Tuple], graph_name: str):
 
 def return_rdf_triples(rdfTriples):
     """
-    Input:
-        rdfTriples: list of RDF triples with correct type - List containing triples on the form (Subject, RelationPredicate, Object).
-        output_file_name: str - The Name of the outputted file
+    Converts triples to RDF Turtle representation.
 
-    Takes in a list of RDF triples and parse them into a ready RDF format.
-    The format and output folder of the files are dependent of the configation of the .env file
-
+    :param rdfTriples: The triples to be converted to Turtle
+    :return: The triples following RDF Turtle format
     """
 
     # Get the "graph" in order to contain the rdfTriples

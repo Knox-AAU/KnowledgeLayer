@@ -67,6 +67,12 @@ async def visualise(request: Request):
 
 @app.post("/generateKG/", status_code=200)
 async def genKG(request: Request):
+    """
+    Backend for 'Show Triples' functionality in the UI
+
+    :param request: The request object, containing the POST content
+    :return: A stringified version of the generated triples, or status code 500
+    """
     try:
         json = await request.json()
         publisher, text = json['publisher'], json['text']
