@@ -32,6 +32,9 @@ s = sched.scheduler(time.time, time.sleep)
 document_classifier = DocumentClassifier()
 
 def run_api():
+    """
+
+    """
     uvicorn.run(ImportApi.app, host="0.0.0.0")
 
 
@@ -69,6 +72,9 @@ def process_stored_publications(content):
 
 
 def pipeline():
+    """
+    The main function and entry point of the Knowledge Layer.
+    """
     print("Beginning of Knowledge Layer!")
 
     # Start a seperate thread for the API to avoid blocking

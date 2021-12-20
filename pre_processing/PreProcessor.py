@@ -34,4 +34,10 @@ class PreProcessor:
         return response.json()['lemmatized_string']
 
     def process(self, document: Document) -> Document:
+        """
+        Main method for the pre-processor. Is to be overwritten by the subclasses
+
+        :param document: The document object to be pre-processed
+        :return: The pre-processed document object
+        """
         print("Not overridden")

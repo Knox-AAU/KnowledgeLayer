@@ -5,16 +5,21 @@ from model import Document, Article
 from rdf.RdfConstants import RelationTypeConstants
 from .TripleExtractor import TripleExtractor, Triple, TripleExtractorEnum
 from rdf.RdfCreator import generate_uri_reference, generate_relation, generate_literal
-# TODO: Make a function that can determine the right preprocessor
 from environment import EnvironmentVariables as Ev
 Ev()
 
 
 class GFTripleExtractor(TripleExtractor):
     """
-
+    The triple extractor class specifically for Grundfos data.
     """
     def __init__(self, spacy_model, tuple_label_list=None, ignore_label_list=None) -> None:
+        """
+
+        :param spacy_model: The name/path of the spaCy model to be used as a string
+        :param tuple_label_list: Not relevant
+        :param ignore_label_list: Not relevant
+        """
         # TODO: The pump name SHOULD NOT be hard-coded. It is only like this since we don't receive the pump name
         #  from the previous layer
         self.pump_name = "SQ/SQE"
@@ -24,42 +29,18 @@ class GFTripleExtractor(TripleExtractor):
 
     def _init_spacy_pipeline(self):
         """
-        Loads the custom spaCy pipeline, and adds patterns for the rule-based matching of pumps.
+        Adds patterns for the rule-based matching of pumps.
         """
-        # pumps = self.__extract_pumps_from_patterns()
-
-        # Add special rules to tokenizer for each pump name
-        # for pump in pumps:
-        #     self.nlp.tokenizer.add_special_case(pump, [{ORTH: pump}])
-
-        # Load rule-based matching and its patterns specified in the .env
         test = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
         self.nlp.add_pipe("entity_ruler").from_disk(test)
-
-    # def __extract_pumps_from_patterns(self) -> List[str]:
-    #     """
-    #     Extracts all pump names from the file containing a list of Grundfos pumps.
-    #     :return: List of pump names
-    #     """
-    #     pump_names = []
-    #
-    #     pump_file_path = Ev.instance.get_value(Ev.instance.GF_PATTERN_PATH)
-    #
-    #     pump_pattern = re.compile(r'"pattern": "(.*)"')
-    #
-    #     with open(pump_file_path, "r") as pump_file:
-    #         for line in pump_file:
-    #             pump_names.append(pump_pattern.search(line).group(1))
-    #
-    #     return pump_names
 
     # TODO: find out if it should have common implementation in TripleExtractor
     def _append_token(self, article: Article, pair: Tuple[str, str]):
         """
+        Method for creating <Manual> <mentions> and <Manual> <name> triples
 
-        :param article:
-        :param pair:
-        :return:
+        :param article: The manual to extract triples from
+        :param pair: Tuple containing the name and label of the entity
         """
         # Ensure formatting of the objects name is compatible, eg. Jens Jensen -> Jens_Jensen
         object_ref, object_label = pair
@@ -77,11 +58,10 @@ class GFTripleExtractor(TripleExtractor):
 
     def extract_content(self, document: Document):
         """
+        Calls the pre-processor, processor, and extracts the manual path for the input document.
 
-        :param document:
-        :return:
+        :param document: The document to be processed
         """
-        # TODO: Call to spaCy should be here, so Doc object is available
         for article in document.articles:
             # For each article, process the text and extract non-textual data in it.
             article.body = self.__pre_process_manual(article.body)
@@ -130,21 +110,21 @@ class GFTripleExtractor(TripleExtractor):
 
     def __process_manual(self, manual: Article):
         """
+        Creates pairs and calls append_token which creates triples.
 
-        :param manual:
-        :return:
+        :param manual: The manual to be processed
         """
         labeled_entities = self.__process_manual_text(manual.body)
 
-        # TODO: maybe some check whether it is related to pump or is just mentioned in the manual
         for label_pair in labeled_entities:
             self._append_token(manual, label_pair)
 
     def __process_manual_text(self, body) -> List[Tuple[str, str]]:
         """
+        Identifies entities in the input body, and creates entity pairs.
 
-        :param body:
-        :return:
+        :param body: The body to find entities in
+        :return: The entities identified in the body
         """
         manual_entities = []
         for line in body.split("\n"):
@@ -156,7 +136,7 @@ class GFTripleExtractor(TripleExtractor):
                 if entity.label_ == "Pump":
                     found_pump = (entity.text, entity.label_)
 
-            if found_pump != False:
+            if found_pump:
                 self.__process_pump_line(found_pump, processed_text)
             else:
                 manual_entities += self.__process_non_pump_line(processed_text)
@@ -165,10 +145,10 @@ class GFTripleExtractor(TripleExtractor):
 
     def __process_pump_line(self, pump_pair, processed_text):
         """
+        Creates triples for the PumpRelates relation.
 
-        :param pump_pair:
-        :param processed_text:
-        :return:
+        :param pump_pair: A Tuple containing a pump's name and label
+        :param processed_text: The Doc object returned by the NLP method
         """
         pump_object_ref, pump_object_label = pump_pair
         pump_object_ref = pump_object_ref.replace(" ", "_")
@@ -194,9 +174,10 @@ class GFTripleExtractor(TripleExtractor):
 
     def __process_non_pump_line(self, processed_text):
         """
+        Identifies entities for the mentions relation.
 
-        :param processed_text:
-        :return:
+        :param processed_text: The Doc object returned by the nlp method
+        :return: A list of entities
         """
         manual_entities = []
         for entity in processed_text.ents:
@@ -209,9 +190,9 @@ class GFTripleExtractor(TripleExtractor):
 
     def __extract_manual_path(self, article: Article):
         """
+        Extracts the path of the manual.
 
-        :param article:
-        :return:
+        :param article: The article whose path is to be extracted
         """
         if article.path is not None and article.path != "":
             self._append_triples_literal([TripleExtractorEnum.MANUAL], article.id,

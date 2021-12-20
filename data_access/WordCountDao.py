@@ -18,15 +18,16 @@ logger = logging.getLogger()
 
 class WordCountDao:
     """
-
+    Data access object for the WordCount. Encapsulates all data access to the database layer regarding word count.
     """
 
     @staticmethod
     def send_word_count(documentWordCounts: List[DocumentWordCountDto]):
         """
+        Posts word counts to the database layer.
 
-        :param documentWordCounts:
-        :return:
+        :param documentWordCounts: A list of data transfer objects containing word count result of documents
+        :return: True if successful
         """
         objects_as_dict = list(map(lambda x: dataclasses.asdict(x), documentWordCounts))
         url = Ev.instance.get_value(Ev.instance.WORD_COUNT_DATA_ENDPOINT)
